@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Back Technologies
 subtitle: Formas de comunicación entre servicios

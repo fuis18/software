@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Dev Auth
 subtitle: Identidad y autenticación, transversal a backend y frontend

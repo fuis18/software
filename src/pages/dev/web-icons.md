@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Front Icons
 subtitle: Dónde sacar iconos y assets visuales

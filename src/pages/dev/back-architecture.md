@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Back Architecture
 subtitle: El orden de aprendizaje en backend
@@ -13,7 +13,7 @@ Contruir un backned desde 0
 
 ### 1. Frameworks
 
-Punto de partida: elegir el framework según el caso de uso (alta disponibilidad, microservicios, enterprise, ML, CRUD, edge) antes que por preferencia personal. Ver [back-stack](/dev/back-stack/).
+Punto de partida: elegir el framework según el caso de uso (alta disponibilidad, microservicios, enterprise, ML, CRUD, edge) antes que por preferencia personal. Ver [back-stack](/Programming/dev/back-stack/).
 
 ### 2. Patrón MVC
 
@@ -21,12 +21,12 @@ Model-View-Controller: separa la app en tres capas — **Model** (datos y lógic
 
 ### 3. Bases de datos + ORMs
 
-Con el framework y el patrón resueltos, la siguiente decisión es dónde y cómo persistir datos. Ver [back-databases](/dev/back-databases/).
+Con el framework y el patrón resueltos, la siguiente decisión es dónde y cómo persistir datos. Ver [back-databases](/Programming/dev/back-databases/).
 
 ### 4. Auth (JWT, OAuth)
 
-Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev-auth](/dev/dev-auth/).
+Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev-auth](/Programming/dev/dev-auth/).
 
 ### 5. Testing
 
-Último escalón: cubrir con tests lo que ya se construyó. Ver [dev-testing](/dev/dev-testing/).
+Último escalón: cubrir con tests lo que ya se construyó. Ver [dev-testing](/Programming/dev/dev-testing/).

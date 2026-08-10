@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Front Stack
 subtitle: Las piezas con las que se arma un frontend

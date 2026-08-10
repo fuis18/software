@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+const { frontmatter } = Astro.props;
+const siteName = 'Programing';
+const title = frontmatter?.title || 'Knowledge';
+const eyebrow = frontmatter?.eyebrow || 'Programing';
+const subtitle = frontmatter?.subtitle;
+const pageTitle = `${title} — ${siteName}`;
+const description =
+  frontmatter?.description || `${title}${subtitle ? ` — ${subtitle}` : ''}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={description}>
+  <meta name="author" content="Fuis18">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0d0f14">
+  <link rel="canonical" href={canonical}>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content={siteName}>
+  <meta property="og:title" content={pageTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={pageTitle}>
+  <meta name="twitter:description" content={description}>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>{eyebrow}</h1>
+      <p>{title} {subtitle && <span>{subtitle}</span>}</p>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </div>
+</body>
+</html>

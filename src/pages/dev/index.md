@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Dev
 subtitle: Backend, webend, Rust y prácticas transversales
@@ -9,64 +9,64 @@ Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backend
 
 ## Library Universal
 
-### [dev-auth]({{ '/dev/dev-auth/' | url }})
+### [dev-auth](/Programming/dev/dev-auth/)
 
 Identidad y autenticación, transversal a backend y frontend: Keycloak como identity provider, los protocolos OIDC y OAuth2.0, tokens JWT, y Auth.js del lado frontend.
 
-### [dev-testing]({{ '/dev/dev-testing/' | url }})
+### [dev-testing](/Programming/dev/dev-testing/)
 
 Testing, transversal a todo el stack: pruebas unitarias (Vitest/Jest), pruebas de componentes e integración (Testing Library), end-to-end (Playwright), y automatización de navegador (Stagehand).
 
 ## Backend
 
-### [back-architecture]({{ '/dev/back-architecture/' | url }})
+### [back-architecture](/Programming/dev/back-architecture/)
 
 Roadmap para backend: frameworks, patrón MVC, bases de datos y ORMs, autenticación y testing — como mapa general antes de entrar al detalle.
 
-### [back-stack]({{ '/dev/back-stack/' | url }})
+### [back-stack](/Programming/dev/back-stack/)
 
 Frameworks de backend y para qué sirve cada uno en la práctica.
 
-### [back-technologies]({{ '/dev/back-technologies/' | url }})
+### [back-technologies](/Programming/dev/back-technologies/)
 
 Formas de comunicación entre servicios: APIs síncronas, mensajería asíncrona y en tiempo real.
 
-### [back-databases]({{ '/dev/back-databases/' | url }})
+### [back-databases](/Programming/dev/back-databases/)
 
 Bases de datos y cuándo usar cada una, comparadas en ACID, JOINs, escalabilidad y disponibilidad, y ORMs.
 
 ## Desktop
 
-### [desk-stack]({{ '/dev/desk-stack/' | url }})
+### [desk-stack](/Programming/dev/desk-stack/)
 
 Frameworks para construir aplicaciones de escritorio: Tauri para apps web empaquetadas, Ratatui para interfaces de terminal, GTK para apps grandes, Bevy para juegos, egui para utilidades rápidas.
 
 ## webend
 
-### [web-architecture]({{ '/dev/web-architecture/' | url }})
+### [web-architecture](/Programming/dev/web-architecture/)
 
 Roadmap para frontend web: qué meta-framework y router lo sostienen, con qué se da estilos.
 
-### [web-stack]({{ '/dev/web-stack/' | url }})
+### [web-stack](/Programming/dev/web-stack/)
 
 Meta-frameworks según el objetivo del proyecto y routers.
 
-### [web-lib-stack]({{ '/dev/web-lib-stack/' | url }})
+### [web-lib-stack](/Programming/dev/web-lib-stack/)
 
 Librerías de apoyo para contruir la lógica de componentes.
 
-### [web-style]({{ '/dev/web-style/' | url }})
+### [web-style](/Programming/dev/web-style/)
 
 Herramienttas para la UI.
 
-### [web-lib-style]({{ '/dev/web-lib-style/' | url }})
+### [web-lib-style](/Programming/dev/web-lib-style/)
 
 Librerías de apoyo para mejorar la interfaz visual.
 
-### [web-icons]({{ '/dev/web-icons/' | url }})
+### [web-icons](/Programming/dev/web-icons/)
 
 Dónde sacar iconos, svg y assets visuales
 
-### [web-utilities]({{ '/dev/web-utilities/' | url }})
+### [web-utilities](/Programming/dev/web-utilities/)
 
 Herramientas para elaborar con código diferentes utilidades.

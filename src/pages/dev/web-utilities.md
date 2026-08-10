@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Front Utilities
 subtitle: Utilidades puntuales — PDF, video, diapositivas y documentación
