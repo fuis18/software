@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev / Back-Architecture
 title: Back Stack
 subtitle: Un framework por caso de uso, no uno para todo

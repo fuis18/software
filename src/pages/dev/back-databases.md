@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Back Databases
 subtitle: Bases de datos y cuándo usar cada una

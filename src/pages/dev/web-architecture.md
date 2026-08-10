@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Front Architecture
 subtitle: Roadmap para frontend
@@ -9,11 +9,11 @@ subtitle: Roadmap para frontend
 
 ### 1. Meta-framework y router
 
-Primero se resuelve qué sostiene la app (Astro, React Router v7, TanStack Start, Svelte, Next.js, Angular) y con qué router navega. Ver [front-stack](/dev/front-stack/).
+Primero se resuelve qué sostiene la app (Astro, React Router v7, TanStack Start, Svelte, Next.js, Angular) y con qué router navega. Ver [front-stack](/Programming/dev/web-stack/).
 
 ### 2. Componentes de UI
 
-De dónde salen los componentes: shadcn/ui, radix/ui, Mantine, HeadlessUI, HeroUI — también en [front-stack](/dev/front-stack/).
+De dónde salen los componentes: shadcn/ui, radix/ui, Mantine, HeadlessUI, HeroUI — también en [front-stack](/Programming/dev/web-stack/).
 
 ### 3. Organización de carpetas — Screaming Architecture
 
@@ -23,12 +23,12 @@ En la práctica: en vez de agrupar por tipo (`components/`, `hooks/`, `services/
 
 ### 4. Estilo
 
-Con qué se estiliza la interfaz del lado CSS. Ver [front-style](/dev/front-style/).
+Con qué se estiliza la interfaz del lado CSS. Ver [front-style](/Programming/dev/web-style/).
 
 ### 5. Estado y datos
 
-Estado global, data fetching, formularios, tablas y drag & drop — la lógica detrás de la interfaz. Ver [front-lib-logic](/dev/front-lib-logic/).
+Estado global, data fetching, formularios, tablas y drag & drop — la lógica detrás de la interfaz. Ver [front-lib-logic](/Programming/dev/web-lib-stack/).
 
 ### 6. Librerías de apoyo visual
 
-Animaciones, gráficos, notificaciones, modales — lo que termina de completar la interfaz. Ver [front-lib-style](/dev/front-lib-style/).
+Animaciones, gráficos, notificaciones, modales — lo que termina de completar la interfaz. Ver [front-lib-style](/Programming/dev/web-lib-style/).

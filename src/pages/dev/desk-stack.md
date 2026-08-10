@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Desk Stack
 subtitle: Frameworks para construir aplicaciones de escritorio

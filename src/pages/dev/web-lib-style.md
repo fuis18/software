@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: ../../layouts/Layout.astro
 eyebrow: Dev
 title: Front Lib Style
 subtitle: Librerías de apoyo visual para la interfaz
