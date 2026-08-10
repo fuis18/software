@@ -2,63 +2,71 @@
 layout: base.njk
 eyebrow: Dev
 title: Dev
-subtitle: Backend, frontend, Rust y prácticas transversales
+subtitle: Backend, webend, Rust y prácticas transversales
 ---
 
-Desarrollo de software: cómo se construyen aplicaciones backend y frontend, qué frameworks y arquitecturas se eligen según el caso de uso, el ecosistema Rust para apps nativas y multiplataforma (incluyendo desarrollo de juegos), y las prácticas transversales — testing y autenticación — que aplican sin importar la capa que se esté construyendo.
+Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backends, qué frameworks y arquitecturas se eligen según el caso de uso, el ecosistema Rust para apps nativas y multiplataforma (incluyendo desarrollo de juegos), y las prácticas transversales — testing y autenticación — que aplican sin importar la capa que se esté construyendo.
 
 ## Library Universal
 
-### [dev-auth]({{ '/dev/dev-auth' | url }})
+### [dev-auth]({{ '/dev/dev-auth/' | url }})
 
 Identidad y autenticación, transversal a backend y frontend: Keycloak como identity provider, los protocolos OIDC y OAuth2.0, tokens JWT, y Auth.js del lado frontend.
 
-### [dev-testing]({{ '/dev/dev-testing' | url }})
+### [dev-testing]({{ '/dev/dev-testing/' | url }})
 
 Testing, transversal a todo el stack: pruebas unitarias (Vitest/Jest), pruebas de componentes e integración (Testing Library), end-to-end (Playwright), y automatización de navegador (Stagehand).
 
-### [front-utilities]({{ '/dev/front-utilities' | url }})
-
-Utilidades puntuales que no encajan en stack, estado o estilo: generar y editar PDF (libpdf), edición de video (Hyperframes, Remotion), crear diapositivas (Reveal.js) y generar documentación (Eleventy).
-
 ## Backend
 
-### [back-architecture]({{ '/dev/back-architecture' | url }})
+### [back-architecture]({{ '/dev/back-architecture/' | url }})
 
-El orden de aprendizaje en backend: frameworks, patrón MVC, bases de datos y ORMs, NestJS, autenticación y testing — como mapa general antes de entrar al detalle.
+Roadmap para backend: frameworks, patrón MVC, bases de datos y ORMs, autenticación y testing — como mapa general antes de entrar al detalle.
 
 ### [back-stack]({{ '/dev/back-stack/' | url }})
 
-Frameworks de backend y para qué sirve cada uno en la práctica: Actix-web para sistemas 24/7 de alta disponibilidad, Axum para microservicios, Fastify para APIs REST en JS/TS, Spring Boot para enterprise, FastAPI para servir modelos de IA, Django para CRUD con admin, y Hono para edge/serverless.
+Frameworks de backend y para qué sirve cada uno en la práctica.
 
-### [back-technologies]({{ '/dev/back-technologies' | url }})
+### [back-technologies]({{ '/dev/back-technologies/' | url }})
 
-Formas de comunicación entre servicios: APIs síncronas (REST, GraphQL, gRPC), mensajería asíncrona (RabbitMQ, Kafka, NATS, Redis Pub/Sub) y tiempo real (WebSocket, Server-Sent Events, Long Polling).
+Formas de comunicación entre servicios: APIs síncronas, mensajería asíncrona y en tiempo real.
 
-### [back-databases]({{ '/dev/back-databases' | url }})
+### [back-databases]({{ '/dev/back-databases/' | url }})
 
-Bases de datos y cuándo usar cada una — SQLite, PostgreSQL, MongoDB, Cassandra, Redis, Neo4j, Qdrant — comparadas en ACID, JOINs, escalabilidad y disponibilidad, más los ORMs para trabajar con ellas (Prisma, TypeORM).
+Bases de datos y cuándo usar cada una, comparadas en ACID, JOINs, escalabilidad y disponibilidad, y ORMs.
 
 ## Desktop
 
-### [desk-stack]({{ '/dev/desk-stack' | url }})
+### [desk-stack]({{ '/dev/desk-stack/' | url }})
 
 Frameworks para construir aplicaciones de escritorio: Tauri para apps web empaquetadas, Ratatui para interfaces de terminal, GTK para apps grandes, Bevy para juegos, egui para utilidades rápidas.
 
-## Frontend
+## webend
 
-### [front-stack]({{ '/dev/front-stack/' | url }})
+### [web-architecture]({{ '/dev/web-architecture/' | url }})
 
-Las piezas con las que se arma un frontend: meta-frameworks según el objetivo del proyecto (Astro para sitios estáticos, React Router v7 e interactividad, TanStack Start para apps con mucho manejo de datos, Svelte por rendimiento, Next.js para SEO/e-commerce, Angular para proyectos enterprise/legacy), routers (React Router, Wouter, TanStack Router) y librerías de componentes de UI (shadcn/ui, radix/ui, Mantine, HeadlessUI, HeroUI).
+Roadmap para frontend web: qué meta-framework y router lo sostienen, con qué se da estilos.
 
-### [front-style]({{ '/dev/front-style/' | url }})
+### [web-stack]({{ '/dev/web-stack/' | url }})
 
-Con qué se estiliza la interfaz, del lado CSS: Tailwind CSS como utility-first, Tailwind Animation para animaciones, twekcn para theming de shadcn/ui, y patrones de CSS moderno (media queries para dark mode, orientación, fullscreen).
+Meta-frameworks según el objetivo del proyecto y routers.
 
-### [front-libs]({{ '/dev/front-libs/' | url }})
+### [web-lib-stack]({{ '/dev/web-lib-stack/' | url }})
 
-Librerías de apoyo para construir la interfaz: animaciones (Framer Motion), estado global (Zustand), data fetching (Tanstack Query), tablas y listas virtuales (Tanstack Table/Virtual), formularios (RHF/TanStack Form), drag & drop (DnDKit), gráficos (Recharts), animación 3D (three.js/React Three Fiber), y utilidades puntuales como libpdf y travels.
+Librerías de apoyo para contruir la lógica de componentes.
 
-### [front-icons]({{ '/dev/front-icons/' | url }})
+### [web-style]({{ '/dev/web-style/' | url }})
 
-Dónde sacar iconos y assets visuales: icones.js.org, iconify, tabler-icons, svgl, flaticon, dashboardicons, entre otros catálogos.
+Herramienttas para la UI.
+
+### [web-lib-style]({{ '/dev/web-lib-style/' | url }})
+
+Librerías de apoyo para mejorar la interfaz visual.
+
+### [web-icons]({{ '/dev/web-icons/' | url }})
+
+Dónde sacar iconos, svg y assets visuales
+
+### [web-utilities]({{ '/dev/web-utilities/' | url }})
+
+Herramientas para elaborar con código diferentes utilidades.

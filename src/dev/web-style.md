@@ -10,7 +10,6 @@ subtitle: Con qué se estiliza la interfaz
 | Librería               | Uso                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------- |
 | **Tailwind CSS**       | Framework utility-first: estilos directo en el markup, sin salir del componente |
-| **Framer Motion**      | Animaciones declarativas para React, transiciones y gestos                      |
 | **Tailwind Animation** | Utilidades de animación (keyframes, transiciones) sobre Tailwind                |
 | **twekcn**             | Theming de colores personalizados para shadcn/ui                                |
 

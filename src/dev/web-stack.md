@@ -28,9 +28,3 @@ Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de d
 | **TanStack Router** | TypeScript-first   | Apps grandes con control avanzado de datos y validación de params |
 
 > Nota: Svelte tiene su propio router
-
-## Ver también
-
-- [front-style]({{ '/dev/front-style/' | url }}) — librerías de estilo del lado CSS (Tailwind, animaciones, theming).
-- [front-libs]({{ '/dev/front-libs/' | url }}) — librerías de apoyo (animaciones, estado, data fetching, forms, gráficos, 3D).
-- [front-icons]({{ '/dev/front-icons/' | url }}) — catálogos de iconos y assets visuales.

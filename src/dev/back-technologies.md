@@ -35,9 +35,3 @@ subtitle: Formas de comunicación entre servicios
 | **Long Polling**             | HTTP      | Simulación de tiempo real      |
 
 **Cómo elegir:** WebSocket cuando el cliente también necesita enviar datos en tiempo real (chat, juegos, colaboración). SSE cuando el flujo es solo del servidor hacia el cliente (notificaciones, streaming de logs) — más simple que WebSocket y funciona sobre HTTP normal. Long Polling como último recurso, cuando no se puede sumar infraestructura para WebSocket/SSE.
-
-## Ver también
-
-- [back-architecture](/dev/back-architecture/) — mapa general de aprendizaje en backend.
-- [back-stack](/dev/back-stack/) — frameworks de backend y para qué sirve cada uno.
-- [back-databases](/dev/back-databases/) — bases de datos y ORMs.

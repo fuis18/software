@@ -17,12 +17,14 @@ subtitle: Librerías de apoyo para construir la interfaz
 | Drag & drop      | **DnDKit**              | Interacciones de drag & drop accesibles                           |
 | Gráficos         | **Recharts**            | Visualización de datos y gráficos                                 |
 | actions history  | **travels**             | Funcionalidad de hacer & deshacer (undo/redo)                     |
+| Office           | **libpdf**              | CRUD de PDF: crear, leer, editar y manipular archivos PDF         |
 
 ### Cuándo usar Context vs. Zustand
 
 - **Context** para datos globales que casi nunca cambian (configuración de la interfaz, i18n).
 - **Zustand** para estado dinámico, cuando se quiere evitar la lógica de `useReducer` o simplemente una experiencia de desarrollo más limpia.
-- No hace falta elegir uno solo: es común usar Context para el tema de la app y Zustand para la lógica de negocio pesada.
+
+> No hace falta elegir uno solo: es común usar Context para el tema de la app y Zustand para la lógica de negocio pesada.
 
 ## Animación 3D
 
@@ -32,9 +34,3 @@ subtitle: Librerías de apoyo para construir la interfaz
 | **WebGL**             | API del navegador        | Dibujar gráficos 2D/3D de alto rendimiento         |
 | **three.js**          | Librería JS              | Facilita trabajar con WebGL y 3D                   |
 | **React Three Fiber** | Framework sobre three.js | Usar three.js dentro de React de forma declarativa |
-
-## Ver también
-
-- [front-stack]({{ '/dev/front-stack/' | url }}) — meta-frameworks, routers y librerías de componentes.
-- [front-style]({{ '/dev/front-style/' | url }}) — librerías de estilo del lado CSS (Tailwind, animaciones, theming).
-- [front-icons]({{ '/dev/front-icons/' | url }}) — catálogos de iconos y assets visuales.

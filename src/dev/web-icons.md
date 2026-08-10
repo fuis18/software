@@ -29,8 +29,3 @@ Catálogos de iconos, SVGs y avatares para no reinventar los assets visuales en 
 | ------------- | ------------------------------------------------------------ |
 | **Avvvatars** | Generador de avatares                                        |
 | **unavatar**  | Avatares a partir de un identificador (usuario, email, etc.) |
-
-## Ver también
-
-- [front-stack]({{ '/dev/front-stack/' | url }}) — meta-frameworks, routers y librerías de componentes.
-- [front-libs]({{ '/dev/front-libs/' | url }}) — librerías de apoyo para construir la interfaz.

@@ -29,6 +29,15 @@ subtitle: Bases de datos y cuándo usar cada una
 | **Esquema flexible**    | ❌ No        | ⚠️ JSONB    | ✅ Sí         | ⚠️ Semi          | ✅ Sí            | ❌ No      | ⚠️ Semi       |
 | **Alta disponibilidad** | ❌ No        | ⚠️ Réplica  | ✅ Réplica    | ✅✅ Nativa      | ✅ Sentinel      | ⚠️ Cluster | ✅ Cluster    |
 
+### Cómo elegir
+
+- **SQL relacional** (SQLite, PostgreSQL) cuando importa ACID y JOINs — la mayoría de las apps con datos estructurados. SQLite si es embebido/local, PostgreSQL si es una app web con servidor propio.
+- **MongoDB** cuando el esquema cambia seguido o no está definido de entrada.
+- **Cassandra** cuando el volumen y la disponibilidad importan más que ACID — escritura masiva, IoT, time-series.
+- **Redis** para todo lo que necesite velocidad extrema y no tiene que sobrevivir para siempre: caché, sesiones, colas simples.
+- **Neo4j** cuando la pregunta central es sobre relaciones entre entidades (quién conoce a quién, qué recomendarle a quién).
+- **Qdrant** cuando se necesita buscar por similitud semántica en vez de por igualdad exacta — RAG, embeddings.
+
 ### ACID
 
 - **Atomic** — la transacción se aplica entera o no se aplica nada.
@@ -43,22 +52,11 @@ subtitle: Bases de datos y cuándo usar cada una
 | **Prisma**  | TypeScript | ORM  | PostgreSQL, MySQL, etc. |
 | **TypeORM** | TypeScript | ORM  | Multi-DB                |
 
-## Cómo elegir
-
-- **SQL relacional** (SQLite, PostgreSQL) cuando importa ACID y JOINs — la mayoría de las apps con datos estructurados. SQLite si es embebido/local, PostgreSQL si es una app web con servidor propio.
-- **MongoDB** cuando el esquema cambia seguido o no está definido de entrada.
-- **Cassandra** cuando el volumen y la disponibilidad importan más que ACID — escritura masiva, IoT, time-series.
-- **Redis** para todo lo que necesite velocidad extrema y no tiene que sobrevivir para siempre: caché, sesiones, colas simples.
-- **Neo4j** cuando la pregunta central es sobre relaciones entre entidades (quién conoce a quién, qué recomendarle a quién).
-- **Qdrant** cuando se necesita buscar por similitud semántica en vez de por igualdad exacta — RAG, embeddings.
-
 ## Recursos
 
-- [sqlbolt.com](https://sqlbolt.com) — practicar SQL interactivamente.
-- **BaaS**: [turso.tech](https://turso.tech) (SQLite en el borde) y [PlanetScale](https://planetscale.com) (MySQL serverless).
+**BaaS**:
 
-## Ver también
+- [turso.tech](https://turso.tech) (SQLite en el borde)
+- [PlanetScale](https://planetscale.com) (MySQL serverless).
 
-- [back-architecture](/dev/back-architecture/) — mapa general de aprendizaje en backend.
-- [back-stack](/dev/back-stack/) — frameworks de backend y para qué sirve cada uno.
-- [back-technologies](/dev/back-technologies/) — comunicación entre servicios.
+- [sqlbolt.com](https://sqlbolt.com) — practicar SQL interactivamete.

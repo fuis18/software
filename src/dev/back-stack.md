@@ -7,16 +7,17 @@ subtitle: Un framework por caso de uso, no uno para todo
 
 ## Resumen
 
-| Framework           | Lenguaje / Runtime   | Uso principal                        | Ejemplos                                          |
-| ------------------- | -------------------- | ------------------------------------ | ------------------------------------------------- |
-| **Actix-web**       | Rust                 | Sistemas 24/7 de alta disponibilidad | Procesadores de pagos, game servers, trading      |
-| **Axum** / **Loco** | Rust                 | Microservicios internos              | Auth service, API gateway, job queue workers      |
-| **Fastify**         | Node.js              | APIs REST en equipos JS/TS           | BFF, APIs públicas, servicios con mucho CRUD      |
-| **Spring Boot**     | Java (JVM)           | Backend enterprise / corporativo     | Banca, ERPs, sistemas de salud, Fortune 500       |
-| **FastAPI**         | Python               | Servir modelos ML/IA                 | Inference endpoints, pipelines de datos, LLM APIs |
-| **Django**          | Python               | Web apps con mucho CRUD y admin      | CMSs, portales internos, dashboards operativos    |
-| **Hono**            | Edge / multi-runtime | Serverless / edge                    | Middleware CDN, auth en el borde, APIs en Workers |
-| **PHP**             |                      |                                      |                                                   |
+| Framework           | Lenguaje   | Uso principal                        | Ejemplos                                          |
+| ------------------- | ---------- | ------------------------------------ | ------------------------------------------------- |
+| **Actix-web**       | Rust       | Sistemas 24/7 de alta disponibilidad | Procesadores de pagos, game servers, trading      |
+| **Axum** / **Loco** | Rust       | Microservicios internos              | Auth service, API gateway, job queue workers      |
+| **Fastify**         | Javascript | APIs REST en equipos JS/TS           | BFF, APIs públicas, servicios con mucho CRUD      |
+| **Express**         | Javascript |                                      |                                                   |
+| **Spring Boot**     | Java (JVM) | Backend enterprise / corporativo     | Banca, ERPs, sistemas de salud, Fortune 500       |
+| **FastAPI**         | Python     | Servir modelos ML/IA                 | Inference endpoints, pipelines de datos, LLM APIs |
+| **Django**          | Python     | Web apps con mucho CRUD y admin      | CMSs, portales internos, dashboards operativos    |
+| **Hono**            | Javascript | Serverless / edge                    | Middleware CDN, auth en el borde, APIs en Workers |
+| **PHP**             |            |                                      |                                                   |
 
 ## Benchmarks (aprox.)
 
@@ -32,8 +33,3 @@ Números orientativos de throughput (requests/segundo) y curva de aprendizaje �
 | **Django**      | ~15k                       | Medio                |
 | **Hono**        | varía según runtime (edge) | Fácil                |
 | **PHP**         |                            |                      |
-
-## Ver también
-
-- [back-technologies]({{ '/dev/back-technologies/' | url }}) — cómo se comunican estos servicios entre sí (REST/GraphQL/gRPC, mensajería, tiempo real).
-- [back-databases]({{ '/dev/back-databases/' | url }}) — qué base de datos combinar con cada uno de estos stacks.
