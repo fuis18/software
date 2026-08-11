@@ -7,6 +7,7 @@
   --text-muted: #8ba1c1;
   --text-dim: #a4b3c8;
   --accent: #38bdf8;
+  --font-p: 16px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,9 +26,7 @@ body {
 }
 
 .page-header {
-  margin-bottom: 40px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
 }
 
 .page-header h1 {
@@ -66,7 +65,7 @@ main h2 { font-size: 18px; border-bottom: 1px solid var(--border); padding-botto
 main h3 { font-size: 15px; color: var(--accent); }
 
 main p {
-  font-size: 18px;
+  font-size: var(--font-p);
   line-height: 1.7;
   color: var(--text-dim);
   margin-bottom: 14px;
@@ -75,7 +74,7 @@ main p {
 main ul, main ol {
   margin: 8px 0 16px 20px;
   color: var(--text-dim);
-  font-size: 16px;
+  font-size: var(--font-p)
   line-height: 1.7;
 }
 
