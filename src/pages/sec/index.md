@@ -1,6 +1,5 @@
 ---
 layout: ../../layouts/Layout.astro
-eyebrow: Sec
 title: Sec
 subtitle: Seguridad de redes, sistemas y cadena de suministro
 ---

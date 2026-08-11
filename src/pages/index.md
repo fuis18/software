@@ -1,14 +1,28 @@
 ---
 layout: ../layouts/Layout.astro
-eyebrow: Knowledge Base
+eyebrow: Software
 title: Software Ecosystem
 subtitle: Dev · Sec · Ops · AI · Games
 ---
 
-Notas técnicas organizadas por especialidad. Cada subgrupo agrupa los "executors" — temas concretos con su propia página.
+El ecosistema del software moderno, ordenado por disciplina: el desarrollo de aplicaciones (web, backend, móvil y de escritorio), la seguridad ofensiva y de la cadena de suministro, la administración de infraestructura, los modelos y herramientas de inteligencia artificial, y el desarrollo de videojuegos.
 
-- [Dev](dev/) — desarrollo de software: backend, frontend, Rust y prácticas transversales.
-- [Sec](sec/) — seguridad de redes, sistemas y cadena de suministro.
-- [Ops](ops/) — administración de sistemas e infraestructura.
-- [AI](ai/) — fundamentos y práctica de modelos de lenguaje.
-- [Games](games/) — desarrollo de videojuegos: motores, matemáticas $3\text{D}/2\text{D}$, ECS, gráficos y audio.
+## [Dev](dev/)
+
+Desarrollo de software: web, backend, apps móviles y de escritorio.
+
+## [Sec](sec/)
+
+Seguridad de redes, sistemas y cadena de suministro.
+
+## [Ops](ops/)
+
+Administración de sistemas e infraestructura.
+
+## [AI](ai/)
+
+Modelos, entrenamiento, herramientas.
+
+## [Games](games/)
+
+Desarrollo de videojuegos: motores, matemáticas, gráficos y audio.

@@ -1,6 +1,5 @@
 ---
 layout: ../../layouts/Layout.astro
-eyebrow: Ops
 title: Ops
 subtitle: Infraestructura, automatización y sistemas
 ---

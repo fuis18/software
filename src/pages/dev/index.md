@@ -1,11 +1,10 @@
 ---
 layout: ../../layouts/Layout.astro
-eyebrow: Dev
 title: Dev
-subtitle: Backend, webend, Rust y prácticas transversales
+subtitle: Web, backend, apps móviles y de escritorio.
 ---
 
-Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backends, qué frameworks y arquitecturas se eligen según el caso de uso, el ecosistema Rust para apps nativas y multiplataforma (incluyendo desarrollo de juegos), y las prácticas transversales — testing y autenticación — que aplican sin importar la capa que se esté construyendo.
+Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backends, qué frameworks y arquitecturas se eligen según el caso de uso, el ecosistema Rust para apps nativas y multiplataforma, y las prácticas transversales — testing y autenticación — que aplican sin importar la capa que se esté construyendo.
 
 ## Frontend - Web
 

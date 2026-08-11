@@ -38,7 +38,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <div class="container">
     <Navbar />
     <section class="page-header">
-      <h1>{eyebrow}</h1>
+      {eyebrow && <h1>{eyebrow}</h1>}
       <p>{title} {subtitle && <span>{subtitle}</span>}</p>
     </section>
     <main>
