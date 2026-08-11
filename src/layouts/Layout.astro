@@ -3,9 +3,9 @@ import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 
 const { frontmatter } = Astro.props;
-const siteName = 'Programing';
+const siteName = 'software';
 const title = frontmatter?.title || 'Knowledge';
-const eyebrow = frontmatter?.eyebrow || 'Programing';
+const eyebrow = frontmatter?.eyebrow || 'software';
 const subtitle = frontmatter?.subtitle;
 const pageTitle = `${title} — ${siteName}`;
 const description =

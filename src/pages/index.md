@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Layout.astro
 eyebrow: Knowledge Base
-title: Programing
+title: Software Ecosystem
 subtitle: Dev · Sec · Ops · AI · Games
 ---
 
