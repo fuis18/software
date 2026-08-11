@@ -16,7 +16,7 @@ body {
   color: var(--text);
   font-family: 'IBM Plex Sans', sans-serif;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 20px 20px 40px 20px;
 }
 
 .container {
@@ -24,13 +24,13 @@ body {
   margin: 0 auto;
 }
 
-header {
+.page-header {
   margin-bottom: 40px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
 }
 
-header h1 {
+.page-header h1 {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 13px;
   font-weight: 600;
@@ -40,14 +40,14 @@ header h1 {
   margin-bottom: 8px;
 }
 
-header p {
+.page-header p {
   font-size: 26px;
   font-weight: 300;
   color: var(--text);
   letter-spacing: -0.02em;
 }
 
-header p span {
+.page-header p span {
   color: var(--accent);
   font-weight: 500;
 }

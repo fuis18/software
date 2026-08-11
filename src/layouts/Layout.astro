@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
 
 const { frontmatter } = Astro.props;
 const siteName = 'Programing';
@@ -35,10 +36,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 </head>
 <body>
   <div class="container">
-    <header>
+    <Navbar />
+    <section class="page-header">
       <h1>{eyebrow}</h1>
       <p>{title} {subtitle && <span>{subtitle}</span>}</p>
-    </header>
+    </section>
     <main>
       <slot />
     </main>
