@@ -8,7 +8,7 @@ Todo el ciclo de vida de la infraestructura: aprovisionamiento y automatización
 
 ## Arquitectura
 
-### [ops-architecture](ops-architecture/)
+### [ops-roadmap](ops-roadmap/)
 
 El roadmap de ops (Docker+deploy → CI/CD → Kubernetes → Microservicios → Arquitecturas → Observabilidad) y los patrones de arquitectura de sistemas — Monolito, SOA, Microservicios, Event-Driven, Serverless, Layered/MVC — con cuándo conviene usar cada uno.
 

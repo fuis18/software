@@ -8,7 +8,7 @@ Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backend
 
 ## Frontend - Web
 
-### [web-architecture](web-architecture/)
+### [web-roadmap](web-roadmap/)
 
 Roadmap para frontend web: qué meta-framework y router lo sostienen, con qué se da estilos.
 
@@ -38,7 +38,7 @@ Librerias para elaborar diferentes utilidades.
 
 ## Backend
 
-### [back-architecture](back-architecture/)
+### [back-roadmap](back-roadmap/)
 
 Roadmap para backend: frameworks, patrón MVC, bases de datos y ORMs, autenticación y testing.
 

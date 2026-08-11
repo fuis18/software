@@ -96,6 +96,27 @@ main code {
   color: #f1f5f9;
 }
 
+main pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  line-height: 1.6;
+}
+
+main pre code {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
 main blockquote {
   border-left: 2px solid var(--border-light);
   padding: 4px 16px;

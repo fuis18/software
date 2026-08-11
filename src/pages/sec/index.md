@@ -26,6 +26,10 @@ Vulnerabilidades comunes y técnicas de explotación: inyección SQL con payload
 
 Marcos conceptuales de seguridad: OWASP, MITRE ATT&CK, threat modeling con STRIDE, y gestión de secretos.
 
+### [sec-roadmap](sec-roadmap/)
+
+Camino formativo y arquitectura de seguridad: el orden de aprendizaje, OWASP Top 10 con sus recursos oficiales, y práctica con OWASP Juice Shop y PortSwigger Web Security Academy.
+
 ## DevSecOps
 
 ### [sec-supplychain](sec-supplychain/)

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Layout.astro
-eyebrow: Dev / Back-Architecture
+eyebrow: Dev / Back-Roadmap
 title: Back Stack
 subtitle: Un framework por caso de uso, no uno para todo
 ---

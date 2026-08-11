@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 eyebrow: Dev
-title: Front Architecture
+title: Front Roadmap
 subtitle: Roadmap para frontend
 ---
 
@@ -47,3 +47,46 @@ Capacidades que ofrece el navegador para ejecutar trabajo fuera del hilo princip
 | -------------- | ------------- |
 | **Web worker** | Segundo Plano |
 | **Service worker** | Cache         |
+
+## Arquitectura
+
+### Screaming Architecture (Feature-Based)
+
+La estructura de carpetas debería reflejar el **dominio de la app** y "gritar" de qué se trata, no qué framework usa. En la práctica se agrupa por feature en vez de por capa técnica — ver paso 3 del roadmap.
+
+```
+src/
+  features/
+    auth/
+      components/    # LoginButton, LoginForm
+      hooks/         # useAuth, useUser
+      services/      # loginApi, registerApi
+      types/         # UserInterface
+      index.ts       # Punto de entrada (Public API)
+    shopping-cart/
+      components/
+      store/
+      index.ts
+  shared/            # Componentes globales (Botones, inputs genéricos)
+```
+
+### Layered Architecture
+
+Agrupar por capa técnica, la alternativa clásica: `components/`, `hooks/`, `services/`, `pages/`, `utils/`.
+
+```
+src/
+  components/
+  hooks/
+  services/
+  pages/
+  utils/
+```
+
+**Cómo elegir:** Layered para proyectos simples donde el tipo de archivo manda; Screaming/Feature-Based cuando la app crece y varias features tocan las mismas capas, para que cada feature quede autocontenida y se pueda mover o eliminar como unidad.
+
+### Principios
+
+- **KISS** — mantenerlo simple.
+- **YAGNI** — no anticipar features que aún no se piden.
+- **DRY** — no repetir lógica.
