@@ -59,15 +59,11 @@ Bases de datos y cuándo usar cada una, comparadas en ACID, JOINs, escalabilidad
 
 ### [desk-stack](desk-stack/)
 
-Frameworks para construir aplicaciones de escritorio: Tauri para apps web empaquetadas, Ratatui para interfaces de terminal, GTK para apps grandes, Bevy para juegos, egui para utilidades rápidas.
-
-### [games-stack](games-stack/)
-
-Tecnologías para construir videojuegos
+Frameworks para construir aplicaciones de escritorio.
 
 ### [mobile-stack](mobile-stack/)
 
-Frameworks para apps móviles nativas y multiplataforma
+Frameworks para apps móviles nativas y multiplataforma.
 
 ## Library Universal
 

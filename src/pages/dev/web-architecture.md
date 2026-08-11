@@ -7,13 +7,19 @@ subtitle: Roadmap para frontend
 
 ## Roadmap
 
+### 0. Conceptos
+
+- **HTML semántico** — qué etiqueta comunica qué significado (no solo qué se ve igual), estructura de documento, accesibilidad básica.
+- **CSS** — modelo de caja, flexbox, grid, especificidad y cascada: cómo se posiciona y distribuye todo antes de sumar cualquier librería de estilos.
+- **JavaScript** — el DOM y cómo se manipula, eventos, closures, asincronía (callbacks, promesas, `async/await`).
+
 ### 1. Meta-framework y router
 
-Primero se resuelve qué sostiene la app (Astro, React Router v7, TanStack Start, Svelte, Next.js, Angular) y con qué router navega. Ver [front-stack](web-stack/).
+Primero se resuelve qué sostiene la app: el meta-framework que define renderizado, build y convenciones, y el router con el que navega entre vistas. La elección depende del objetivo del proyecto (¿estático?, ¿SEO?, ¿mucha interactividad?, ¿manejo intensivo de datos?, ¿enterprise?), no de preferencia personal. Ver [front-stack](web-stack/).
 
 ### 2. Componentes de UI
 
-De dónde salen los componentes: shadcn/ui, radix/ui, Mantine, HeadlessUI, HeroUI — también en [front-stack](web-stack/).
+De dónde salen los componentes de interfaz: puede ser una librería ya estilada y lista para usar, primitivos accesibles sin estilos para construir encima, o componentes copiables que quedan en el propio repo para editar libremente. La elección depende de cuánto control se quiere sobre el resultado final vs. cuánta velocidad de prototipado se necesita. Ver [front-style](web-style/).
 
 ### 3. Organización de carpetas — Screaming Architecture
 

@@ -21,7 +21,7 @@ Catálogos de iconos, SVGs y avatares para no reinventar los assets visuales en 
 | **Skill Icons**        | [https://skillicons.dev/](https://skillicons.dev/)                     | Iconos de tecnologías/stacks para READMEs                |
 | **SVGL**               | [https://svgl.app/](https://svgl.app/)                                 | Logos en SVG                                             |
 | **Dashboard Icons**    | [https://dashboardicons.com/icons/](https://dashboardicons.com/icons/) | Iconos para dashboards y self-hosted apps                |
-| **Pixel Icon Library** | pixeliconlibrary                                                       | Iconos estilo pixel art                                  |
+| **Pixel Icon Library** | [https://pixeliconlibrary.com/](https://pixeliconlibrary.com/)         | Iconos estilo pixel art                                  |
 
 ## Avatares
 

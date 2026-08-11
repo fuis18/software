@@ -29,36 +29,6 @@ subtitle: Con qué se estiliza la interfaz
 
 Media queries de uso frecuente, sin depender de JS para detectarlas.
 
-```css
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000;
-    color: #fff;
-  }
-}
-
-@media (orientation: landscape) {
-  body {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-@media (orientation: portrait) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (display-mode: fullscreen) {
-  .fullscreen {
-    width: 100vw;
-    height: 100vh;
-  }
-}
-```
-
 - `prefers-color-scheme` — dark mode a nivel sistema operativo, sin toggle manual.
 - `orientation` — layout distinto según landscape/portrait (útil en mobile/tablet).
 - `display-mode: fullscreen` — estilos específicos cuando la app corre como PWA en fullscreen.
