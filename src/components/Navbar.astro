@@ -1,15 +1,18 @@
 ---
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const links = [
-  { label: 'Dev', href: '/dev/' },
-  { label: 'Sec', href: '/sec/' },
-  { label: 'Ops', href: '/ops/' },
-  { label: 'AI', href: '/ai/' },
+  { label: 'Dev', href: `${base}dev/` },
+  { label: 'Sec', href: `${base}sec/` },
+  { label: 'Ops', href: `${base}ops/` },
+  { label: 'AI', href: `${base}ai/` },
 ];
-const githubUrl = 'https://github.com/fuis18';
+const githubUrl = 'https://github.com/fuis18/Programming/';
 ---
 
 <header class="navbar">
-  <a href="/" class="brand" aria-label="Ir al inicio">
+  <a href={base} class="brand" aria-label="Ir al inicio">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="m8 6-5 6 5 6" />
       <path d="m16 6 5 6-5 6" />
