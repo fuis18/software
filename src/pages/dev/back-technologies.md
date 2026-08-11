@@ -26,6 +26,16 @@ subtitle: Formas de comunicación entre servicios
 
 **Cómo elegir:** RabbitMQ para colas de trabajo clásicas (procesar algo una vez, con reintentos). Kafka cuando el volumen de eventos es alto y varios consumidores necesitan leer el mismo stream (analytics, event sourcing). NATS cuando la prioridad es latencia mínima por sobre garantías de entrega. Redis Pub/Sub cuando ya hay Redis como cache y no se justifica sumar infraestructura nueva solo para mensajería simple.
 
+## Webhooks
+
+Un **webhook** es un callback por HTTP: el servicio que produce el evento le hace una request (normalmente `POST` con un payload JSON) a una URL que el consumidor expuso de antemano, cada vez que algo ocurre. A diferencia de las colas y los streams, no hay infraestructura intermedia — el productor y el consumidor se hablan por HTTP directo.
+
+| Name        | Tipo          | Uso principal                                              |
+| ----------- | ------------- | ---------------------------------------------------------- |
+| **Webhook** | HTTP callback | Notificar a un tercero (Stripe, GitHub, Slack) sin polling |
+
+**Cómo elegir:** webhooks cuando otro servicio necesita enterarse de tus eventos en el momento (pagos, deploys, mensajes) y podés tolerar reintentos por parte del productor. A diferencia de Kafka/RabbitMQ no hay cola que amortigüe picos ni acuse de recibo garantizado, así que el endpoint debe ser idempotente y el productor debe reintentar los fallos.
+
 ## Tiempo real
 
 | Name                         | Protocolo | Uso                            |
