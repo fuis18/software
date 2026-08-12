@@ -44,6 +44,9 @@ body {
   font-weight: 300;
   color: var(--text);
   letter-spacing: -0.02em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 7px;
 }
 
 .page-header p span {
