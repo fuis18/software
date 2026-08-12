@@ -54,9 +54,10 @@ const githubUrl = 'https://github.com/fuis18/software/';
 
 <style>
   .navbar {
-    display: flex;
+    display: grid;
+    grid-template-areas: "brand links actions";
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     gap: 16px;
     margin-bottom: 40px;
     padding-bottom: 16px;
@@ -87,8 +88,10 @@ const githubUrl = 'https://github.com/fuis18/software/';
   }
 
   .nav-actions {
+    grid-area: actions;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 8px;
   }
 
@@ -124,6 +127,7 @@ const githubUrl = 'https://github.com/fuis18/software/';
   }
 
   .brand {
+    grid-area: brand;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -143,22 +147,20 @@ const githubUrl = 'https://github.com/fuis18/software/';
   }
 
   .nav-links {
-    margin-right: auto;
+    grid-area: links;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 460px) {
     .navbar {
-      flex-direction: column;
-      align-items: stretch;
+      grid-template-areas:
+        "brand actions"
+        "links links";
+      grid-template-columns: 1fr auto;
     }
 
     .nav-links ul {
-      justify-content: space-between;
-      gap: 0;
-    }
-
-    .nav-actions {
-      justify-content: flex-end;
+      justify-content: center;
+      gap: 0 14px;
     }
   }
 </style>
