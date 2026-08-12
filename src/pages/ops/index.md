@@ -4,52 +4,98 @@ title: Ops
 subtitle: Infraestructura, automatización y sistemas
 ---
 
-Todo el ciclo de vida de la infraestructura: aprovisionamiento y automatización (Terraform, Ansible), contenedores y orquestación (Docker, Kubernetes), pipelines de CI/CD, observabilidad y las arquitecturas de sistemas que sostienen todo lo anterior — sin dejar fuera la infraestructura física real: el homelab, el cableado y las VLANs que conectan cada máquina.
+Todo el ciclo de vida de la infraestructura: del cableado físico y los racks del datacenter hasta lo que corre en producción y cómo se mide. Cómo se aprovisiona y configura el hardware, cómo se contienen y orquestan las cargas de trabajo, cómo se automatizan entrega y despliegue, y cómo se garantiza — con alertas, métricas y prácticas de fiabilidad — que el sistema real se sostiene en el tiempo.
 
-## Arquitectura
+## Red Física, Hardware y Data Center
 
-### [ops-roadmap](ops-roadmap/)
+### [ops-physical-network](ops-physical-network/)
 
-El roadmap de ops (Docker+deploy → CI/CD → Kubernetes → Microservicios → Arquitecturas → Observabilidad) y los patrones de arquitectura de sistemas — Monolito, SOA, Microservicios, Event-Driven, Serverless, Layered/MVC — con cuándo conviene usar cada uno.
+Cómo viajan los datos a nivel de cable y equipo: routing y switching, los protocolos de la capa física, y la infraestructura pasiva que conecta cada máquina — cableado, patch panels y las VLANs que segmentan la red.
 
-## Contenedores y Orquestación
+### [ops-hardware](ops-hardware/)
 
-### [ops-containers](ops-containers/)
+El cómputo real detrás de todo: servidores bare-metal, sistemas operativos de servidor, gestión out-of-band para administrar máquinas sin sistema operativo levantado, y el aprovisionamiento físico.
 
-Docker y Docker Compose: imágenes de contenedor, registries, redes de contenedores, y cómo se agrupan varios servicios en un solo archivo compose.
+### [ops-datacenter](ops-datacenter/)
 
-### [ops-kubernetes](ops-kubernetes/)
+Las operaciones y facilidades que sostienen el hardware: gestión de racks, energía, refrigeración y seguridad física, y el trabajo cotidiano de operar un cuarto de servidores.
 
-Conceptos base de Kubernetes: pods, services, ingress, secrets, RBAC.
-
-## CI/CD
-
-### [ops-cicd](ops-cicd/)
-
-Pipelines de integración y despliegue continuo: Git, GitHub Actions, GitLab CI/CD, Jenkins, y automatización de build/tests/scans/deploy.
-
-## Infraestructura como Código
-
-### [ops-iac](ops-iac/)
-
-Infraestructura como código y configuración declarativa: Terraform para aprovisionar (HCL, `terraform apply`), Ansible para configurar servidores de forma idempotente por SSH sin agentes, y el flujo GitOps completo — Terraform → Ansible → Docker Compose → Git.
-
-## Servicios y Red
-
-### [ops-networking](ops-networking/)
-
-Servicios de red que sostienen la infraestructura: Nginx como proxy, firewall, load balancer, caching server, servidores web.
-
-### [ops-observability](ops-observability/)
-
-Monitoreo de sistemas: Prometheus.
+## Cómputo y Nube
 
 ### [ops-cloud](ops-cloud/)
 
-Almacenamiento y servicios tipo cloud: MinIO como object storage, Supabase como BaaS, LocalStack como emulador de AWS, más IAM y la certificación AWS Security Specialty.
+La infraestructura como servicio de terceros: proveedores de nube pública, los conceptos de arquitectura de nube (regiones, zonas, redes virtuales y control de accesos) y la gestión de costos.
 
-## Homelab
+### [ops-virtualization](ops-virtualization/)
 
-### [ops-homelab](ops-homelab/)
+Máquinas virtuales y hypervisors: qué es la virtualización, dónde corre cada hypervisor, y cuándo conviene una VM frente a metal desnudo o contenedores.
 
-Tu infraestructura real: mapeo del switch (puertos, VLANs, dispositivos), subredes por VLAN, y el NAS con su Arr stack (Sonarr, Radarr, Prowlarr, Bazarr, qBittorrent, Plex), Proxmox, ArchLinux y UPS.
+### [ops-containers](ops-containers/)
+
+Contenedores y runtimes: imágenes, registries, networking de contenedores y escaneo de seguridad de lo que se empaqueta.
+
+### [ops-kubernetes](ops-kubernetes/)
+
+Orquestación de contenedores a escala: plano de control, networking del clúster, almacenamiento, ingreso de tráfico, empaquetado y operadores.
+
+## Almacenamiento
+
+### [ops-storage](ops-storage/)
+
+Las tres formas de persistir datos distribuidos — object, block y file — comparadas por protocolo, latencia y caso de uso.
+
+## NetOps
+
+### [ops-netsecurity](ops-netsecurity/)
+
+La defensa del perímetro y del host: firewalls dedicados, protección contra ataques dirigidos al borde, reglas locales del sistema operativo y control de accesos.
+
+### [ops-traffic](ops-traffic/)
+
+Cómo se enruta y acelera el tráfico hacia los servicios: resolución de nombres, borde de entrega, proxies reversos, balanceadores de carga y certificados.
+
+### [ops-sdn](ops-sdn/)
+
+Redes definidas por software y capas de overlay: túneles entre máquinas, conexiones entre nubes y mallas de servicios.
+
+## CI/CD y Release Ops
+
+### [ops-ci](ops-ci/)
+
+Integración continua: pipelines que compilan, prueban y escanean cada cambio de código antes de que llegue a producción.
+
+### [ops-cd](ops-cd/)
+
+Entrega y despliegue continuo: el repositorio como fuente de verdad, despliegues progresivos y las estrategias para publicar cambios sin romper a los usuarios.
+
+### [ops-iac](ops-iac/)
+
+Infraestructura y configuración como código: la diferencia entre aprovisionar recursos y configurar servidores, la idempotencia, y el flujo declarativo que une la infraestructura con la aplicación.
+
+## SRE y Observabilidad
+
+### [ops-observability](ops-observability/)
+
+Las tres señales para entender qué pasa en producción — métricas, logs y trazas — y los dashboards que las visualizan.
+
+### [ops-incident](ops-incident/)
+
+Gestión de incidentes y alertas: definir objetivos de fiabilidad medibles, alertar a la persona correcta y aprender de cada caída con post-mortems.
+
+### [ops-reliability](ops-reliability/)
+
+Fiabilidad y chaos engineering: dimensionamiento de capacidad, escalado automático, sistemas auto-reparables y romper a propósito para descubrir cómo falla lo construido.
+
+## DataOps / DBRE
+
+### [ops-dbadmin](ops-dbadmin/)
+
+Administración y escalado de bases de datos: replicación, sharding, migraciones de esquema y el trabajo de operar motores de datos en producción.
+
+### [ops-dataops](ops-dataops/)
+
+Pipelines y flujos de datos: orquestación de trabajos, streams de eventos y la arquitectura de lago de datos.
+
+### [ops-backup](ops-backup/)
+
+Backup y disaster recovery: definir cuánta data se puede perder y cuánto se tarda en volver, y las estrategias de recuperación punto a tiempo y replicación fuera de sitio.
