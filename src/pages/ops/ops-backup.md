@@ -29,13 +29,13 @@ Los dos números que definen cualquier estrategia de respaldo.
 | **Point-in-Time Recovery** | Volver a un momento exacto (segundo/minuto) | Corregir error puntual, anular una mala acción |
 
 - **PITR** combina backups periódicos + log/registro continuo: permite "rebobinar" el estado a un instante antes del desastre.
-- **Backup ≠ réplica** — la réplica protege de la caída del nodo (ver [ops-dbadmin](ops-dbadmin/)); el backup protege del borrado accidental y de la corrupción. La replicación de un error es solo más copias del error.
+- **Backup ≠ réplica** — la réplica protege de la caída del nodo (ver [ops-dbadmin](../ops-dbadmin/)); el backup protege del borrado accidental y de la corrupción. La replicación de un error es solo más copias del error.
 
 ## Replicación fuera de sitio
 
 - **Cross-region / off-site** — copias en otra ubicación física: un incendio del DC no debería llevarse también el respaldo.
 - **Regla off-site 3-2-1** — 3 copias, 2 soportes distintos, 1 fuera del sitio.
-- **Regiones** — en la nube, replicar a otra región / zona. Ver [ops-cloud](ops-cloud/).
+- **Regiones** — en la nube, replicar a otra región / zona. Ver [ops-cloud](../ops-cloud/).
 
 ## Backup en Kubernetes
 
@@ -44,14 +44,14 @@ Los dos números que definen cualquier estrategia de respaldo.
 | **Velero** | Backup/restore del clúster | Respaldo de recursos y volúmenes k8s  |
 
 - **Velero** respalda los recursos declarativos del clúster y los volúmenes, con restore dirigido a un momento/entorno.
-- Como todo en Kubernetes: el backup también es declarativo y automatizable. Ver [ops-kubernetes](ops-kubernetes/).
+- Como todo en Kubernetes: el backup también es declarativo y automatizable. Ver [ops-kubernetes](../ops-kubernetes/).
 
 ## Prueba de restauración
 
 Un backup que no se recuperó jamás no es un backup: es una esperanza.
 
 - **Restore regular ensayado** — recuperar en un ambiente de prueba de forma periódica, no el día del incendio.
-- **Runbooks del DR** — pasos escritos y validados para recomponer desde cero: datos, apps e infraestructura. Ver [ops-iac](ops-iac/) para la parte reproducible.
-- **Automatización** — el respaldo no depende de un humano que se acuerde: se programa, se alerta y se verifica. Ver [ops-observability](ops-observability/).
+- **Runbooks del DR** — pasos escritos y validados para recomponer desde cero: datos, apps e infraestructura. Ver [ops-iac](../ops-iac/) para la parte reproducible.
+- **Automatización** — el respaldo no depende de un humano que se acuerde: se programa, se alerta y se verifica. Ver [ops-observability](../ops-observability/).
 
 > La buena noticia del backup: las estrategias son conocidas y probadas. La mala: se aprenden el día que se aplazan.

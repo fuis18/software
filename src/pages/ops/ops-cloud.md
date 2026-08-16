@@ -30,8 +30,8 @@ Los conceptos que se repiten en cualquier nube, con nombres que cambian levement
 | **Objetos de almacenamiento** | Buckets/servicios de almacenamiento de objetos          |
 
 - **Regiones y zonas** — el patrón de alta disponibilidad en la nube: replicar la carga entre zonas para sobrevivir la caída de un datacenter completo.
-- **VPC / red virtual** — la nube segura se parece a una red on-premise: subredes, firewalls de red, peering. Ver [ops-sdn](ops-sdn/).
-- **IAM (Identity and Access Management)** — el control granular de accesos: sin permisos mínimos y sin rotación, la nube es una puerta abierta. Ver [ops-netsecurity](ops-netsecurity/).
+- **VPC / red virtual** — la nube segura se parece a una red on-premise: subredes, firewalls de red, peering. Ver [ops-sdn](../ops-sdn/).
+- **IAM (Identity and Access Management)** — el control granular de accesos: sin permisos mínimos y sin rotación, la nube es una puerta abierta. Ver [ops-netsecurity](../ops-netsecurity/).
 
 ## FinOps
 
@@ -40,6 +40,6 @@ La disciplina de gestionar el costo de la nube, porque a diferencia del hardware
 - **Derecho a tamaño (right-sizing)** — pagar por la capacidad que la carga realmente usa, no por la que sobra.
 - **Descuentos por compromiso** — el consumo sostenido y predecible se paga más barato comprometiendo uso por adelantado.
 - **Etiquetado y atribución** — cada recurso marcado (proyecto, equipo, entorno) para saber quién consume qué.
-- **Optimización de almacenamiento** — mover datos a tier de menor costo según frecuencia de acceso. Ver [ops-storage](ops-storage/).
+- **Optimización de almacenamiento** — mover datos a tier de menor costo según frecuencia de acceso. Ver [ops-storage](../ops-storage/).
 
 > FinOps no es ahorro puntual: es un ciclo continuo de informar → optimizar → operar, alineando al negocio con el costo real de la infraestructura.

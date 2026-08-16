@@ -32,7 +32,7 @@ El vocabulario de "¿qué tan confiable prometemos ser?".
 - **Alerta ≠ ruido** — si una alerta no exige acción, no es una alerta: es ruido que termina ignorado (y las alertas ignoradas son peores que no tenerlas).
 - **Rutas correctas** — cada tipo de alerta llega a quien puede actuar: crítico a la guardia, warning al canal del equipo.
 - **Escalado** — la alerta no se tranza: si nadie responde, escala a más gente hasta que alguien la tome.
-- **El error budget guía la alerta** — las reglas se definen para proteger el SLO, no para compensar la falta de él. Ver [ops-observability](ops-observability/).
+- **El error budget guía la alerta** — las reglas se definen para proteger el SLO, no para compensar la falta de él. Ver [ops-observability](../ops-observability/).
 
 ## On-Call
 
@@ -51,4 +51,4 @@ El aprendizaje después del incidente — lo que convierte el caos en proceso.
 - **Acciones** — hallazgos que se convierten en tareas concretas con dueño y fecha.
 - **Ampliar el sistema, no solo el síntoma** — el fix del trigger no basta: la pregunta es qué proceso falló para que llegara a pasar.
 
-> Un incidente gestionado bien deja el sistema más fuerte: la historia registrada, el runbook actualizado y las acciones en curso. Es la misma idea de mejora continua que sostiene [ops-reliability](ops-reliability/).
+> Un incidente gestionado bien deja el sistema más fuerte: la historia registrada, el runbook actualizado y las acciones en curso. Es la misma idea de mejora continua que sostiene [ops-reliability](../ops-reliability/).

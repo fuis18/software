@@ -15,14 +15,14 @@ La fiabilidad no es una propiedad que se compra: se construye conociendo los lí
 | **Auto-scaling**   | Crecer/shrink automático de la capacidad según la carga real |
 | **Self-healing**   | El sistema detecta y repara fallas por sí mismo       |
 
-- **Capacity planning** — se proyecta por métricas (uso, picos históricos, crecimiento) para no quedar cortos de cómputo en el peor momento. Ver [ops-observability](ops-observability/).
-- **Auto-scaling** — dentro del límite, la infraestructura se adapta: más réplicas con carga, menos cuando calla. Ver [ops-kubernetes](ops-kubernetes/) y [ops-cloud](ops-cloud/).
+- **Capacity planning** — se proyecta por métricas (uso, picos históricos, crecimiento) para no quedar cortos de cómputo en el peor momento. Ver [ops-observability](../ops-observability/).
+- **Auto-scaling** — dentro del límite, la infraestructura se adapta: más réplicas con carga, menos cuando calla. Ver [ops-kubernetes](../ops-kubernetes/) y [ops-cloud](../ops-cloud/).
 - **Self-healing** — alineado con la orquestación: detecta que un pod murió y lo reemplaza; que un nodo falló y re-distribuye.
 
 ## Redundancia y Multi-az
 
 - **Diseño sin punto único de fallo** — cada pieza debe existir al menos 2 veces: servidores, redes, datacenters.
-- **Multi-zona** — replicar entre zonas de disponibilidad / DC para que un fallo físico no lo tire todo. Ver [ops-cloud](ops-cloud/).
+- **Multi-zona** — replicar entre zonas de disponibilidad / DC para que un fallo físico no lo tire todo. Ver [ops-cloud](../ops-cloud/).
 - **Failover automático** — el sistema redirige a la réplica sana sin intervención manual.
 
 ## Chaos Engineering
@@ -41,4 +41,4 @@ La fiabilidad no es una propiedad que se compra: se construye conociendo los lí
 3. **Observación** — se mide contra la hipótesis con las señales de observabilidad.
 4. **Aprender** — si la hipótesis fallaba, hay un hallazgo que arreglar.
 
-> El chaos no es vandalismo: DDoS deliberado al principio, en dosis controladas, con el objetivo de descubrir los puntos débiles antes de que un incidente real lo haga por nosotros. La mejora que sale de ahí alimenta la cultura de [ops-incident](ops-incident/).
+> El chaos no es vandalismo: DDoS deliberado al principio, en dosis controladas, con el objetivo de descubrir los puntos débiles antes de que un incidente real lo haga por nosotros. La mejora que sale de ahí alimenta la cultura de [ops-incident](../ops-incident/).

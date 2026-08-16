@@ -69,7 +69,3 @@ Frameworks para apps móviles nativas y multiplataforma.
 ### [dev-auth](dev-auth/)
 
 Identidad y autenticación, transversal a backend y frontend: Keycloak como identity provider, los protocolos OIDC y OAuth2.0, tokens JWT, y Auth.js del lado frontend.
-
-### [dev-testing](dev-testing/)
-
-Testing, transversal a todo el stack: pruebas unitarias (Vitest/Jest), pruebas de componentes e integración (Testing Library), end-to-end (Playwright), y automatización de navegador (Stagehand).

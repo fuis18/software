@@ -34,7 +34,7 @@ Un paso es **idempotente** cuando ejecutarlo las veces que sea llega siempre al 
 - **Declarativo** — se declara el *estado deseado* y la herramienta decide cómo llegar (el caso nativo de Terraform/Ansible).
 - **Imperativo** — se escribe *cómo* hacerlo paso a paso; más frágil y re-ejecutar suele duplicar efecto.
 
-> La filosofía es compartida con Kubernetes y GitOps: el sistema compara el estado real con el deseado y reconcilia. Ver [ops-kubernetes](ops-kubernetes/) y [ops-cd](ops-cd/).
+> La filosofía es compartida con Kubernetes y GitOps: el sistema compara el estado real con el deseado y reconcilia. Ver [ops-kubernetes](../ops-kubernetes/) y [ops-cd](../ops-cd/).
 
 ## El flujo GitOps completo
 
@@ -45,4 +45,4 @@ El recorrido que une las piezas hasta un deploy reproducible:
 3. **Definir apps** — los servicios de la app se definen como composiciones/imágenes declaradas.
 4. **Git como fuente** — todo lo anterior vive versionado en el repo; el cambio nace en git y se reconcilia en el mundo real.
 
-> Todo el ciclo — de la infraestructura a la app — queda trazado y reproducible desde el repo, que es también la puerta de entrada de las estrategias de despliegue de [ops-cd](ops-cd/).
+> Todo el ciclo — de la infraestructura a la app — queda trazado y reproducible desde el repo, que es también la puerta de entrada de las estrategias de despliegue de [ops-cd](../ops-cd/).

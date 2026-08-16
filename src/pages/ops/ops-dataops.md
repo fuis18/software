@@ -47,4 +47,4 @@ El camino del dato desde origen hasta donde se analiza.
 2. **Transformación** — se limpia y modela (orquestado, versionado).
 3. **Consumo** — analytics, BI, data science leen desde el lakehouse o el warehouse.
 
-> DataOps es ops aplicado al dato: lo mismo que los pipelines le dan al código (CI/CD) los flujos le dan a los datos — reproducible, versionado y monitoreado. El estado duradero que estos flujos escriben se respalda en [ops-backup](ops-backup/).
+> DataOps es ops aplicado al dato: lo mismo que los pipelines le dan al código (CI/CD) los flujos le dan a los datos — reproducible, versionado y monitoreado. El estado duradero que estos flujos escriben se respalda en [ops-backup](../ops-backup/).

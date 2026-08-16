@@ -37,7 +37,7 @@ Cuando se corre software de verdad, lo que importa es poder responder "¿qué es
 ## Dashboards y Alertas
 
 - **Dashboards** — agrupan las series que importan en una vista: la pantalla que alguien abre cuando "algo está raro".
-- **Alertas** — la diferencia entre observar y actuar: reglas sobre las métricas que notifican cuando algo se sale de rango. El "qué se alerta y a quién" se ve en [ops-incident](ops-incident/).
+- **Alertas** — la diferencia entre observar y actuar: reglas sobre las métricas que notifican cuando algo se sale de rango. El "qué se alerta y a quién" se ve en [ops-incident](../ops-incident/).
 
 ### Principios
 
@@ -45,4 +45,4 @@ Cuando se corre software de verdad, lo que importa es poder responder "¿qué es
 - **Baselines** — no hay alerta confiable sin saber el valor normal del sistema.
 - **Dashboards vivos** — si una vista no se mira, no es un dashboard, es un decorado.
 
-> La observabilidad no se agrega al final: se diseña junto al sistema. Una request sin traza y un log sin contexto no ayudan cuando el servicio se cae — y la lectura de definitiva de la salud se completa con las prácticas de [ops-reliability](ops-reliability/).
+> La observabilidad no se agrega al final: se diseña junto al sistema. Una request sin traza y un log sin contexto no ayudan cuando el servicio se cae — y la lectura de definitiva de la salud se completa con las prácticas de [ops-reliability](../ops-reliability/).

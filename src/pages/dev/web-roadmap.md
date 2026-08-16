@@ -15,11 +15,11 @@ subtitle: Roadmap para frontend
 
 ### 1. Meta-framework y router
 
-Primero se resuelve qué sostiene la app: el meta-framework que define renderizado, build y convenciones, y el router con el que navega entre vistas. La elección depende del objetivo del proyecto (¿estático?, ¿SEO?, ¿mucha interactividad?, ¿manejo intensivo de datos?, ¿enterprise?), no de preferencia personal. Ver [front-stack](web-stack/).
+Primero se resuelve qué sostiene la app: el meta-framework que define renderizado, build y convenciones, y el router con el que navega entre vistas. La elección depende del objetivo del proyecto (¿estático?, ¿SEO?, ¿mucha interactividad?, ¿manejo intensivo de datos?, ¿enterprise?), no de preferencia personal. Ver [front-stack](../web-stack/).
 
 ### 2. Componentes de UI
 
-De dónde salen los componentes de interfaz: puede ser una librería ya estilada y lista para usar, primitivos accesibles sin estilos para construir encima, o componentes copiables que quedan en el propio repo para editar libremente. La elección depende de cuánto control se quiere sobre el resultado final vs. cuánta velocidad de prototipado se necesita. Ver [front-style](web-style/).
+De dónde salen los componentes de interfaz: puede ser una librería ya estilada y lista para usar, primitivos accesibles sin estilos para construir encima, o componentes copiables que quedan en el propio repo para editar libremente. La elección depende de cuánto control se quiere sobre el resultado final vs. cuánta velocidad de prototipado se necesita. Ver [front-style](../web-style/).
 
 ### 3. Organización de carpetas — Screaming Architecture
 
@@ -29,15 +29,15 @@ En la práctica: en vez de agrupar por tipo (`components/`, `hooks/`, `services/
 
 ### 4. Estilo
 
-Con qué se estiliza la interfaz del lado CSS. Ver [front-style](web-style/).
+Con qué se estiliza la interfaz del lado CSS. Ver [front-style](../web-style/).
 
 ### 5. Estado y datos
 
-Estado global, data fetching, formularios, tablas y drag & drop — la lógica detrás de la interfaz. Ver [front-lib-logic](web-lib-stack/).
+Estado global, data fetching, formularios, tablas y drag & drop — la lógica detrás de la interfaz. Ver [front-lib-logic](../web-lib-stack/).
 
 ### 6. Librerías de apoyo visual
 
-Animaciones, gráficos, notificaciones, modales — lo que termina de completar la interfaz. Ver [front-lib-style](web-lib-style/).
+Animaciones, gráficos, notificaciones, modales — lo que termina de completar la interfaz. Ver [front-lib-style](../web-lib-style/).
 
 ### 7. Runtime del cliente
 

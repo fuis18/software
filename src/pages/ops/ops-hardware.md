@@ -11,23 +11,24 @@ La máquina física que ejecuta el software: qué es un servidor bare-metal, qu�
 
 Un servidor **bare metal** es una máquina física dedicada, sin capa de virtualización entre el hardware y el sistema operativo. Frente a las VMs, todo el hardware es tuyo: sin "vecinos ruidosos" que compitan por CPU o I/O.
 
-| Aspecto      | Bare metal                                       | VM                | Contenedor           |
-| ------------ | ------------------------------------------------ | ----------------- | -------------------- |
-| **Aislamiento** | Por hardware                                 | Por hypervisor    | Por kernel compartido |
-| **Performance** | Máxima, sin overhead                          | Pequeño overhead  | Casi nativo           |
-| **Aprovisionamiento** | Lento (físico)                              | Rápido            | Instantáneo           |
-| **Uso típico** | Bases de datos grandes, cargas de alta persistencia | Consolidación de cargas | Escalado horizontal |
+### Diferencias
+
+| Aspecto         | Bare metal             | VM                  | Contenedor            |
+| --------------- | ---------------------- | ------------------- | --------------------- |
+| **Aislamiento** | Por hardware           | Por hypervisor      | Por kernel compartido |
+| **Performance** | Máxima, sin overhead   | Pequeño overhead    | Casi nativo           |
+| **Configurar**  | Lento (físico)         | Rápido              | Instantáneo           |
+| **Uso típico**  | Bases de datos grandes | Sistemas Operativos | Microservicios        |
 
 **Cómo elegir:** bare metal cuando se necesita toda la performance o latencia mínima sin competencia; VMs cuando se quiere consolidar varios sistemas en una sola máquina; contenedores cuando lo que importa es portabilidad y velocidad de escalado.
 
 ## Sistemas Operativos de Servidor
 
-La familia predominante en servidores es **GNU/Linux** en sus variantes enterprise.
+- Red Hat Enterprise Linux (RHEL): El estándar comercial de pago. Ofrece soporte técnico directo, certificaciones estrictas y la máxima estabilidad corporativa.
 
-- **Distribuciones enterprise** — estables, con soporte a largo plazo y paquetes conservadores: ideales para producción donde no se quiere sorpresas.
-- **Diferencias entre distros** — el gestor de paquetes, el sistema de init y las políticas de seguridad (SELinux/AppArmor) cambian, pero el modelo de administración es el mismo: systemd, users, grupos, `ssh`.
+- Rocky Linux: Busca ser un clon "1:1" idéntico a RHEL. Sigue al pie de la letra el código original para garantizar que lo que corre en RHEL funcione exactamente igual en Rocky, sin desviarse un solo milímetro.
 
-> La elección del sistema operativo es una decisión de soporte y predilección, no de arquitectura: lo que se aprende sobre administración es portable entre ellas.
+- AlmaLinux: Es más permisiva y pragmática. Aunque mantiene compatibilidad binaria con RHEL, se permite incluir parches más rápidos, soporte extendido para hardware antiguo o funciones comunitarias sin esperar la aprobación estricta de Red Hat.
 
 ## Out-of-Band (OOB) & IPMI
 
@@ -44,5 +45,5 @@ Administrar una máquina que no puede arrancar el sistema operativo — por eso 
 El proceso de dar de alta una máquina nueva sin instalarlo a mano una por una.
 
 - **Instalación por red** — arrancar desde la red en vez de un disco físico, con respuestas predefinidas, para instalar el SO de forma reproducible.
-- **Pós-implantación** — una vez instalado el SO, la automatización de configuración (ver [ops-iac](ops-iac/)) toma el control: usuarios, paquetes, hardening y servicios.
-- **Inventario y etiquetado** — cada máquina con nombre, IP de gestión y rol documentados antes de entrar en producción. Ver [ops-datacenter](ops-datacenter/).
+- **Pós-implantación** — una vez instalado el SO, la automatización de configuración (ver [ops-iac](../ops-iac/)) toma el control: usuarios, paquetes, hardening y servicios.
+- **Inventario y etiquetado** — cada máquina con nombre, IP de gestión y rol documentados antes de entrar en producción. Ver [ops-datacenter](../ops-datacenter/).

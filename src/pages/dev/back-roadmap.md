@@ -16,7 +16,7 @@ subtitle: El orden de aprendizaje en backend
 
 ### 1. Frameworks
 
-Punto de partida: elegir el framework según el caso de uso (alta disponibilidad, microservicios, enterprise, ML, CRUD, edge) antes que por preferencia personal. Ver [back-stack](back-stack/).
+Punto de partida: elegir el framework según el caso de uso (alta disponibilidad, microservicios, enterprise, ML, CRUD, edge) antes que por preferencia personal. Ver [back-stack](../back-stack/).
 
 ### 2. Patrón MVC
 
@@ -24,15 +24,15 @@ Model-View-Controller: separa la app en tres capas — **Model** (datos y lógic
 
 ### 3. Bases de datos + ORMs
 
-Con el framework y el patrón resueltos, la siguiente decisión es dónde y cómo persistir datos. Ver [back-databases](back-databases/).
+Con el framework y el patrón resueltos, la siguiente decisión es dónde y cómo persistir datos. Ver [back-databases](../back-databases/).
 
 ### 4. Auth
 
-Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev-auth](dev-auth/).
+Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev-auth](../dev-auth/).
 
 ### 5. Testing
 
-Último escalón: cubrir con tests lo que ya se construyó. Ver [dev-testing](dev-testing/).
+Último escalón: cubrir con tests lo que ya se construyó. Ver [ops-ci](../ops/ops-ci/).
 
 ## Arquitectura
 
@@ -49,23 +49,23 @@ Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev
 
 ### SOLID
 
-| Principio | Idea base                                                     |
-| --------- | ------------------------------------------------------------- |
-| **S** Single Responsibility | Una clase debe tener una sola responsabilidad.                |
-| **O** Open/Closed           | El código debe poder extenderse sin modificar lo ya existente. |
+| Principio                   | Idea base                                                               |
+| --------------------------- | ----------------------------------------------------------------------- |
+| **S** Single Responsibility | Una clase debe tener una sola responsabilidad.                          |
+| **O** Open/Closed           | El código debe poder extenderse sin modificar lo ya existente.          |
 | **L** Liskov                | Una clase hija debe poder usarse en lugar de la clase padre sin romper. |
-| **I** Interface Segregation | Mejor varias interfaces pequeñas que una interfaz gigante.    |
-| **D** Dependency Inversion  | Depender de abstracciones, no de implementaciones concretas.  |
+| **I** Interface Segregation | Mejor varias interfaces pequeñas que una interfaz gigante.              |
+| **D** Dependency Inversion  | Depender de abstracciones, no de implementaciones concretas.            |
 
 ### Estilos arquitectónicos
 
-| Estilo              | Idea base                                                   |
-| ------------------- | ----------------------------------------------------------- |
+| Estilo                 | Idea base                                                       |
+| ---------------------- | --------------------------------------------------------------- |
 | **Clean Architecture** | Las reglas de negocio en el centro, dependencias hacia adentro. |
-| **Hexagonal**       | Puerto-adaptador: el dominio no conoce a la infraestructura. |
-| **Onion**           | Capas concéntricas con el dominio en el núcleo.             |
-| **DDD**             | Modelar el dominio del negocio con su propio lenguaje.      |
-| **MVC**             | Model / View / Controller — ver paso 2 del roadmap.         |
+| **Hexagonal**          | Puerto-adaptador: el dominio no conoce a la infraestructura.    |
+| **Onion**              | Capas concéntricas con el dominio en el núcleo.                 |
+| **DDD**                | Modelar el dominio del negocio con su propio lenguaje.          |
+| **MVC**                | Model / View / Controller — ver paso 2 del roadmap.             |
 
 ### Recursos
 

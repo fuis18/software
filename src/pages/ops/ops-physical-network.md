@@ -45,6 +45,6 @@ Todo lo que no procesa datos pero hace posible que viajen.
 - **Cableado estructurado** — el tendido físico de parcheado, categoría y acometida que conecta racks, cuartos y plantas.
 - **Patch panels** — el punto donde termina el cableado y se conecta cada puerto al switch.
 - **Racks y organizadores** — el soporte físico donde se montan switches, routers y servidores, con gestión de cables.
-- **VLANs y subredes por uso** — la primera capa de organización lógica: cada grupo de dispositivos (producción, gestión, invitados) en su propio segmento aislado. Ver [ops-hardware](ops-hardware/).
+- **VLANs y subredes por uso** — la primera capa de organización lógica: cada grupo de dispositivos (producción, gestión, invitados) en su propio segmento aislado. Ver [ops-hardware](../ops-hardware/).
 
 > La topología física importa para el mapeo de la red: qué puerto del switch llega a qué dispositivo y por qué VLAN pasa cada uno.
