@@ -54,6 +54,12 @@ Formas de comunicación entre servicios: APIs síncronas, mensajería asíncrona
 
 Bases de datos y cuándo usar cada una, comparadas en ACID, JOINs, escalabilidad y disponibilidad, y ORMs.
 
+## Arquitectura
+
+### [dev-architectures](dev-architectures/)
+
+Patrones de arquitectura de software: monolitos, SOA, microservicios, event-driven, serverless y layered/MVC, y cuándo elegir cada uno.
+
 ## Platforms
 
 ### [desk-stack](desk-stack/)
@@ -69,3 +75,9 @@ Frameworks para apps móviles nativas y multiplataforma.
 ### [dev-auth](dev-auth/)
 
 Identidad y autenticación, transversal a backend y frontend: Keycloak como identity provider, los protocolos OIDC y OAuth2.0, tokens JWT, y Auth.js del lado frontend.
+
+## Project Management
+
+### [dev-project-management](dev-project-management/)
+
+Herramientas de gestión de proyectos de software: Asana, Jira y Monday, y cómo elegirlas según la forma de trabajar del equipo.

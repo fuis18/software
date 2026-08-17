@@ -22,7 +22,7 @@ La distinción importa porque son dos capas con ciclos de vida distintos: **prov
 
 #### Terraform / OpenTofu
 
-**Perfil:** el estándar de facto — un lenguaje declarativo propio (HCL) para describir recursos de cualquier proveedor de nube, con un paso de `plan` que muestra qué va a cambiar antes de aplicarlo.
+**Perfil:** el estándar de facto — un lenguaje declarativo propio (HCL) para describir recursos de cualquier proveedor de nube, con el ciclo `terraform plan` (muestra qué va a cambiar) → `terraform apply` (ejecuta los cambios).
 
 - **Fortalezas:** el ecosistema de _providers_ es enorme (prácticamente cualquier servicio de cualquier nube tiene uno), el `plan` da visibilidad previa de cada cambio antes de ejecutarlo (reduce sorpresas), y el _state file_ le permite saber exactamente qué recursos administra y detectar drift.
 - **Casos de uso:** multi-nube o nube única, cualquier equipo que necesite reproducibilidad de infraestructura versionada en git.

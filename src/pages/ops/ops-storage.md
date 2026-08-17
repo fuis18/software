@@ -54,6 +54,7 @@ Compartir archivos por red entre varias máquinas como si fueran carpetas locale
 - **EFS (AWS):** la versión gestionada de file storage compartido en AWS, pensada para que muchas VMs monten el mismo filesystem elástico. Fortaleza: escala automáticamente, sin gestionar servidores NFS propios. Debilidad: latencia mayor que EBS, costo por uso puede subir con tráfico alto.
 - **CephFS:** file storage sobre un cluster Ceph. Fortaleza: si ya hay Ceph para block u object, sumar CephFS da la tercera pata sin infraestructura nueva. Caso de uso: entornos self-hosted que quieren los tres tipos (block, file, object) desde un mismo cluster.
 - **SMB:** protocolo equivalente a NFS pero para el mundo Windows — también el que entienden la mayoría de los NAS domésticos/empresariales. Caso de uso: compartir con estaciones Windows o dispositivos NAS.
+- **NAS (Network Attached Storage):** el dispositivo dedicado que expone file storage por SMB/NFS a toda la red — la forma típica de almacenamiento compartido en casas y pymes. Un NAS de varias bahías suele correr su propio sistema (TrueNAS, OpenMediaVault) con volúmenes y snapshots propios; lo que guarda se respalda como cualquier otra cosa, ver [ops-backup](../ops-backup/).
 
 ## Cómo elegir
 

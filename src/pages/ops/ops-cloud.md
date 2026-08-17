@@ -33,6 +33,21 @@ Los conceptos que se repiten en cualquier nube, con nombres que cambian levement
 - **VPC / red virtual** — la nube segura se parece a una red on-premise: subredes, firewalls de red, peering. Ver [ops-sdn](../ops-sdn/).
 - **IAM (Identity and Access Management)** — el control granular de accesos: sin permisos mínimos y sin rotación, la nube es una puerta abierta. Ver [ops-netsecurity](../ops-netsecurity/).
 
+## PaaS, BaaS y desarrollo local
+
+Entre la nube IaaS (aprovisionar VMs) y operarlo todo a mano, existe el modelo PaaS: la plataforma gestiona el runtime, el escalado y los deploys, y el equipo solo trae el código.
+
+| Plataforma   | Perfil                              | Destaca en                                             |
+| ------------ | ----------------------------------- | ------------------------------------------------------ |
+| **Heroku**   | El PaaS clásico                     | Deploy por `git push`, addons, madurez                |
+| **Render**   | PaaS moderno simple                 | Web services, static sites, bases de datos gestionadas |
+| **Railway**  | PaaS de despliegue rápido           | Templates, escalado simple, developer experience      |
+| **Fly.io**   | PaaS distribuido en el edge         | Apps cerca del usuario, VMs por región                 |
+
+- **La diferencia con IaaS** — el proveedor maneja el sistema operativo, el runtime y el escalado: se despliega conectando el repo o con un `git push`, sin aprovisionar ni parchear servidores.
+- **BaaS (Backend as a Service)** va un paso más allá: además del hosting, provee servicios de backend listos — base de datos, auth, storage y APIs. **Supabase** es el BaaS open source de referencia (PostgreSQL, Auth, Realtime, Storage), self-hostable o gestionado.
+- **LocalStack** emula la API de AWS en local: permite desarrollar y testear contra S3, Lambda, DynamoDB y demás servicios sin pagar ni tocar la nube real, antes de desplegar contra AWS.
+
 ## FinOps
 
 La disciplina de gestionar el costo de la nube, porque a diferencia del hardware propio, en la nube cada recurso encendido es consumo facturado.
