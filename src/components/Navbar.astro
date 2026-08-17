@@ -60,8 +60,17 @@ const githubUrl = 'https://github.com/fuis18/software/';
     align-items: center;
     gap: 16px;
     margin-bottom: 40px;
-    padding-bottom: 16px;
+    padding: 16px 0;
     border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    transition: transform 0.25s ease;
+  }
+
+  .navbar.nav-hidden {
+    transform: translateY(-100%);
   }
 
   .nav-links ul {
@@ -169,3 +178,28 @@ const githubUrl = 'https://github.com/fuis18/software/';
     }
   }
 </style>
+
+<script>
+  const header = document.querySelector('.navbar');
+  const HIDE_AT = 80;
+  const DELTA = 10;
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (Math.abs(y - lastY) > DELTA) {
+          header.classList.toggle('nav-hidden', y > lastY && y > HIDE_AT);
+          lastY = y;
+        }
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+</script>
