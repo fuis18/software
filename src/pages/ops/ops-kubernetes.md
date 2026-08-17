@@ -62,6 +62,19 @@ Cuando los contenedores son decenas o cientos, se necesita algo que los organice
 
 El sistema trabaja **declarativamente**: se declara el estado deseado y los controladores reconcilian el estado actual hacia ese objetivo — el mismo principio que aparece en [ops-iac](../ops-iac/) y [ops-cd](../ops-cd/).
 
+## Kubernetes bare-metal
+
+El clúster se puede instalar sobre VMs en la nube (gestionado por el proveedor) o sobre servidores físicos propios. En bare-metal, el sistema operativo del nodo y la instalación pasan a ser parte del problema — y hay distribuciones pensadas específicamente para eso.
+
+| Distribución | Perfil                                       | Destaca en                                |
+| ------------ | -------------------------------------------- | ----------------------------------------- |
+| **Talos**    | SO inmutable diseñado solo para Kubernetes   | Seguridad, gestión por API, sin SSH       |
+| **RKE2**     | Kubernetes hardened de Rancher, con containerd | Cumplimiento CIS, instalación simple      |
+
+- **Talos** es un sistema operativo que no existe para otra cosa que correr Kubernetes: inmutable (nada se instala ni modifica en runtime), sin SSH ni shell interactivo — se administra entero por API, con certificados. Cada nodo es idéntico y reproducible, lo que encaja con el modelo declarativo.
+- **RKE2** es la distribución de Rancher: un solo binario levanta el clúster con containerd y componentes hardened, alineado a los benchmarks CIS. Menos radical que Talos (sigue siendo un SO con servicios), pero más simple de operar que montar un clúster con `kubeadm` a mano.
+- La instalación física de estos nodos se apoya en el aprovisionamiento y el out-of-band de [ops-hardware](../ops-hardware/).
+
 ## Networking y Almacenamiento
 
 Kubernetes no implementa la red ni el almacenamiento por sí mismo: define interfaces estándar — **CNI** y **CSI** — y deja que un plugin las implemente. El clúster declara _qué_ necesita; el plugin resuelve _cómo_ lo consigue contra la infraestructura real.

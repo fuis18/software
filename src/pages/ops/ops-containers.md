@@ -15,6 +15,15 @@ Los contenedores empaquetan una aplicación con sus dependencias en una unidad r
 | **Contenedor** | Instancia en ejecución de una imagen                                        |
 | **Runtime**    | El motor que ejecuta contenedores (derechos de kernel, namespaces, cgroups) |
 
+### Imágenes base minimalistas
+
+| Imagen           | Qué es                                                                   |
+| ---------------- | ------------------------------------------------------------------------ |
+| **AlpineLinux**  | Distribución ultraliviana (musl, ~5 MB), estándar como capa base de imagen |
+
+- **AlpineLinux** es una distribución minimalista construida sobre musl libc y BusyBox — una imagen base típica pesa unos pocos megabytes frente a los cientos de las distribuciones generalistas. Al ser tan chica, reduce la superficie de ataque y acelera el pull, lo que la convierte en la base por defecto de muchos Dockerfiles.
+- **Debilidad:** musl libc y BusyBox no son 100% compatibles con todo el software compilado para glibc — algunas aplicaciones necesitan ajustes o una base distinta (por ejemplo, imágenes `distroless` o distribuciones slim basadas en Debian/Ubuntu).
+
 ## Runtimes
 
 ### Docker

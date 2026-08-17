@@ -99,3 +99,9 @@ Pipelines y flujos de datos: orquestación de trabajos, streams de eventos y la 
 ### [ops-backup](ops-backup/)
 
 Backup y disaster recovery: definir cuánta data se puede perder y cuánto se tarda en volver, y las estrategias de recuperación punto a tiempo y replicación fuera de sitio.
+
+## Self-Hosted Services
+
+### [ops-selfhosted](ops-selfhosted/)
+
+Servicios propios para la casa o infraestructura propia: media servers, la automatización que los rodea, descargadores y las utilidades que sostienen la red del hogar.

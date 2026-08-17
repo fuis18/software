@@ -29,6 +29,7 @@ Entre el usuario y el servicio hay toda una capa de infraestructura de red: reso
 - **CDN** acelera entrega de contenido estático y video, y además absorbe tráfico de ataques (DDoS), aliviando al origen. Ver [ops-netsecurity](../ops-netsecurity/).
 - **Anycast** es el mecanismo que permite esa proximidad: muchos nodos con la misma IP y la red elige el camino más corto.
 - **WAF** se coloca en el borde, frente a las apps web, para filtrar el tráfico malicioso antes de que llegue al backend. Ver [ops-netsecurity](../ops-netsecurity/).
+- **Cloudflare** es el CDN/edge gestionado de referencia: absorbe DDoS en su red, sirve el contenido desde el nodo más cercano y agrega DNS, WAF y proxy en el mismo plano — la alternativa gestionada a montar NGINX o HAProxy propios en el borde.
 
 ## Proxy Reverso
 
