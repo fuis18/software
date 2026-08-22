@@ -4,7 +4,7 @@ title: Sec
 subtitle: Seguridad de redes, sistemas y cadena de suministro
 ---
 
-Seguridad de redes, sistemas y de la cadena de suministro de software: el camino formativo y las herramientas ofensivas de red team (reconocimiento, explotación, movimiento lateral), los fundamentos de networking y su automatización, la seguridad de contenedores y pipelines, gestión de identidades (IAM), y un stack propio de privacidad y self-hosting.
+Seguridad de redes, sistemas y de la cadena de suministro de software: el camino formativo y las herramientas ofensivas de red team (reconocimiento, explotación, movimiento lateral), los fundamentos de networking y su automatización, la seguridad de contenedores y pipelines, el análisis estático de código, gestión de identidades (IAM), y un stack propio de privacidad y self-hosting.
 
 ## Conceptos de Seguridad
 
@@ -24,13 +24,17 @@ Camino formativo en seguridad ofensiva: certificaciones (CompTIA Security+, Comp
 
 ### [sec-tools](sec-tools/)
 
-Herramientas de red team: Burp Suite y Caido/FoxyProxy para interceptar tráfico web, Wfuzz/gobuster para fuzzing, Nmap para reconocimiento, BloodHound/CrackMapExec/NetExec/Responder/Kerbrute para atacar Active Directory, whatweb/wappalyzer para fingerprinting, y John the Ripper para crackear contraseñas.
+Herramientas de red team: Burp Suite y OWASP ZAP/Caido/FoxyProxy para interceptar tráfico web, Wfuzz/gobuster para fuzzing, Nmap para reconocimiento, BloodHound/CrackMapExec/NetExec/Responder/Kerbrute para atacar Active Directory, whatweb/wappalyzer para fingerprinting, y John the Ripper para crackear contraseñas.
 
 ### [sec-vulnerabilities](sec-vulnerabilities/)
 
 Vulnerabilidades comunes y técnicas de explotación: inyección SQL con payloads clásicos, manejo de hashes, y reconocimiento OSINT (phonebook.cz para correos/subdominios, country.is para geolocalización de IP).
 
 ## DevSecOps
+
+### [sec-sast](sec-sast/)
+
+Análisis estático y dinámico de código: SonarQube con quality gates, Semgrep y CodeQL para SAST, y OWASP ZAP como DAST en el pipeline.
 
 ### [sec-supplychain](sec-supplychain/)
 

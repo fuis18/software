@@ -12,10 +12,12 @@ El kit de la seguridad ofensiva: cada fase del pentest tiene su herramienta. Ac�
 | Herramienta    | Qué hace                                                        |
 | -------------- | --------------------------------------------------------------- |
 | **Burp Suite** | Proxy de intercepción web: captura, modifica y reenvía requests |
+| **OWASP ZAP**  | Proxy y scanner open source de la comunidad OWASP               |
 | **Caido**      | Proxy web moderno y liviano, alternativa open source a Burp     |
 | **FoxyProxy**  | Gestor de proxies en el navegador para alternar entre ellos     |
 
 - **Burp Suite** es una suite de herramientas para testing de aplicaciones web con un proxy de intercepción en el centro.
+- **OWASP ZAP** (Zed Attack Proxy) es el equivalente libre de Burp mantenido por OWASP: proxy de intercepción, spider, escáner pasivo/activo y fuzzer — ideal para aprender sin licencia y para automatizar escaneos DAST en un pipeline.
 - **Caido** es un proxy de intercepción web moderno y open source, pensado como alternativa liviana a Burp.
 - **FoxyProxy** es una extensión de navegador para gestión de proxies.
 
