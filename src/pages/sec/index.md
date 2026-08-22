@@ -6,6 +6,16 @@ subtitle: Seguridad de redes, sistemas y cadena de suministro
 
 Seguridad de redes, sistemas y de la cadena de suministro de software: el camino formativo y las herramientas ofensivas de red team (reconocimiento, explotación, movimiento lateral), los fundamentos de networking y su automatización, la seguridad de contenedores y pipelines, gestión de identidades (IAM), y un stack propio de privacidad y self-hosting.
 
+## Conceptos de Seguridad
+
+### [sec-roadmap](sec-roadmap/)
+
+Camino formativo y arquitectura de seguridad: el orden de aprendizaje, OWASP Top 10 con sus recursos oficiales, y práctica con OWASP Juice Shop y PortSwigger Web Security Academy.
+
+### [sec-threatconcepts](sec-threatconcepts/)
+
+Marcos conceptuales de seguridad: OWASP, MITRE ATT&CK, threat modeling con STRIDE, y gestión de secretos.
+
 ## Red Team
 
 ### [sec-redteam](sec-redteam/)
@@ -19,16 +29,6 @@ Herramientas de red team: Burp Suite y Caido/FoxyProxy para interceptar tráfico
 ### [sec-vulnerabilities](sec-vulnerabilities/)
 
 Vulnerabilidades comunes y técnicas de explotación: inyección SQL con payloads clásicos, manejo de hashes, y reconocimiento OSINT (phonebook.cz para correos/subdominios, country.is para geolocalización de IP).
-
-## Conceptos de Seguridad
-
-### [sec-threatconcepts](sec-threatconcepts/)
-
-Marcos conceptuales de seguridad: OWASP, MITRE ATT&CK, threat modeling con STRIDE, y gestión de secretos.
-
-### [sec-roadmap](sec-roadmap/)
-
-Camino formativo y arquitectura de seguridad: el orden de aprendizaje, OWASP Top 10 con sus recursos oficiales, y práctica con OWASP Juice Shop y PortSwigger Web Security Academy.
 
 ## DevSecOps
 
