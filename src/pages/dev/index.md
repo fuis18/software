@@ -40,7 +40,7 @@ Librerias para elaborar diferentes utilidades.
 
 ### [back-roadmap](back-roadmap/)
 
-Roadmap para backend: frameworks, patrón MVC, bases de datos y ORMs, autenticación y testing.
+Roadmap para backend: diseño de APIs REST (filtros, paginación e idempotencia), frameworks, patrón MVC, bases de datos y ORMs, autenticación y testing.
 
 ### [back-stack](back-stack/)
 

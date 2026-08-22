@@ -34,6 +34,44 @@ Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev
 
 Último escalón: cubrir con tests lo que ya se construyó. Ver [ops-ci](../ops/ops-ci/).
 
+## Diseño de APIs REST
+
+### Convenciones de la URL
+
+La URL identifica recursos; los verbos HTTP expresan la acción sobre ellos.
+
+- **Sustantivos, no verbos** — `/users/42` y no `/getUser?id=42`: la acción la aporta el verbo HTTP, el path solo dice qué recurso.
+- **Jerarquía con moderación** — `/users/42/orders` para relaciones directas; más de dos niveles de anidación suele ser señal de un endpoint mal modelado.
+- **El estado vive fuera del path** — la misma URL representa siempre el mismo recurso; lo que varía entre pedidos (filtros, página) va en query params, no en el path.
+
+### Filtros, orden y paginación
+
+Todo listado que pueda crecer necesita los tres, y van como **query params**:
+
+| Query param        | Uso                                                            |
+| ------------------ | -------------------------------------------------------------- |
+| `?status=active`   | Filtra por atributos del recurso                               |
+| `?sort=-createdAt` | Ordena (el `-` invierte el sentido)                            |
+| `?page=2&limit=20` | Paginación offset-based: simple, permite saltar a cualquier página |
+| `?cursor=abc`      | Paginación cursor-based: estable ante inserciones concurrentes |
+
+- **Offset vs. cursor** — offset se corrompe si se insertan filas mientras se pagina; el cursor ("desde este último elemento") no, al costo de solo avanzar/retroceder sin saltar. Offset para admin panels, cursor para feeds.
+- **Límite por defecto** — todo listado sin `limit` explícito debe tener un máximo impuesto por el servidor: devolver cien mil filas porque nadie puso paginación es un accidente esperando pasar a producción.
+
+### Idempotencia
+
+Un método es idempotente cuando repetirlo deja el mismo resultado que ejecutarlo una vez.
+
+| Verbo  | ¿Idempotente? | Por qué                                            |
+| ------ | ------------- | -------------------------------------------------- |
+| GET    | Sí            | Leer no muta nada                                  |
+| PUT    | Sí            | Reemplaza el recurso completo siempre con lo mismo |
+| DELETE | Sí            | Borrar algo ya borrado deja el mismo estado        |
+| POST   | No            | Cada llamada crea un recurso nuevo                 |
+
+- **Por qué importa** — reintentos: si la red falla después de un timeout, el cliente no sabe si el servidor procesó el pedido; puede reintentar sin miedo solo si el verbo es idempotente.
+- **POST crítico** — cuando un POST representa un pago u otra operación que no debe duplicarse, se agrega una clave de idempotencia (`Idempotency-Key`): el servidor guarda la respuesta de la primera ejecución y devuelve esa misma en los reintentos.
+
 ## Arquitectura
 
 ### Principios

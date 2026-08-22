@@ -12,6 +12,15 @@ subtitle: Con qué se estiliza la interfaz
 | **Tailwind CSS**       | Framework utility-first: estilos directo en el markup, sin salir del componente |
 | **Tailwind Animation** | Utilidades de animación (keyframes, transiciones) sobre Tailwind                |
 | **twekcn**             | Theming de colores personalizados para shadcn/ui                                |
+| **CSS Modules**        | Archivos `.module.css` con scope local: cada clase vive aislada por componente, CSS estándar sin runtime ni dependencias |
+
+### CSS Modules
+
+**CSS con scope local por archivo**
+
+- Un `.module.css` se importa desde el componente y cada clase se convierte en un nombre único generado en build (`styles.card`) — imposible colisionar con clases de otro componente o de una librería.
+- Es CSS de toda la vida (anidamiento moderno nativo, variables, media queries) sin framework que aprender: la alternativa natural cuando un proyecto no usa Tailwind.
+- Elegilo para proyectos donde el equipo prefiere CSS plano y aislado por componente, o para aislar estilos complejos que ensuciarían el markup con utilities.
 
 ## Component UI
 
