@@ -49,6 +49,34 @@ Antes de que el tráfico toque un servicio, hay capas que deciden qué entra y q
 - **Por qué existe:** la red interna ya no es un límite de confianza; el acceso se autoriza por sesión, no por geografía.
 - **Cómo se materializa:** se apoya en túneles y capas overlay que conectan a la persona autorizada con el recurso, sin exponer la red. Ver [ops-sdn](../ops-sdn/).
 
+### IDS/IPS (Detección de intrusos)
+
+**Qué es:** los sistemas que inspeccionan el tráfico buscando patrones de ataque conocido — el IDS detecta y alerta, el IPS además bloquea en línea antes de que el paquete llegue a destino.
+
+| Herramienta  | Qué hace                                                        |
+| ------------ | --------------------------------------------------------------- |
+| **Snort**    | El IDS clásico: reglas de firma sobre el tráfico, open source   |
+| **Suricata** | IDS/IPS moderno multihilo, alternativa más rápida a Snort       |
+| **Zeek**     | No busca firmas: registra y analiza el comportamiento de la red |
+
+- **Firmas vs. comportamiento** — Snort/Suricata comparan cada paquete contra miles de firmas (la base de reglas de Emerging Threats, entre otras); Zeek genera logs detallados de lo que pasa en la red para que otro sistema (o un SIEM) decida si es anómalo.
+- **Dónde viven** — en el punto de inspección del perímetro o como sensor en un mirror/span port; el modo IPS exige estar en línea con el tráfico, el IDS puede trabajar sobre una copia.
+- **El eslabón con la detección** — las alertas del IDS son entrada típica de un SIEM: detectan el evento puntual, pero no cuentan la historia completa del ataque.
+
+### SIEM (Security Information and Event Management)
+
+**Qué es:** el sistema que centraliza logs y eventos de toda la infraestructura (firewalls, IDS, servidores, apps) y los correlaciona para convertir ruido en incidentes visibles.
+
+| Plataforma        | Perfil                                            |
+| ----------------- | ------------------------------------------------- |
+| **Wazuh**         | SIEM/XDR open source self-hosted, agente por host |
+| **Splunk**        | El estándar enterprise, costo elevado             |
+| **Security Onion**| Distribución libre que integra Suricata + Zeek + ELK |
+
+- **La correlación es el valor** — un login fallido aquí, una regla de Snort disparada allá y un escaneo desde esa IP, por separado, no dicen nada; juntos dibujan un ataque en curso.
+- **Ciclo de vida** — recolectar → normalizar → correlacionar → alertar → investigar: se apoya en la observabilidad general del stack ([ops-observability](../ops-observability/)) pero con foco en seguridad.
+- **Compliance** — retención de logs y trazabilidad auditable (PCI-DSS, ISO 27001) suelen exigir SIEM por definición.
+
 ## Host & OS Security
 
 La última capa de red es la del propio sistema operativo.

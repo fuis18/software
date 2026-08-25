@@ -48,7 +48,7 @@ Las tres formas de persistir datos distribuidos — object, block y file — com
 
 ### [ops-netsecurity](ops-netsecurity/)
 
-La defensa del perímetro y del host: firewalls dedicados, protección contra ataques dirigidos al borde, reglas locales del sistema operativo y control de accesos.
+La defensa del perímetro y del host: firewalls dedicados, protección contra ataques dirigidos al borde, detección de intrusos con Snort/Suricata/Zeek, correlación de eventos con SIEM (Wazuh, Splunk), reglas locales del sistema operativo y control de accesos.
 
 ### [ops-traffic](ops-traffic/)
 

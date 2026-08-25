@@ -32,6 +32,22 @@ El analizador de paquetes de referencia: captura el tráfico real de una interfa
 - **Seguimiento de streams** — reconstruir una conversación completa (un login HTTP, una sesión DNS) para ver exactamente qué se envió.
 - **Uso en seguridad** — verificar que el tráfico está cifrado, detectar tráfico inesperado, o entender qué hace una herramienta ofensiva en [sec-tools](../sec-tools/) antes de usarla.
 
+## Análisis de flujos (NetFlow)
+
+La contraparte agregada de la captura de paquetes: en vez de inspeccionar cada uno, se registran **flujos** — el resumen de cada conversación (quién habló con quién, cuándo, cuánto) en formatos NetFlow/IPFIX/sFlow.
+
+| Herramienta   | Qué hace                                                       |
+| ------------- | -------------------------------------------------------------- |
+| **softflowd** | Exporta el tráfico de una interfaz como registros de flujo      |
+| **nfdump**    | Colecciona (nfcapd) y consulta flujos por línea de comandos     |
+| **SiLK**      | Suite del CERT para análisis forense de flujos a gran escala    |
+| **Akvorado**  | Colector moderno: enriquece los flujos y los visualiza          |
+
+- **Flujo vs. paquete** — el flujo no guarda contenido, guarda metadatos (IPs, puertos, bytes, duración): órdenes de magnitud más liviano que capturar todo, y suficiente para responder "¿qué pasó en la red?" sin almacenar el tráfico completo.
+- **El pipeline** — softflowd genera los registros → nfcapd/nfdump o SiLK los coleccionan y consultan → Akvorado suma enriquecimiento (GeoIP, ASN, nombres de interfaz) y dashboards sobre ClickHouse.
+- **Cuál y cuándo** — nfdump para homelab/pymes, SiLK cuando el volumen es grande y el foco es forense, Akvorado para monitoreo continuo con visualización.
+- **Uso en seguridad** — detectar exfiltración, escaneos y beaconing: los flujos son la materia prima clásica de la detección de red y alimentan al IDS/SIEM de [ops-netsecurity](../../ops/ops-netsecurity/).
+
 ## Automatización de red
 
 Configurar equipos de red a mano no escala: la configuración se trata como código.

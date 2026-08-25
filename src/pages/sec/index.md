@@ -52,7 +52,7 @@ Gestión de identidades y accesos: qué es IAM, y el camino hacia la certificaci
 
 ### [sec-network](sec-network/)
 
-Fundamentos de networking y su automatización: TCP/IP, switching, routing, firewall, VPN, DNS, HTTP, FTP/SFTP, SSL/TLS, SSH, análisis con Wireshark, el camino CCNA y DevNet (con su sandbox), automatización con Netmiko y NAPALM, y plataformas Cisco como Meraki y DNA Center.
+Fundamentos de networking y su automatización: TCP/IP, switching, routing, firewall, VPN, DNS, HTTP, FTP/SFTP, SSL/TLS, SSH, análisis con Wireshark y de flujos NetFlow (softflowd, nfdump, SiLK, Akvorado), el camino CCNA y DevNet (con su sandbox), automatización con Netmiko y NAPALM, y plataformas Cisco como Meraki y DNA Center.
 
 ### [sec-privacy](sec-privacy/)
 
