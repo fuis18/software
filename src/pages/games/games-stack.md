@@ -33,7 +33,7 @@ El motor AAA: gráficos de punta (Nanite para geometría masiva, Lumen para ilum
 
 ### Bevy
 
-El proyecto Rust: ECS puro como fundamento (todo es componente y sistema), scheduling automático en paralelo, y hot-reloading. No tiene editor maduro ni ecosistema de assets comparable — es para quien quiere construir con control total y performance data-oriented, o ya programa en Rust. La opción "engine-less engine" que crece más rápido que ninguna otra.
+El proyecto Rust: ECS puro como fundamento (todo es componente y sistema), scheduling automático en paralelo, y hot-reloading. Multiplataforma de fábrica: desktop y web vía WASM corren hoy, con mobile en progreso. No tiene editor maduro ni ecosistema de assets comparable, pero es la opción de facto para desarrollo de juegos en Rust — pensada para quien quiere construir con control total y performance data-oriented. La opción "engine-less engine" que crece más rápido que ninguna otra.
 
 ### Raylib
 
