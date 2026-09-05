@@ -2,18 +2,28 @@
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+
+const currentPath = Astro.url.pathname;
+const langMatch = currentPath.match(/\/(es|en)\//);
+const currentLang = langMatch ? langMatch[1] : 'es';
+
+const otherLang = currentLang === 'es' ? 'en' : 'es';
+const otherLangLabel = currentLang === 'es' ? 'EN' : 'ES';
+
+const switchPath = currentPath.replace(`/${currentLang}/`, `/${otherLang}/`);
+
 const links = [
-  { label: 'Dev', href: `${base}dev/` },
-  { label: 'Sec', href: `${base}sec/` },
-  { label: 'Ops', href: `${base}ops/` },
-  { label: 'AI', href: `${base}ai/` },
-  { label: 'Games', href: `${base}games/` },
+  { label: 'Dev', href: `${base}${currentLang}/dev/` },
+  { label: 'Sec', href: `${base}${currentLang}/sec/` },
+  { label: 'Ops', href: `${base}${currentLang}/ops/` },
+  { label: 'AI', href: `${base}${currentLang}/ai/` },
+  { label: 'Games', href: `${base}${currentLang}/games/` },
 ];
 const githubUrl = 'https://github.com/fuis18/software/';
 ---
 
 <header class="navbar">
-  <a href={base} class="brand" aria-label="Ir al inicio">
+  <a href={`${base}${currentLang}/`} class="brand" aria-label="Go to home">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="m8 6-5 6 5 6" />
       <path d="m16 6 5 6-5 6" />
@@ -21,7 +31,7 @@ const githubUrl = 'https://github.com/fuis18/software/';
     </svg>
   </a>
 
-  <nav class="nav-links" aria-label="Navegación principal">
+  <nav class="nav-links" aria-label="Main navigation">
     <ul>
       {
         links.map((link) => (
@@ -34,13 +44,32 @@ const githubUrl = 'https://github.com/fuis18/software/';
   </nav>
 
   <div class="nav-actions">
-    <a href={githubUrl} class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
+    <div class="lang-switcher">
+      <button type="button" class="icon-btn lang-toggle" aria-label="Switch language" aria-expanded="false" aria-haspopup="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        <span class="lang-label">{currentLang.toUpperCase()}</span>
+      </button>
+      <div class="lang-dropdown" role="menu">
+        <a href={currentPath.replace(`/${currentLang}/`, '/es/')} class:list={['lang-option', { active: currentLang === 'es' }]} role="menuitem" data-lang="es">
+          ES
+        </a>
+        <a href={currentPath.replace(`/${currentLang}/`, '/en/')} class:list={['lang-option', { active: currentLang === 'en' }]} role="menuitem" data-lang="en">
+          EN
+        </a>
+      </div>
+    </div>
+
+    <a href={githubUrl} class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
       </svg>
     </a>
 
-    <button type="button" class="icon-btn theme-toggle" aria-label="Cambiar tema">
+    <button type="button" class="icon-btn theme-toggle" aria-label="Toggle theme">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="5" />
         <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.73 12.73 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
@@ -159,6 +188,64 @@ const githubUrl = 'https://github.com/fuis18/software/';
     grid-area: links;
   }
 
+  .lang-switcher {
+    position: relative;
+  }
+
+  .lang-toggle {
+    width: auto !important;
+    padding: 0 10px !important;
+    gap: 6px;
+  }
+
+  .lang-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .lang-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px;
+    min-width: 48px;
+    display: none;
+    z-index: 200;
+  }
+
+  .lang-dropdown.open {
+    display: block;
+  }
+
+  .lang-dropdown .lang-option {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .lang-dropdown .lang-option:hover {
+    color: var(--accent);
+    background: var(--bg);
+  }
+
+  .lang-dropdown .lang-option.active {
+    color: var(--accent);
+  }
+
   @media (max-width: 460px) {
     .navbar {
       grid-template-areas:
@@ -202,4 +289,35 @@ const githubUrl = 'https://github.com/fuis18/software/';
     },
     { passive: true },
   );
+
+  const langToggle = document.querySelector('.lang-toggle');
+  const langDropdown = document.querySelector('.lang-dropdown');
+
+  if (langToggle && langDropdown) {
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = langDropdown.classList.toggle('open');
+      langToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('open');
+      langToggle.setAttribute('aria-expanded', 'false');
+    });
+
+    langDropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    const langOptions = document.querySelectorAll('.lang-option');
+    langOptions.forEach((option) => {
+      option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+        if (lang) {
+          localStorage.setItem('lang', lang);
+          document.cookie = `lang=${lang};path=/;max-age=31536000`;
+        }
+      });
+    });
+  }
 </script>

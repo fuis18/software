@@ -4,6 +4,11 @@ import Navbar from '../components/Navbar.astro';
 
 const { frontmatter } = Astro.props;
 const siteName = 'software';
+
+const currentPath = Astro.url.pathname;
+const langMatch = currentPath.match(/\/(es|en)\//);
+const lang = langMatch ? langMatch[1] : 'es';
+
 const title = frontmatter?.title || 'Knowledge';
 const eyebrow = frontmatter?.eyebrow || 'software';
 const subtitle = frontmatter?.subtitle;
@@ -11,9 +16,11 @@ const pageTitle = `${title} — ${siteName}`;
 const description =
   frontmatter?.description || `${title}${subtitle ? ` — ${subtitle}` : ''}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +35,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={description}>
   <meta property="og:url" content={canonical}>
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale" content={ogLocale}>
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content={pageTitle}>
   <meta name="twitter:description" content={description}>
