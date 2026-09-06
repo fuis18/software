@@ -44,3 +44,11 @@ Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de d
 - **TanStack Router**: router pensado para TypeScript desde el diseño, con inferencia de tipos en rutas y params, validación de search params y buena integración con TanStack Query.
 
 > Nota: Svelte tiene su propio router
+
+## React Compiler
+
+Compilador automático de React (anteriormente "React Forget") que optimiza los componentes en build time: agrega memoización automática (useMemo, useCallback) donde detecta que es necesario, sin que el desarrollador tenga que escribirlo a mano.
+
+- **Qué hace**: analiza el flujo de datos del componente y decide qué memorizar, eliminando re-renders innecesarios.
+- **Cuándo usarlo**: ya viene integrado en Next.js 15+ y Vite con el plugin de React. No requiere configuración manual.
+- **Resultado**: mejor performance sin escribir memoización explícita — el compiler la agrega donde realmente ayuda.

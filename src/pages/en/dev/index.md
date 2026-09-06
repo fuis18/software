@@ -21,6 +21,10 @@ Meta-frameworks based on project goals and routers.
 
 Support libraries for building component logic.
 
+### [web-hooks](web-hooks/)
+
+React hooks and common patterns: useState, useRef, useId, Context, debounce, and custom hooks.
+
 ### [web-style](web-style/)
 
 UI tools.
@@ -60,6 +64,10 @@ Databases and when to use each one, compared on ACID, JOINs, scalability, and av
 ### [dev-architectures](dev-architectures/)
 
 Software architecture patterns: monoliths, SOA, microservices, event-driven, serverless, and layered/MVC, and when to choose each one.
+
+### [dev-principles](dev-principles/)
+
+Fundamental principles: KISS, YAGNI, and DRY — simplicity, don't anticipate, don't repeat.
 
 ## Platforms
 

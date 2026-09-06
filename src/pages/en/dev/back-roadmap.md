@@ -83,7 +83,7 @@ A method is idempotent when repeating it leaves the same result as running it on
 - **Observability** — logs, metrics, and traces to understand what happens in production.
 - **Safe evolution** — incremental changes without breaking what already works.
 - **N-Layer Architecture** — separate the app into layers (presentation, logic, data).
-- **KISS / YAGNI / DRY** — simplicity, don't anticipate, don't repeat.
+- **KISS / YAGNI / DRY** — see [dev-principles](../dev-principles/).
 
 ### SOLID
 

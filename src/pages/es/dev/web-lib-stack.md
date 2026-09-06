@@ -10,6 +10,7 @@ subtitle: Librerías de apoyo para construir la interfaz
 | Categoría        | Librería             | Uso                                                               |
 | ---------------- | -------------------- | ----------------------------------------------------------------- |
 | Estado global    | **Zustand**          | Estado global simple, sin el boilerplate de Context/useReducer    |
+| Estado global    | **Redux Toolkit**    | Estado global con slices, thunks y devtools, estándar en apps grandes |
 | Data fetching    | **Tanstack Query**   | Cache, invalidación, refetch y estado async de datos del servidor |
 | Tablas           | **Tanstack Table**   | Tablas headless: ordenamiento, filtrado y paginación              |
 | Listas virtuales | **Tanstack Virtual** | Renderizado eficiente de listas y grillas muy largas              |

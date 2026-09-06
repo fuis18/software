@@ -19,6 +19,26 @@ El desarrollo de software es también coordinación: quién hace qué, en qué o
 - **Jira** — la herramienta de referencia en desarrollo: _issues_ con estados, tableros de sprint, backlog y reportes, integrada al flujo de CI/CD y a los repos (cada PR puede referenciar un ticket). Es la más pesada de configurar y la más potente cuando el equipo ya trabaja con metodología ágil. En el flujo de operaciones aparece como el integrador natural de las alertas de [ops-incident](../../ops/ops-incident/).
 - **Monday** — trabajo en tableros visuales muy accesibles, con automatizaciones y vistas sin escribir código. Rápida de adoptar para equipos no-técnicos que conviven con el equipo de desarrollo.
 
+## Metodologías
+
+| Metodología | Uso principal |
+| ----------- | ------------- |
+| **AGILE**   | Filosofía general: iteraciones cortas, feedback continuo, respuesta al cambio |
+| **SCRUM**   | Framework ágil: sprints fijos (1-4 sem), roles (PO, SM, dev team), ceremonias |
+| **Kanban**  | Flujo continuo: límite de WIP, tablero visual, sin sprints fijos |
+| **XP**      | Prácticas técnicas: TDD, pair programming, continuous integration, refactoring |
+| **Lean**    | Eliminar desperdicio: optimizar flujo de valor, reducir inventario |
+| **SAFe**    | Escalar ágil a grandes organizaciones: múltiples equipos, portafolios |
+
+### Cuándo usar cada una
+
+- **AGILE** — no es una metodología sino una filosofía: los 4 valores del Manifiesto Ágil y sus 12 principios. Todo lo demás (Scrum, Kanban, XP) son formas de implementarlo.
+- **SCRUM** — el framework más usado para construir software complejo: el trabajo se planifica en sprints de 1-4 semanas, con roles definidos (Product Owner, Scrum Master, Development Team) y ceremonias (Sprint Planning, Daily, Review, Retro). Ideal cuando el equipo necesita estructura y entregas frecuentes.
+- **Kanban** — flujo continuo sin sprints fijos: se visualiza el trabajo en un tablero, se limita el trabajo en progreso (WIP) y se mide el tiempo de ciclo. Ideal para soporte, mantenimiento o cuando el equipo no puede comprometerse a duración fija de sprints.
+- **XP (Extreme Programming)** — enfocado en prácticas técnicas de calidad: TDD, pair programming, continuous integration, refactoring, small releases. Complementa a Scrum cuando se quiere elevar la calidad del código.
+- **Lean** — inspirationado en Toyota: eliminar desperdicio, optimizar el flujo de valor, entregar rápido y respetar a las personas. Útil para procesos que no son puramente de desarrollo de software.
+- **SAFe (Scaled Agile Framework)** — escalar ágil a organizaciones grandes con múltiples equipos: define cómo alinear portafolios, programas y equipos. Complejo de adoptar, útil cuando hay dependencias fuertes entre equipos.
+
 ## Cómo elegir
 
 - **Jira** cuando el equipo vive en tickets y sprints y necesita el vínculo directo con el código (PRs, commits, releases).

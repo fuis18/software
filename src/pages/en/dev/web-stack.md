@@ -44,3 +44,11 @@ Choose based on the project's goal (static? SEO? heavy data handling? enterprise
 - **TanStack Router**: router designed for TypeScript from the design, with type inference in routes and params, search params validation, and good integration with TanStack Query.
 
 > Note: Svelte has its own router
+
+## React Compiler
+
+Automatic React compiler (formerly "React Forget") that optimizes components at build time: adds automatic memoization (useMemo, useCallback) where it detects it's necessary, without the developer having to write it manually.
+
+- **What it does**: analyzes the component's data flow and decides what to memoize, eliminating unnecessary re-renders.
+- **When to use it**: already integrated in Next.js 15+ and Vite with the React plugin. No manual configuration needed.
+- **Result**: better performance without writing explicit memoization — the compiler adds it where it actually helps.

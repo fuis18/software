@@ -13,3 +13,4 @@ subtitle: Utilidades puntuales — PDF, video, diapositivas y documentación
 | **Remotion**    | Crear videos programáticamente, componiendo con React    |
 | **Reveal.js**   | Crear presentaciones/diapositivas en HTML                |
 | **Eleventy**    | Transforma markdown en HTML manteniendo el estilo visual |
+| **date-fns**    | Utilidades de fecha inmutables y modulares (parse, format, diff) |

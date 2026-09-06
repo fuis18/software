@@ -22,6 +22,7 @@ Catalogs of icons, SVGs, and avatars to avoid reinventing visual assets for ever
 | **SVGL**               | [https://svgl.app/](https://svgl.app/)                                 | SVG logos                                                   |
 | **Dashboard Icons**    | [https://dashboardicons.com/icons/](https://dashboardicons.com/icons/) | Icons for dashboards and self-hosted apps                  |
 | **Pixel Icon Library** | [https://pixeliconlibrary.com/](https://pixeliconlibrary.com/)         | Pixel art style icons                                      |
+| **react-icons**        | React library                                                          | Aggregates multiple packs (Feather, Material, FontAwesome, etc.) in a single component |
 
 ## Avatars
 

@@ -87,6 +87,4 @@ src/
 
 ### Principios
 
-- **KISS** — mantenerlo simple.
-- **YAGNI** — no anticipar features que aún no se piden.
-- **DRY** — no repetir lógica.
+Ver [dev-principles](../dev-principles/) — KISS, YAGNI y DRY.

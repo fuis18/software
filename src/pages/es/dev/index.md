@@ -20,6 +20,10 @@ Meta-frameworks según el objetivo del proyecto y routers.
 
 Librerías de apoyo para contruir la lógica de componentes.
 
+### [web-hooks](web-hooks/)
+
+Hooks de React y patrones comunes: useState, useRef, useId, Context, debounce y custom hooks.
+
 ### [web-style](web-style/)
 
 Herramienttas para la UI.
@@ -59,6 +63,10 @@ Bases de datos y cuándo usar cada una, comparadas en ACID, JOINs, escalabilidad
 ### [dev-architectures](dev-architectures/)
 
 Patrones de arquitectura de software: monolitos, SOA, microservicios, event-driven, serverless y layered/MVC, y cuándo elegir cada uno.
+
+### [dev-principles](dev-principles/)
+
+Principios fundamentales: KISS, YAGNI y DRY — simplicidad, no anticipar, no repetir.
 
 ## Platforms
 

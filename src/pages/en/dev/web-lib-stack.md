@@ -10,6 +10,7 @@ subtitle: Supporting libraries for building the interface
 | Category         | Library            | Use                                                                  |
 | ---------------- | ------------------ | -------------------------------------------------------------------- |
 | Global state     | **Zustand**        | Simple global state, without the Context/useReducer boilerplate      |
+| Global state     | **Redux Toolkit**  | Global state with slices, thunks, and devtools, standard in large apps |
 | Data fetching    | **Tanstack Query** | Caching, invalidation, refetch, and async server data state          |
 | Tables           | **Tanstack Table** | Headless tables: sorting, filtering, and pagination                  |
 | Virtual lists    | **Tanstack Virtual** | Efficient rendering of very long lists and grids                  |

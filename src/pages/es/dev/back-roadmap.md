@@ -83,7 +83,7 @@ Un método es idempotente cuando repetirlo deja el mismo resultado que ejecutarl
 - **Observabilidad** — logs, métricas y trazas para entender qué pasa en producción.
 - **Evolución segura** — cambios incrementales sin romper lo que ya funciona.
 - **Arquitectura de "N" Capas** — separar la app en capas (presentación, lógica, datos).
-- **KISS / YAGNI / DRY** — simplicidad, no anticipar, no repetir.
+- **KISS / YAGNI / DRY** — ver [dev-principles](../dev-principles/).
 
 ### SOLID
 
