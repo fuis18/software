@@ -9,6 +9,7 @@ subtitle: Frameworks para construir aplicaciones de escritorio
 
 | Framework     | Tipo                            | Destaca en                                            |
 | ------------- | ------------------------------- | ----------------------------------------------------- |
+| **Dioxus**    | Framework cross-platform        | Un solo código para web, desktop y móvil              |
 | **Tauri**     | Apps web empaquetadas           | Bundle liviano, usa el webview del sistema            |
 | **Ratatui**   | Interfaces de terminal (TUI)    | Apps de terminal en Rust                              |
 | **egui**      | Utilidades rápidas              | Immediate-mode GUI, prototipado veloz                 |
@@ -57,6 +58,15 @@ subtitle: Frameworks para construir aplicaciones de escritorio
 - Inspirado en la arquitectura de Elm: la UI se modela como estado + mensajes + una función `view` pura que renderiza ese estado — sin manipulación imperativa de widgets.
 - Renderizado propio sobre GPU (vía wgpu), lo que le da control fino sobre el dibujado en vez de delegar en un toolkit nativo del sistema.
 - Elegilo si preferís un modelo de estado predecible y tipado antes que un árbol de widgets tradicional; es la base sobre la que corre el escritorio COSMIC.
+
+### Dioxus
+
+**Framework cross-platform**
+
+- Un solo código fuente compila a web (WebAssembly), desktop (via WebView o WGPU experimental) y móvil (Android/iOS) — la misma app corre en todas las plataformas.
+- Sintaxis RSX similar a JSX de React, con state management basado en signals que combina lo mejor de React, Solid y Svelte.
+- Hot reloading integrado, bundler propio (`dx bundle`) y server functions type-safe para el lado del servidor.
+- Elegilo cuando querés una app multiplataforma con un solo codebase en Rust, o cuando buscás una alternativa a Flutter pero nativa y con mejor rendimiento.
 
 ### Relm4
 
