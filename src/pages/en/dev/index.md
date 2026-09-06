@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/Layout.astro
-eyebrow: Dev
+eyebrow: Software
 title: Dev
 subtitle: Web, backend, mobile, and desktop apps.
 ---
