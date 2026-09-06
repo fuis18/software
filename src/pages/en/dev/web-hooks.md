@@ -149,3 +149,27 @@ const About = React.lazy(() => import('./pages/About'));
 ```
 
 > Lazy Loading and Code Splitting work together: the split creates the chunks and the lazy decides when to load them.
+
+### Persist Form State
+
+Save form data to localStorage so it's not lost on page reload or navigation.
+
+```tsx
+function useFormPersist<T>(key: string, initial: T) {
+  const [value, setValue] = useState<T>(() => {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : initial;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue] as const;
+}
+
+// Usage
+const [form, setForm] = useFormPersist('checkout-form', {
+  name: '', email: '', address: ''
+});
+```

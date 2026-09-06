@@ -9,6 +9,7 @@ subtitle: Frameworks for building desktop applications
 
 | Framework     | Type                            | Excels in                                            |
 | ------------- | ------------------------------- | ---------------------------------------------------- |
+| **Dioxus**    | Cross-platform framework        | Single codebase for web, desktop, and mobile         |
 | **Tauri**     | Packaged web apps               | Lightweight bundles, uses the system's webview       |
 | **Ratatui**   | Terminal UIs (TUI)              | Terminal apps in Rust                                |
 | **egui**      | Quick utilities                 | Immediate-mode GUI, rapid prototyping                |
@@ -57,6 +58,15 @@ subtitle: Frameworks for building desktop applications
 - Inspired by Elm's architecture: the UI is modeled as state + messages + a pure `view` function that renders that state — no imperative widget manipulation.
 - Custom rendering on GPU (via wgpu), giving fine control over drawing instead of delegating to a system-native toolkit.
 - Choose it if you prefer a predictable and typed state model over a traditional widget tree; it's the foundation that the COSMIC desktop runs on.
+
+### Dioxus
+
+**Cross-platform framework**
+
+- A single source codebase compiles to web (WebAssembly), desktop (via WebView or experimental WGPU), and mobile (Android/iOS) — the same app runs on all platforms.
+- RSX syntax similar to React's JSX, with signals-based state management that combines the best of React, Solid, and Svelte.
+- Built-in hot reloading, its own bundler (`dx bundle`), and type-safe server functions for the backend.
+- Choose it when you want a multiplatform app with a single Rust codebase, or when looking for a Flutter alternative that's native and performs better.
 
 ### Relm4
 

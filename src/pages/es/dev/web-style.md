@@ -22,6 +22,88 @@ subtitle: Con qué se estiliza la interfaz
 - Es CSS de toda la vida (anidamiento moderno nativo, variables, media queries) sin framework que aprender: la alternativa natural cuando un proyecto no usa Tailwind.
 - Elegilo para proyectos donde el equipo prefiere CSS plano y aislado por componente, o para aislar estilos complejos que ensuciarían el markup con utilities.
 
+## Arquitectura CSS
+
+Convenciones y metodologías para nombrar y organizar clases CSS, evitando conflictos y escalando codebases grandes.
+
+| Metodología | Formato | Uso principal |
+| ----------- | ------- | ------------- |
+| **BEM**      | `.block__element--modifier` | Naming convention: organiza clases por componente y sus partes |
+| **SUIT**     | `.Component-property--modifier` | Naming convention: variante estricta de BEM con prefijos |
+| **Atomic CSS** | Clases utilitarias (una clase = una propiedad) | Enfoque: estilos reutilizables y combinables, base de Tailwind |
+
+### BEM (Block Element Modifier)
+
+La metodología de naming más usada. Separa el CSS en bloques autocontenidos.
+
+```css
+/* Block: componente principal */
+.card { }
+
+/* Element: partes internas del block */
+.card__title { }
+.card__image { }
+.card__body { }
+
+/* Modifier: variante del block o element */
+.card--featured { }
+.card__title--large { }
+```
+
+### SUIT (Structure Use Animation Template)
+
+Variante más estricta de BEM con reglas de nombrado claras.
+
+```css
+/* Componente */
+.Card { }
+.Card-title { }
+.Card-image { }
+
+/* Utilidad */
+.u-flex { }
+.u-text-center { }
+
+/* Estado */
+.is-active { }
+.is-hidden { }
+```
+
+### Atomic CSS
+
+Un solo estilo por clase, combinables en el markup. Filosofía detrás de Tailwind.
+
+```css
+/* Cada clase hace una sola cosa */
+.mt-4 { margin-top: 1rem; }
+.text-bold { font-weight: bold; }
+.bg-blue { background-color: blue; }
+```
+
+> BEM y SUIT conviven bien con CSS Modules. Atomic CSS es el enfoque de Tailwind: si ya usás utility-first, ya estás aplicando Atomic sin saberlo.
+
+## Atomic Design
+
+Metodología de Brad Frost para construir sistemas de diseño escalables. No es solo CSS — define cómo se organizan los componentes de una interfaz.
+
+| Nivel | Qué es | Ejemplo |
+| ----- | ------ | ------- |
+| **Atoms** | Elementos más pequeños e indivisibles | Botón, input, label, avatar |
+| **Molecules** | Combinación de atoms que forman una unidad | Formulario de búsqueda (input + botón) |
+| **Organisms** | Secciones complejas compuestas por molecules | Header con nav, logo y buscador |
+| **Templates** | Layouts de página sin contenido real | Estructura de una landing page |
+| **Pages** | Templates con contenido concreto | La landing page final con datos reales |
+
+```
+Atoms → Molecules → Organisms → Templates → Pages
+  ↓         ↓           ↓           ↓          ↓
+button   search-form   header    layout-    home-page
+input                  navbar    landing
+label
+```
+
+> Atomic Design define la jerarquía de componentes; BEM/SUIT/Atomic CSS resuelven cómo nombrar los estilos de cada nivel.
+
 ## Component UI
 
 | Lib             | Qué es                                                                                                                      |

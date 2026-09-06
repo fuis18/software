@@ -16,6 +16,7 @@ subtitle: Librerías de apoyo para construir la interfaz
 | Listas virtuales | **Tanstack Virtual** | Renderizado eficiente de listas y grillas muy largas              |
 | Formularios      | **RHF**              | Manejo de formularios, validación y estado de campos              |
 | Formularios      | **TanStack Form**    | Manejo de formularios, validación y estado de campos              |
+| URL state        | **nuqs**             | Estado type-safe en URL query params: como useState pero en la URL |
 | Drag & drop      | **DnDKit**           | Interacciones de drag & drop accesibles                           |
 | Gráficos         | **Recharts**         | Visualización de datos y gráficos                                 |
 | actions history  | **travels**          | Funcionalidad de hacer & deshacer (undo/redo)                     |

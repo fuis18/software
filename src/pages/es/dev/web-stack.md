@@ -18,6 +18,7 @@ Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de d
 | **Next.js**          | Turbopack      | Público / SEO                   | E-commerce             |
 | **Angular**          | Vite / esbuild | Enterprise                      | Proyectos legacy       |
 | **Qwik**             | Vite           | Público / Gobierno              | Carga instantánea      |
+| **vinext**           | Vite           | Next.js sobre Vite             | Deploy universal, builds rápidos |
 
 ### ¿Qué es cada uno?
 
@@ -28,6 +29,7 @@ Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de d
 - **Next.js**: el meta-framework de React más usado en producción, con SSR/SSG/ISR integrados y fuerte enfoque en SEO y e-commerce.
 - **Angular**: framework completo (no solo librería) mantenido por Google, con TypeScript de base, inyección de dependencias y convenciones estrictas; común en entornos enterprise/legacy.
 - **Qwik**: framework con "resumability" en vez de hidratación: no re-ejecuta JS en el cliente al cargar, lo que da tiempos de carga inicial muy rápidos, útil en sitios públicos de alto tráfico.
+- **vinext**: plugin de Vite que reimplementa la API de Next.js. Permite correr apps de Next.js sobre Vite con deploys a Cloudflare Workers, Vercel, Netlify y más. Builds 4.4x más rápidos que Next.js, bundles 57% más chicos.
 
 ## Router
 

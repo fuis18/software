@@ -16,6 +16,7 @@ subtitle: Supporting libraries for building the interface
 | Virtual lists    | **Tanstack Virtual** | Efficient rendering of very long lists and grids                  |
 | Forms            | **RHF**            | Form handling, validation, and field state                           |
 | Forms            | **TanStack Form**  | Form handling, validation, and field state                           |
+| URL state        | **nuqs**           | Type-safe URL query params state: like useState but in the URL      |
 | Drag & drop      | **DnDKit**         | Accessible drag & drop interactions                                  |
 | Charts           | **Recharts**       | Data visualization and charts                                        |
 | Actions history  | **travels**        | Undo/redo functionality                                              |

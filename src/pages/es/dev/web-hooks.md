@@ -149,3 +149,27 @@ const About = React.lazy(() => import('./pages/About'));
 ```
 
 > Lazy Loading y Code Splitting trabajan juntos: el split crea los chunks y el lazy decide cuándo cargarlos.
+
+### Guardar estado del formulario
+
+Persistir los datos de un formulario en localStorage para que no se pierdan al recargar la página o navegar y volver.
+
+```tsx
+function useFormPersist<T>(key: string, initial: T) {
+  const [value, setValue] = useState<T>(() => {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : initial;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue] as const;
+}
+
+// Uso
+const [form, setForm] = useFormPersist('checkout-form', {
+  name: '', email: '', address: ''
+});
+```
