@@ -38,10 +38,20 @@ A **webhook** is an HTTP callback: the service that produces the event makes a r
 
 ## Real-time
 
-| Name                         | Protocol | Use                            |
-| ---------------------------- | -------- | ------------------------------ |
-| **WebSocket**                | WebSocket | Bidirectional full-duplex      |
-| **Server-Sent Events (SSE)** | HTTP     | Unidirectional (server→client) |
-| **Long Polling**             | HTTP     | Real-time simulation           |
+| Name                         | Protocol  | Functionality                                                                                                                                                                       | Typical examples                                                 |
+| ---------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **WebSocket**                | WebSocket | Persistent bidirectional full-duplex channel over a single TCP connection: both sides exchange messages in real time with millisecond latency                                       | Chat, live market data, multiplayer games, collaborative editing |
+| **Server-Sent Events (SSE)** | HTTP      | Unidirectional server→client stream over plain HTTP: the client subscribes with a long-lived request and receives events as they arrive; simpler and more compatible than WebSocket | Notifications, live feeds, log streaming                         |
+| **Long Polling**             | HTTP      | Simulates real-time: the client keeps the HTTP request open and the server responds as soon as new data exists, then reconnects immediately                                         | Fallback when WebSocket/SSE infrastructure cannot be added       |
 
 **How to choose:** WebSocket when the client also needs to send data in real time (chat, games, collaboration). SSE when the flow is only from server to client (notifications, log streaming) — simpler than WebSocket and works over plain HTTP. Long Polling as a last resort when infrastructure for WebSocket/SSE cannot be added.
+
+### When Real-time Is the Core of the Experience
+
+Real-time communication matters when **low latency** (milliseconds) and **instant live updates** are the core of the experience, not just an add-on: the user must perceive events as they happen, without refreshing or explicit polling. The mechanism then depends on the direction of the flow and the available infrastructure — WebSocket for two-way communication, SSE for one-way, Long Polling as a fallback.
+
+### Scaling Real-time Beyond a Single Server
+
+At scale, real-time infrastructure goes far beyond a simple Node.js server: it requires distributing long-lived connections across many servers, a messaging engine (Pub/Sub) to fan events out to the right receivers on any server, session/state management for horizontal scaling, and asynchronous persistence in databases so network threads are never blocked.
+
+
