@@ -18,6 +18,7 @@ subtitle: A framework per use case, not one for everything
 | **Django**          | Python     | Web apps with lots of CRUD and admin                    | CMSs, internal portals, operational dashboards                 |
 | **Hono**            | Javascript | Serverless / edge                                       | CDN middleware, edge auth, Workers APIs                         |
 | **Nitro**           | Javascript | Full-stack server (UnJS)                                | Filesystem routing, universal deploy, engine behind Nuxt       |
+| **Bun**             | Javascript (runtime) | Native fast HTTP server & runtime for JS/TS        | Bun.serve, Elysia, edge functions, scripts & tests             |
 | **Laravel**         | PHP        | Traditional web portals, e-commerce and SaaS monoliths  | Online stores, CMSs (WordPress), SaaS platforms, REST APIs     |
 
 ## Benchmarks (approx.)
@@ -36,3 +37,18 @@ Indicative throughput numbers (requests/second) and learning curve — useful fo
 | **Hono**        | varies by runtime (edge)    | Easy           |
 | **Nitro**       | ~50k+                      | Easy           |
 | **Laravel**     | ~15k                        | Easy           |
+
+## Language Benchmarks (approx.)
+
+Indicative throughput numbers (requests/second) and learning curve for popular backend languages — useful for relative comparison, not as absolute figures: they depend on hardware, payload, and test type.
+
+| Language        | RPS approx. (typical framework) | Learning Curve |
+| --------------- | ------------------------------- | -------------- |
+| **Rust**        | ~700k (Actix-web)               | Hard           |
+| **Go**          | ~500k (net/http)                | Easy           |
+| **C# (.NET)**   | ~400k (ASP.NET Core)            | Medium         |
+| **Java (JVM)**  | ~300k (Spring Boot)             | Hard           |
+| **Bun**         | ~200k (Bun.serve / Hono)        | Easy           |
+| **Node.js**     | ~120k (Fastify)                 | Easy           |
+| **PHP**         | ~60k (Laravel)                  | Easy           |
+| **Python**      | ~30k (FastAPI)                  | Easy           |
