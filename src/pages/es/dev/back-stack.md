@@ -17,7 +17,6 @@ subtitle: Un framework por caso de uso, no uno para todo
 | **FastAPI**         | Python     | Servir modelos ML/IA                                      | Inference endpoints, pipelines de datos, LLM APIs               |
 | **Django**          | Python     | Web apps con mucho CRUD y admin                           | CMSs, portales internos, dashboards operativos                  |
 | **Hono**            | Javascript | Serverless / edge                                         | Middleware CDN, auth en el borde, APIs en Workers               |
-| **Nitro**           | Javascript | Servidor full-stack (UnJS)                                | Filesystem routing, deploy universal, motor de Nuxt             |
 | **Bun**             | Javascript (runtime) | Servidor HTTP nativo ultrarrápido y runtime para JS/TS | Bun.serve, Elysia, edge functions, scripts y tests             |
 | **Laravel**         | PHP        | Portales web tradicionales, e-commerce y SaaS monoliths   | Tiendas online, CMSs (WordPress), plataformas SaaS, APIs REST   |
 
@@ -35,7 +34,6 @@ Números orientativos de throughput (requests/segundo) y curva de aprendizaje �
 | **FastAPI**     | ~30k                       | Fácil                |
 | **Django**      | ~15k                       | Medio                |
 | **Hono**        | varía según runtime (edge) | Fácil                |
-| **Nitro**       | ~50k+                     | Fácil                |
 | **Laravel**     | ~15k                       | Fácil                |
 
 ## Benchmarks de lenguajes (aprox.)
