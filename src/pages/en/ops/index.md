@@ -96,6 +96,10 @@ Database administration and scaling: replication, sharding, schema migrations, a
 
 Data pipelines and workflows: job orchestration, event streams, and data lake architecture.
 
+### [ops-modern-data-stack](ops-modern-data-stack/)
+
+Modern Data Stack (MDS): ingestion, storage, transformation, consumption, and cross-cutting tooling for data platforms.
+
 ### [ops-backup](ops-backup/)
 
 Backup and disaster recovery: defining how much data can be lost and how long it takes to recover, and point-in-time recovery and off-site replication strategies.

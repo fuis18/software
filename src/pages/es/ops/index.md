@@ -96,6 +96,10 @@ Administración y escalado de bases de datos: replicación, sharding, migracione
 
 Pipelines y flujos de datos: orquestación de trabajos, streams de eventos y la arquitectura de lago de datos.
 
+### [ops-modern-data-stack](ops-modern-data-stack/)
+
+Modern Data Stack (MDS): ingestión, almacenamiento, transformación, consumo y herramientas transversales para plataformas de datos.
+
 ### [ops-backup](ops-backup/)
 
 Backup y disaster recovery: definir cuánta data se puede perder y cuánto se tarda en volver, y las estrategias de recuperación punto a tiempo y replicación fuera de sitio.
