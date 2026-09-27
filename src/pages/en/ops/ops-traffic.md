@@ -40,6 +40,7 @@ The service's front-end: receives traffic and reroutes it to the correct backend
 | **NGINX**   | Classic all-in-one      | Proxy, caching, TLS, load balancing, web server                               |
 | **HAProxy** | Load balancing specialist | High availability, health checks, gRPC/websocket                          |
 | **Traefik** | Native for containers | Auto-discovery, automatic Let's Encrypt, Docker/K8s integration |
+| **Caddy**   | Zero-config HTTPS       | Automatic certificates by default, simple configuration, built in Go              |
 
 | Capability           | What it does                                                 |
 | ------------------- | -------------------------------------------------------- |

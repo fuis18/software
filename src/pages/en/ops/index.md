@@ -6,6 +6,12 @@ subtitle: Infrastructure, automation, and systems
 
 The entire infrastructure lifecycle: from physical cabling and datacenter racks to what runs in production and how it's measured. How hardware is provisioned and configured, how workloads are contained and orchestrated, how delivery and deployment are automated, and how the system is sustained over time — with alerts, metrics, and reliability practices.
 
+## Server Architecture
+
+### [ops-server-architecture](ops-server-architecture/)
+
+What a server is and the layers it implies: virtualization with KVM/QEMU & virt-manager, the container hierarchy (ingress, applications, data, support services), and network infrastructure services (directory, DHCP, DNS).
+
 ## Physical Network, Hardware, and Data Center
 
 ### [ops-physical-network](ops-physical-network/)

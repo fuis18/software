@@ -6,6 +6,12 @@ subtitle: Infraestructura, automatización y sistemas
 
 Todo el ciclo de vida de la infraestructura: del cableado físico y los racks del datacenter hasta lo que corre en producción y cómo se mide. Cómo se aprovisiona y configura el hardware, cómo se contienen y orquestan las cargas de trabajo, cómo se automatizan entrega y despliegue, y cómo se garantiza — con alertas, métricas y prácticas de fiabilidad — que el sistema real se sostiene en el tiempo.
 
+## Arquitectura de Servidor
+
+### [ops-server-architecture](ops-server-architecture/)
+
+Qué es un servidor y qué capas implica: virtualización con KVM/QEMU y virt-manager, la jerarquía de contenedores (ingress, aplicaciones, datos, servicios de soporte) y los servicios de infraestructura de red (directorio, DHCP, DNS).
+
 ## Red Física, Hardware y Data Center
 
 ### [ops-physical-network](ops-physical-network/)
