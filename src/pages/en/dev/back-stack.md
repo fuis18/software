@@ -18,6 +18,9 @@ subtitle: A framework per use case, not one for everything
 | **Django**          | Python     | Web apps with lots of CRUD and admin                    | CMSs, internal portals, operational dashboards                 |
 | **Hono**            | Javascript | Serverless / edge                                       | CDN middleware, edge auth, Workers APIs                         |
 | **Bun**             | Javascript (runtime) | Native fast HTTP server & runtime for JS/TS        | Bun.serve, Elysia, edge functions, scripts & tests             |
+| **Deno**            | Javascript (runtime, TS) | Modern & secure backend runtime, native TS     | Deno.serve, edge functions, scripts & tests                   |
+| **Fresh**           | Javascript (TS) | Full-stack edge-first framework for Deno                     | SSR apps, islands, Deno Deploy, dashboards                    |
+| **Oak**             | Javascript (TS) | Koa-style middleware framework for Deno                      | REST APIs, middleware chains, auth, simple servers            |
 | **Laravel**         | PHP        | Traditional web portals, e-commerce and SaaS monoliths  | Online stores, CMSs (WordPress), SaaS platforms, REST APIs     |
 
 ## Benchmarks (approx.)
@@ -29,9 +32,11 @@ Indicative throughput numbers (requests/second) and learning curve — useful fo
 | **Actix-web**   | ~300k                       | Hard           |
 | **Axum**        | ~280k                       | Hard           |
 | **Fastify**     | ~80k                        | Easy           |
+| **Oak**         | ~80k (Koa-style middleware) | Easy           |
 | **Spring Boot** | ~50k                        | Hard           |
 | **Express**     | ~35k                        | Very easy      |
 | **FastAPI**     | ~30k                        | Easy           |
+| **Fresh**       | ~30k (SSR + islands)        | Easy           |
 | **Django**      | ~15k                        | Medium         |
 | **Hono**        | varies by runtime (edge)    | Easy           |
 | **Laravel**     | ~15k                        | Easy           |
@@ -48,5 +53,6 @@ Indicative throughput numbers (requests/second) and learning curve for popular b
 | **Java (JVM)**  | ~300k (Spring Boot)             | Hard           |
 | **Bun**         | ~200k (Bun.serve / Hono)        | Easy           |
 | **Node.js**     | ~120k (Fastify)                 | Easy           |
+| **Deno**        | ~90k (Deno.serve / Fresh)       | Easy           |
 | **PHP**         | ~60k (Laravel)                  | Easy           |
 | **Python**      | ~30k (FastAPI)                  | Easy           |

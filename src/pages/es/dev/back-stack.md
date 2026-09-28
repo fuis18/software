@@ -18,6 +18,9 @@ subtitle: Un framework por caso de uso, no uno para todo
 | **Django**          | Python     | Web apps con mucho CRUD y admin                           | CMSs, portales internos, dashboards operativos                  |
 | **Hono**            | Javascript | Serverless / edge                                         | Middleware CDN, auth en el borde, APIs en Workers               |
 | **Bun**             | Javascript (runtime) | Servidor HTTP nativo ultrarrápido y runtime para JS/TS | Bun.serve, Elysia, edge functions, scripts y tests             |
+| **Deno**            | Javascript (runtime, TS) | Runtime backend moderno y seguro, TS nativo       | Deno.serve, edge functions, scripts y tests                   |
+| **Fresh**           | Javascript (TS) | Framework full-stack edge-first para Deno                    | Apps SSR, islands, Deno Deploy, dashboards                    |
+| **Oak**             | Javascript (TS) | Framework de middleware estilo Koa para Deno                 | APIs REST, cadenas de middleware, auth, servidores simples    |
 | **Laravel**         | PHP        | Portales web tradicionales, e-commerce y SaaS monoliths   | Tiendas online, CMSs (WordPress), plataformas SaaS, APIs REST   |
 
 ## Benchmarks (aprox.)
@@ -29,9 +32,11 @@ Números orientativos de throughput (requests/segundo) y curva de aprendizaje �
 | **Actix-web**   | ~300k                      | Difícil              |
 | **Axum**        | ~280k                      | Difícil              |
 | **Fastify**     | ~80k                       | Fácil                |
+| **Oak**         | ~80k (middleware estilo Koa) | Fácil              |
 | **Spring Boot** | ~50k                       | Difícil              |
 | **Express**     | ~35k                       | Muy fácil            |
 | **FastAPI**     | ~30k                       | Fácil                |
+| **Fresh**       | ~30k (SSR + islands)       | Fácil                |
 | **Django**      | ~15k                       | Medio                |
 | **Hono**        | varía según runtime (edge) | Fácil                |
 | **Laravel**     | ~15k                       | Fácil                |
@@ -48,5 +53,6 @@ Números orientativos de throughput (requests/segundo) y curva de aprendizaje de
 | **Java (JVM)**  | ~300k (Spring Boot)           | Difícil              |
 | **Bun**         | ~200k (Bun.serve / Hono)      | Fácil                |
 | **Node.js**     | ~120k (Fastify)               | Fácil                |
+| **Deno**        | ~90k (Deno.serve / Fresh)     | Fácil                |
 | **PHP**         | ~60k (Laravel)                | Fácil                |
 | **Python**      | ~30k (FastAPI)                | Fácil                |
