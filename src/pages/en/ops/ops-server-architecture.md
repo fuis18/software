@@ -16,6 +16,18 @@ A server differs from a personal computer by purpose, not by parts: instead of s
 - **Administrated remotely** — via SSH and the tooling covered in this section ([ops-iac](../ops-iac/)).
 - **Specialized** — each server or VM tends to run a focused role rather than many applications at once.
 
+## Server Operating Systems
+
+The layer between the hardware and everything else. The classic server distribution family is the RHEL one — the commercial standard — plus its community rebuilds:
+
+| Distro | Profile |
+|---|---|
+| **RHEL** | Red Hat Enterprise Linux: the paid commercial standard, with direct support and strict certifications |
+| **Rocky Linux** | Aimed to be a 1:1 clone of RHEL: what runs on RHEL works exactly the same on Rocky |
+| **AlmaLinux** | Binary-compatible with RHEL but more pragmatic: faster patches, extended legacy hardware support, community features |
+
+Community Linux server distros (Debian, Ubuntu) are the free alternative to the RHEL family. The full comparison lives in [ops-hardware](../ops-hardware/).
+
 ## The Layer Model
 
 From the physical machine to the services delivered, a server is organized in layers. Each layer is one of the topics of this section:
@@ -23,6 +35,7 @@ From the physical machine to the services delivered, a server is organized in la
 | Layer | What it is | Covered in |
 |---|---|---|
 | **Physical** | The real hardware that runs everything | [ops-hardware](../ops-hardware/), [ops-physical-network](../ops-physical-network/) |
+| **Server OS** | The operating system on the machine: RHEL, Rocky Linux, AlmaLinux, or a community distro | [ops-hardware](../ops-hardware/) |
 | **Virtualization** | KVM/QEMU isolating operating systems on the same hardware | [ops-virtualization](../ops-virtualization/) |
 | **Containers** | Reproducible units packaging each app and its dependencies | [ops-containers](../ops-containers/) |
 | **Ingress & networking** | Reverse proxy, load balancer, WAF at the edge | [ops-traffic](../ops-traffic/) |

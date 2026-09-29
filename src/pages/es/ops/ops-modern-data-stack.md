@@ -17,7 +17,7 @@ Herramientas encargadas de extraer y cargar datos desde las fuentes hacia el alm
 
 | Herramienta | Perfil | Caso de Uso |
 |---|---|---|
-| [Vector (Datadog)](https://vector.dev/) | Ingestión de eventos, logs y streaming | Alta capacidad para datos de observabilidad, telemetría y streaming. |
+| [Vector (Datadog)](https://vector.dev/) | Ingestión de eventos, logs y streaming | Alta capacidad para datos de eventos, logs y streaming. La telemetría operativa vive en [ops-observability](../ops-observability/). |
 | [Estuary Flow](https://estuary.dev/) | Ingestión en tiempo real (CDC) | Change Data Capture (CDC) con baja latencia, desarrollado en Rust. |
 | [Meltano](https://meltano.com/) | ELT con conectores Singer | Extracción y carga desde APIs SaaS y bases de datos hacia warehouses/lakehouses. |
 
@@ -54,12 +54,12 @@ Capa donde los datos se exponen a usuarios finales, analistas, científicos de d
 
 ## 5. Transversales (Soporte a la Arquitectura)
 
-Capacidades de soporte que garantizan fiabilidad, gobernanza, observabilidad y automatización en toda la plataforma de datos.
+Capacidades de soporte que garantizan fiabilidad, gobernanza y automatización en toda la plataforma de datos. La observabilidad operativa — métricas, logs y trazas — vive en [ops-observability](../ops-observability/).
 
 | Ámbito | Herramienta | Caso de Uso |
 |---|---|---|
 | Orquestación | [Kestra](https://kestra.io/) | Orquestación fiable de workflows para coordinar, programar y monitorizar pipelines de datos. |
-| Calidad de Datos y Observabilidad | [Soda Core](https://www.soda.io/) | Validaciones automáticas de calidad de datos, detección de anomalías y checks entre datasets. |
+| Calidad de Datos | [Soda Core](https://www.soda.io/) | Validaciones automáticas de calidad de datos, detección de anomalías y checks entre datasets. |
 | Gobierno de Datos y Catálogo | [OpenLineage](https://openlineage.io/) & [Marquez](https://marquezproject.ai/) | Linaje de datos end-to-end, gestión de metadatos y descubrimiento de datos. |
 
 ## MDS vs. Stack de Datos Tradicional
@@ -74,5 +74,6 @@ Capacidades de soporte que garantizan fiabilidad, gobernanza, observabilidad y a
 
 ## Relacionados
 
+- [ops-data-modeling](../ops-data-modeling/) — Esquema de estrella, vistas materializadas y motores columnares para analítica.
 - [ops-dataops](../ops-dataops/) — Prácticas, automatización y CI/CD para flujos de trabajo de datos.
 - [ops-observability](../ops-observability/) — Monitoreo, trazado y observabilidad para sistemas y datos.

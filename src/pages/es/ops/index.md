@@ -106,6 +106,10 @@ Pipelines y flujos de datos: orquestación de trabajos, streams de eventos y la 
 
 Modern Data Stack (MDS): ingestión, almacenamiento, transformación, consumo y herramientas transversales para plataformas de datos.
 
+### [ops-data-modeling](ops-data-modeling/)
+
+Modelado de datos para analítica: esquema de estrella (hechos y dimensiones), vistas materializadas y motores columnares modernos (DuckDB, ClickHouse, RisingWave, Arrow/Parquet, Polars).
+
 ### [ops-backup](ops-backup/)
 
 Backup y disaster recovery: definir cuánta data se puede perder y cuánto se tarda en volver, y las estrategias de recuperación punto a tiempo y replicación fuera de sitio.

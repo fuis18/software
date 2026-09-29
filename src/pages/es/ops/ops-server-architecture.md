@@ -16,6 +16,18 @@ Un servidor se diferencia de un equipo personal por su propósito, no por sus pi
 - **Administrado remotamente** — vía SSH y con las herramientas de esta sección ([ops-iac](../ops-iac/)).
 - **Especializado** — cada servidor o VM tiende a cumplir un rol concreto en vez de correr muchas aplicaciones a la vez.
 
+## Sistemas Operativos de Servidor
+
+La capa entre el hardware y todo lo demás. La familia clásica de distribuciones de servidor es la de RHEL — el estándar comercial — más sus rebuilds comunitarios:
+
+| Distribución | Perfil |
+|---|---|
+| **RHEL** | Red Hat Enterprise Linux: el estándar comercial de pago, con soporte directo y certificaciones estrictas |
+| **Rocky Linux** | Busca ser un clon 1:1 de RHEL: lo que corre en RHEL funciona exactamente igual en Rocky |
+| **AlmaLinux** | Compatible binario con RHEL pero más pragmática: parches más rápidos, soporte extendido para hardware antiguo, funciones comunitarias |
+
+Las distros Linux comunitarias (Debian, Ubuntu) son la alternativa libre a la familia RHEL. La comparación completa vive en [ops-hardware](../ops-hardware/).
+
 ## El Modelo de Capas
 
 De la máquina física a los servicios entregados, un servidor se organiza en capas. Cada capa es uno de los temas de esta sección:
@@ -23,6 +35,7 @@ De la máquina física a los servicios entregados, un servidor se organiza en ca
 | Capa | Qué es | Dónde se trata |
 |---|---|---|
 | **Física** | El hardware real que ejecuta todo | [ops-hardware](../ops-hardware/), [ops-physical-network](../ops-physical-network/) |
+| **Sistema Operativo** | El sistema operativo que corre en la máquina: RHEL, Rocky Linux, AlmaLinux o una distro comunitaria | [ops-hardware](../ops-hardware/) |
 | **Virtualización** | KVM/QEMU aislando sistemas operativos sobre el mismo hardware | [ops-virtualization](../ops-virtualization/) |
 | **Contenedores** | Unidades reproducibles que empaquetan cada app y sus dependencias | [ops-containers](../ops-containers/) |
 | **Ingress y red** | Proxy reverso, balanceador de carga y WAF en el borde | [ops-traffic](../ops-traffic/) |

@@ -106,6 +106,10 @@ Data pipelines and workflows: job orchestration, event streams, and data lake ar
 
 Modern Data Stack (MDS): ingestion, storage, transformation, consumption, and cross-cutting tooling for data platforms.
 
+### [ops-data-modeling](ops-data-modeling/)
+
+Data modeling for analytics: star schemas (facts and dimensions), materialized views, and modern columnar engines (DuckDB, ClickHouse, RisingWave, Arrow/Parquet, Polars).
+
 ### [ops-backup](ops-backup/)
 
 Backup and disaster recovery: defining how much data can be lost and how long it takes to recover, and point-in-time recovery and off-site replication strategies.

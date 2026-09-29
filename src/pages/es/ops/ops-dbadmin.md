@@ -7,15 +7,6 @@ subtitle: Administración y escalado de bases de datos
 
 Operar una base de datos en producción es un oficio aparte: mantenerla alta, replicarla para disponibilidad, escalarla cuando crece, y cambiar el esquema sin tirar el servicio.
 
-## Motores
-
-| Motor          | Tipo                | Uso típico                            |
-| -------------- | ------------------- | ------------------------------------- |
-| **PostgreSQL** | SQL                 | Aplicaciones web, datos estructurados |
-| **MySQL**      | SQL                 | Web tradicional, compatible con MySQL |
-| **Redis**      | Key-Value (memoria) | Caché, sesiones, colas, real-time     |
-| **MongoDB**    | Document Store      | Esquemas flexibles, catálogos, CMS    |
-
 La comparación de ACID, JOINs, escalabilidad y disponibilidad — y cuándo elegir cada uno desde la perspectiva de desarrollo — está en [back-databases](../../dev/back-databases/). Acá importa el lado operativo: mantenerlos vivos y escalables, sin importar cuál se haya elegido.
 
 ## Replicación

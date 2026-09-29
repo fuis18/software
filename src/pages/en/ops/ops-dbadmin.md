@@ -7,15 +7,6 @@ subtitle: Database administration and scaling
 
 Operating a database in production is a craft of its own: keeping it up, replicating it for availability, scaling it when it grows, and changing the schema without taking down the service.
 
-## Engines
-
-| Engine          | Type                | Typical use                            |
-| -------------- | ------------------- | ------------------------------------- |
-| **PostgreSQL** | SQL                 | Web applications, structured data |
-| **MySQL**      | SQL                 | Traditional web, MySQL-compatible |
-| **Redis**      | Key-Value (in-memory) | Cache, sessions, queues, real-time     |
-| **MongoDB**    | Document Store      | Flexible schemas, catalogs, CMS    |
-
 The comparison of ACID, JOINs, scalability, and availability — and when to choose each from a development perspective — is in [back-databases](../../dev/back-databases/). What matters here is the operational side: keeping them alive and scalable, regardless of which was chosen.
 
 ## Replication

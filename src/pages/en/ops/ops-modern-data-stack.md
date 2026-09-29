@@ -17,7 +17,7 @@ Tools responsible for extracting and loading data from sources into storage, eit
 
 | Tool | Profile | Use Case |
 |---|---|---|
-| [Vector (Datadog)](https://vector.dev/) | Event, log, and streaming ingestion | High-throughput ingestion of observability, telemetry, and streaming data. |
+| [Vector (Datadog)](https://vector.dev/) | Event, log, and streaming ingestion | High-throughput ingestion of events, logs, and streaming data. Operational telemetry lives in [ops-observability](../ops-observability/). |
 | [Estuary Flow](https://estuary.dev/) | Real-time ingestion (CDC) | Change Data Capture (CDC) with low-latency streaming, built in Rust. |
 | [Meltano](https://meltano.com/) | ELT with Singer connectors | Extract and load data from SaaS APIs and databases directly into data warehouses/lakehouses. |
 
@@ -54,12 +54,12 @@ The layer where data is exposed to end users, analysts, data scientists, or AI a
 
 ## 5. Cross-cutting (Architecture Support)
 
-Supporting capabilities that ensure reliability, governance, observability, and automation across the entire data platform.
+Supporting capabilities that ensure reliability, governance, and automation across the entire data platform. Operational observability — metrics, logs, and traces — lives in [ops-observability](../ops-observability/).
 
 | Concern | Tool | Use Case |
 |---|---|---|
 | Orchestration | [Kestra](https://kestra.io/) | Reliable workflow orchestration to schedule, monitor, and coordinate data pipelines. |
-| Data Quality & Observability | [Soda Core](https://www.soda.io/) | Automated data quality checks, anomaly detection, and validation across datasets. |
+| Data Quality | [Soda Core](https://www.soda.io/) | Automated data quality checks, anomaly detection, and validation across datasets. |
 | Data Governance & Catalog | [OpenLineage](https://openlineage.io/) & [Marquez](https://marquezproject.ai/) | End-to-end data lineage tracking, metadata management, and data discovery. |
 
 ## MDS vs. Traditional Data Stack
@@ -74,5 +74,6 @@ Supporting capabilities that ensure reliability, governance, observability, and 
 
 ## Related
 
+- [ops-data-modeling](../ops-data-modeling/) — Star schemas, materialized views, and columnar analytical engines.
 - [ops-dataops](../ops-dataops/) — DataOps practices, automation, and CI/CD for data workflows.
 - [ops-observability](../ops-observability/) — Monitoring, tracing, and observability for data and systems.
