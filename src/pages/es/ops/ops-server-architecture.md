@@ -69,17 +69,9 @@ Los productos reales: APIs de backend e interfaces de frontend, cada una en su p
 
 ### Capa de Datos
 
-Los servicios persistentes que guardan y sirven estado: bases de datos relacionales, caches, document stores y almacenamiento de objetos.
+Los servicios persistentes que guardan y sirven estado: bases de datos relacionales, caches, document stores y almacenamiento de objetos, cada uno en su propio contenedor.
 
-| Herramienta | Rol |
-|---|---|
-| **postgres** | Base de datos relacional, la opción de referencia para OLTP |
-| **mysql** | Base de datos relacional, el clásico por defecto de la web |
-| **redis** | Cache en memoria y store clave-valor |
-| **mongodb** | Document store |
-| **minio** | Almacenamiento de objetos compatible con S3, self-hosted |
-
-La administración y el escalado de bases de datos viven en [ops-dbadmin](../ops-dbadmin/), los fundamentos block/file/object en [ops-storage](../ops-storage/) y la elección de base de datos en [back-databases](../../dev/back-databases/).
+La decisión de qué base de datos usar — SQL, documento, clave-valor, vector — pertenece a [back-databases](../../dev/back-databases/); el lado operativo (replicación, sharding, migraciones) a [ops-dbadmin](../ops-dbadmin/); y los fundamentos de almacenamiento (block, file, object — incluido el S3 self-hosted tipo MinIO) a [ops-storage](../ops-storage/).
 
 ### Capa de Servicios de Soporte
 
@@ -94,6 +86,10 @@ Todo lo que las demás capas necesitan para funcionar: resolución de nombres, i
 | **rabbitmq** | Cola de mensajes / broker entre servicios |
 
 Las tres señales de observabilidad se tratan en [ops-observability](../ops-observability/), la identidad en [dev-auth](../../dev/dev-auth/) y los patrones de mensajería en [back-technologies](../../dev/back-technologies/).
+
+### Lado Escritorio — Distrobox
+
+Las cuatro capas de servicios anteriores son el lado **servidor** de los contenedores. En la **workstation**, los contenedores cumplen otro rol: darle al desarrollador entornos reproducibles sin salir del host. **Distrobox** envuelve a Podman o Docker para crear un contenedor de cualquier distro Linux con integración total con el host — comparte el `$HOME` del usuario, el almacenamiento externo y los dispositivos USB, y puede exportar apps GUI al escritorio para que corran como si fueran nativas. Mismos backends de contenedores (podman/docker) que las capas de servidor, distinto propósito.
 
 ## Servicios de Infraestructura de Red
 
@@ -118,9 +114,8 @@ La resolución de nombres es la columna que conecta un nombre con un servicio. E
 | **BIND9** | El servidor DNS de referencia: autoritativo y recursivo, probado durante décadas |
 | **knot-resolver** | Resolver recursivo de alto rendimiento (CZ.NIC), pensado para escala |
 | **NextDNS** | DNS gestionado con filtrado (SaaS, no self-hosted): políticas por dispositivo y bloqueo |
-| **Pi-hole** | Bloqueo de anuncios a nivel de red: actúa como resolver de la red y bloquea trackers para todos los dispositivos |
 
-El DNS como parte del enrutamiento de tráfico se trata en [ops-traffic](../ops-traffic/), y Pi-hole aparece entre las utilidades del hogar en [ops-selfhosted](../ops-selfhosted/).
+El DNS como parte del enrutamiento de tráfico se trata en [ops-traffic](../ops-traffic/). Para el bloqueo de anuncios a nivel de DNS en toda la red, Pi-hole vive en [ops-selfhosted](../ops-selfhosted/).
 
 ## Relacionados
 

@@ -69,17 +69,9 @@ The actual products: backend APIs and frontend interfaces, each running in its o
 
 ### Data Layer
 
-The persistent services that store and serve state: relational databases, caches, document stores, and object storage.
+The persistent services that store and serve state: relational databases, caches, document stores, and object storage, each in its own container.
 
-| Tool | Role |
-|---|---|
-| **postgres** | Relational database, the reference OLTP choice |
-| **mysql** | Relational database, the classic web default |
-| **redis** | In-memory cache and key-value store |
-| **mongodb** | Document store |
-| **minio** | S3-compatible object storage, self-hosted |
-
-Database administration and scaling live in [ops-dbadmin](../ops-dbadmin/), the block/file/object fundamentals in [ops-storage](../ops-storage/), and choosing a database in [back-databases](../../dev/back-databases/).
+The decision of which database to use — SQL, document, key-value, vector — belongs to [back-databases](../../dev/back-databases/); the operational side (replication, sharding, migrations) to [ops-dbadmin](../ops-dbadmin/); and the storage fundamentals (block, file, object — including self-hosted S3 like MinIO) to [ops-storage](../ops-storage/).
 
 ### Support Services Layer
 
@@ -94,6 +86,10 @@ Everything the other layers need to function: name resolution, identity, metrics
 | **rabbitmq** | Message queue / broker between services |
 
 The three observability signals are covered in [ops-observability](../ops-observability/), identity in [dev-auth](../../dev/dev-auth/), and messaging patterns in [back-technologies](../../dev/back-technologies/).
+
+### Workstation Side — Distrobox
+
+The four service layers above are the **server** side of containers. On the **workstation**, containers have a different role: giving the developer reproducible environments without leaving the host. **Distrobox** wraps Podman or Docker to create a container of any Linux distribution tightly integrated with the host — it shares the user's `$HOME`, external storage, and USB devices, and can export GUI apps to the desktop so they run as if they were native. Same container backends (podman/docker) as the server layers, different purpose.
 
 ## Network Infrastructure Services
 
@@ -118,9 +114,8 @@ Name resolution is the column connecting a name to a service. In a self-hosted e
 | **BIND9** | The reference DNS server: authoritative and recursive, battle-tested for decades |
 | **knot-resolver** | High-performance recursive resolver (CZ.NIC), designed for scale |
 | **NextDNS** | Managed filtering DNS (SaaS, not self-hosted): per-device policies and blocking |
-| **Pi-hole** | Network-wide ad blocking: acts as the network's resolver and blocks trackers for every device |
 
-DNS as part of traffic routing is covered in [ops-traffic](../ops-traffic/), and Pi-hole appears among the home utilities in [ops-selfhosted](../ops-selfhosted/).
+DNS as part of traffic routing is covered in [ops-traffic](../ops-traffic/). For network-wide ad blocking at the DNS level, Pi-hole lives in [ops-selfhosted](../ops-selfhosted/).
 
 ## Related
 
