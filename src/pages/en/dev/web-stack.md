@@ -9,16 +9,16 @@ subtitle: The pieces that make up a frontend
 
 Choose based on the project's goal (static? SEO? heavy data handling? enterprise?), not personal preference.
 
-| Framework           | Bundler        | Goal                           | Excels at             |
-| -------------------- | -------------- | ------------------------------- | ---------------------- |
-| **Astro**            | Vite           | Static sites                   | Landing pages, blogs  |
-| **React**            | Vite           | Interactivity                  | React ecosystem       |
-| **TanStack Start**   | Vite           | Data-heavy apps                | Large projects        |
-| **Svelte**           | Vite           | Interactivity                  | Performance           |
-| **Next.js**          | Turbopack      | Public / SEO                   | E-commerce            |
-| **Angular**          | Vite / esbuild | Enterprise                     | Legacy projects       |
-| **Qwik**             | Vite           | Public / Government            | Instant loading       |
-| **vinext**           | Vite           | Next.js on Vite               | Universal deploy, fast builds |
+| Framework    | Bundler        | Goal                | Excels at                     |
+| ------------ | -------------- | ------------------- | ----------------------------- |
+| **Astro**    | Vite           | Static sites        | Landing pages, blogs          |
+| **React**    | Vite           | Interactivity       | React ecosystem               |
+| **TanStack** | Vite           | Data-heavy apps     | Large projects                |
+| **Svelte**   | Vite           | Interactivity       | Performance                   |
+| **Next.js**  | Turbopack      | Public / SEO        | E-commerce                    |
+| **Angular**  | Vite / esbuild | Enterprise          | Legacy projects               |
+| **Qwik**     | Vite           | Public / Government | Instant loading               |
+| **vinext**   | Vite           | Next.js on Vite     | Universal deploy, fast builds |
 
 ### What is each one?
 
@@ -33,11 +33,11 @@ Choose based on the project's goal (static? SEO? heavy data handling? enterprise
 
 ## Router
 
-| Router               | Size / philosophy              | Ideal for                                                              |
-| --------------------- | ------------------------------ | ----------------------------------------------------------------------- |
-| **React Router**      | De facto standard              | Traditional apps (SPA), declarative routes, React ecosystem            |
-| **Wouter**            | Minimalist (~2kb)              | Small projects, when you don't need extra abstractions                 |
-| **TanStack Router**   | TypeScript-first               | Large apps with advanced data control and param validation             |
+| Router              | Size / philosophy | Ideal for                                                   |
+| ------------------- | ----------------- | ----------------------------------------------------------- |
+| **React Router**    | De facto standard | Traditional apps (SPA), declarative routes, React ecosystem |
+| **Wouter**          | Minimalist (~2kb) | Small projects, when you don't need extra abstractions      |
+| **TanStack Router** | TypeScript-first  | Large apps with advanced data control and param validation  |
 
 ### What is each one?
 

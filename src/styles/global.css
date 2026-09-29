@@ -167,4 +167,5 @@ main td:first-child {
   font-weight: 600;
   color: #f1f5f9;
   white-space: nowrap;
+  text-wrap: balance;
 }
