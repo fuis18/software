@@ -78,7 +78,7 @@ Continuous delivery and deployment: the repository as the source of truth, progr
 
 Infrastructure and configuration as code: the difference between provisioning resources and configuring servers, idempotency, and the declarative flow that ties infrastructure to the application.
 
-## SRE and Observability
+## SRE, Observability & Reliability
 
 ### [ops-observability](ops-observability/)
 
@@ -92,27 +92,27 @@ Incident and alert management: defining measurable reliability objectives, alert
 
 Reliability and chaos engineering: capacity sizing, autoscaling, self-healing systems, and intentionally breaking things to discover how what was built fails.
 
-## DataOps / DBRE
+### [ops-backup](ops-backup/)
 
-### [ops-dbadmin](ops-dbadmin/)
+Backup and disaster recovery: defining how much data can be lost and how long it takes to recover, and point-in-time recovery and off-site replication strategies.
 
-Database administration and scaling: replication, sharding, schema migrations, and the work of operating data engines in production.
-
-### [ops-dataops](ops-dataops/)
-
-Data pipelines and workflows: job orchestration, event streams, and data lake architecture.
+## Data & Databases
 
 ### [ops-modern-data-stack](ops-modern-data-stack/)
 
 Modern Data Stack (MDS): ingestion, storage, transformation, consumption, and cross-cutting tooling for data platforms.
 
+### [ops-dataops](ops-dataops/)
+
+Data pipelines and workflows: job orchestration, event streams, and data lake architecture.
+
 ### [ops-data-modeling](ops-data-modeling/)
 
 Data modeling for analytics: star schemas (facts and dimensions), materialized views, and modern columnar engines (DuckDB, ClickHouse, RisingWave, Arrow/Parquet, Polars).
 
-### [ops-backup](ops-backup/)
+### [ops-dbadmin](ops-dbadmin/)
 
-Backup and disaster recovery: defining how much data can be lost and how long it takes to recover, and point-in-time recovery and off-site replication strategies.
+Database administration and scaling: replication, sharding, schema migrations, and the work of operating data engines in production.
 
 ## Self-Hosted Services
 

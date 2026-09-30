@@ -78,7 +78,7 @@ Entrega y despliegue continuo: el repositorio como fuente de verdad, despliegues
 
 Infraestructura y configuración como código: la diferencia entre aprovisionar recursos y configurar servidores, la idempotencia, y el flujo declarativo que une la infraestructura con la aplicación.
 
-## SRE y Observabilidad
+## SRE, Observabilidad y Fiabilidad
 
 ### [ops-observability](ops-observability/)
 
@@ -92,27 +92,27 @@ Gestión de incidentes y alertas: definir objetivos de fiabilidad medibles, aler
 
 Fiabilidad y chaos engineering: dimensionamiento de capacidad, escalado automático, sistemas auto-reparables y romper a propósito para descubrir cómo falla lo construido.
 
-## DataOps / DBRE
+### [ops-backup](ops-backup/)
 
-### [ops-dbadmin](ops-dbadmin/)
+Backup y disaster recovery: definir cuánta data se puede perder y cuánto se tarda en volver, y las estrategias de recuperación punto a tiempo y replicación fuera de sitio.
 
-Administración y escalado de bases de datos: replicación, sharding, migraciones de esquema y el trabajo de operar motores de datos en producción.
-
-### [ops-dataops](ops-dataops/)
-
-Pipelines y flujos de datos: orquestación de trabajos, streams de eventos y la arquitectura de lago de datos.
+## Datos y Bases de Datos
 
 ### [ops-modern-data-stack](ops-modern-data-stack/)
 
 Modern Data Stack (MDS): ingestión, almacenamiento, transformación, consumo y herramientas transversales para plataformas de datos.
 
+### [ops-dataops](ops-dataops/)
+
+Pipelines y flujos de datos: orquestación de trabajos, streams de eventos y la arquitectura de lago de datos.
+
 ### [ops-data-modeling](ops-data-modeling/)
 
 Modelado de datos para analítica: esquema de estrella (hechos y dimensiones), vistas materializadas y motores columnares modernos (DuckDB, ClickHouse, RisingWave, Arrow/Parquet, Polars).
 
-### [ops-backup](ops-backup/)
+### [ops-dbadmin](ops-dbadmin/)
 
-Backup y disaster recovery: definir cuánta data se puede perder y cuánto se tarda en volver, y las estrategias de recuperación punto a tiempo y replicación fuera de sitio.
+Administración y escalado de bases de datos: replicación, sharding, migraciones de esquema y el trabajo de operar motores de datos en producción.
 
 ## Self-Hosted Services
 
