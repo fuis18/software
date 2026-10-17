@@ -40,6 +40,18 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
   <meta name="twitter:title" content={pageTitle}>
   <meta name="twitter:description" content={description}>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script is:inline>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var theme = stored === 'light' || stored === 'dark'
+        ? stored
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#f7f9fc' : '#0d0f14');
+    })();
+  </script>
 </head>
 <body>
   <div class="container">

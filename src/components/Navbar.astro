@@ -160,10 +160,6 @@ const githubUrl = 'https://github.com/fuis18/software/';
     height: 18px;
   }
 
-  .icon-moon {
-    display: none;
-  }
-
   .brand {
     grid-area: brand;
     display: inline-flex;
@@ -318,6 +314,32 @@ const githubUrl = 'https://github.com/fuis18/software/';
           document.cookie = `lang=${lang};path=/;max-age=31536000`;
         }
       });
+    });
+  }
+
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    const applyTheme = (theme, persist) => {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (persist) {
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+      }
+      themeToggle.setAttribute(
+        'aria-label',
+        theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme',
+      );
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#f7f9fc' : '#0d0f14');
+    };
+
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'light' ? 'light' : 'dark', false);
+
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      applyTheme(isLight ? 'dark' : 'light', true);
     });
   }
 </script>
