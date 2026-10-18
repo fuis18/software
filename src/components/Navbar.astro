@@ -7,11 +7,6 @@ const currentPath = Astro.url.pathname;
 const langMatch = currentPath.match(/\/(es|en)\//);
 const currentLang = langMatch ? langMatch[1] : 'es';
 
-const otherLang = currentLang === 'es' ? 'en' : 'es';
-const otherLangLabel = currentLang === 'es' ? 'EN' : 'ES';
-
-const switchPath = currentPath.replace(`/${currentLang}/`, `/${otherLang}/`);
-
 const links = [
   { label: 'Dev', href: `${base}${currentLang}/dev/` },
   { label: 'Sec', href: `${base}${currentLang}/sec/` },
@@ -242,7 +237,7 @@ const githubUrl = 'https://github.com/fuis18/software/';
     color: var(--accent);
   }
 
-  @media (max-width: 460px) {
+  @media (max-width: 560px) {
     .navbar {
       grid-template-areas:
         "brand actions"
@@ -269,22 +264,24 @@ const githubUrl = 'https://github.com/fuis18/software/';
   let lastY = window.scrollY;
   let ticking = false;
 
-  window.addEventListener(
-    'scroll',
-    () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (Math.abs(y - lastY) > DELTA) {
-          header.classList.toggle('nav-hidden', y > lastY && y > HIDE_AT);
-          lastY = y;
-        }
-        ticking = false;
-      });
-    },
-    { passive: true },
-  );
+  if (header) {
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          if (Math.abs(y - lastY) > DELTA) {
+            header.classList.toggle('nav-hidden', y > lastY && y > HIDE_AT);
+            lastY = y;
+          }
+          ticking = false;
+        });
+      },
+      { passive: true },
+    );
+  }
 
   const langToggle = document.querySelector('.lang-toggle');
   const langDropdown = document.querySelector('.lang-dropdown');
@@ -293,16 +290,22 @@ const githubUrl = 'https://github.com/fuis18/software/';
     langToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = langDropdown.classList.toggle('open');
-      langToggle.setAttribute('aria-expanded', isOpen);
+      langToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    document.addEventListener('click', () => {
-      langDropdown.classList.remove('open');
-      langToggle.setAttribute('aria-expanded', 'false');
+    document.addEventListener('click', (e) => {
+      if (!langDropdown.contains(e.target) && !langToggle.contains(e.target)) {
+        langDropdown.classList.remove('open');
+        langToggle.setAttribute('aria-expanded', 'false');
+      }
     });
 
-    langDropdown.addEventListener('click', (e) => {
-      e.stopPropagation();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && langDropdown.classList.contains('open')) {
+        langDropdown.classList.remove('open');
+        langToggle.setAttribute('aria-expanded', 'false');
+        langToggle.focus();
+      }
     });
 
     const langOptions = document.querySelectorAll('.lang-option');
@@ -310,7 +313,9 @@ const githubUrl = 'https://github.com/fuis18/software/';
       option.addEventListener('click', () => {
         const lang = option.getAttribute('data-lang');
         if (lang) {
-          localStorage.setItem('lang', lang);
+          try {
+            localStorage.setItem('lang', lang);
+          } catch (e) {}
           document.cookie = `lang=${lang};path=/;max-age=31536000`;
         }
       });
