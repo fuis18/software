@@ -208,7 +208,7 @@ importers:
   .:
     dependencies:
       '@astrojs/sitemap':
-        specifier: ^3.7.3
+        specifier: 3.7.3
         version: 3.7.3
       astro:
         specifier: 7.2.0
