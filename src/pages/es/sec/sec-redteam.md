@@ -20,7 +20,7 @@ La seguridad ofensiva es la disciplina de encontrar y explotar debilidades antes
 
 - **CCST Cybersecurity** — la puerta de entrada técnica: enseña cómo funcionan las redes de forma segura, los principios básicos de ciberseguridad y la protección esencial de puntos de acceso.
 - **Security+** — el punto de partida: el vocabulario de la seguridad (confidencialidad, integridad, disponibilidad), criptografía básica, redes seguras y gestión de riesgo. Es la base para cualquiera de las otras.
-- **PenTest+** — pasa a la práctica: planificar un pentest, escanear, explotar vulnerabilidades, ganar acceso y escribir el reporte final. Complementa las habilidades de [sec-tools](https://www.google.com/search?q=../sec-tools/).
+- **PenTest+** — pasa a la práctica: planificar un pentest, escanear, explotar vulnerabilidades, ganar acceso y escribir el reporte final. Complementa las habilidades de [sec-tools](../sec-tools/).
 - **CEH** — la perspectiva del atacante: metodologías sistemáticas para simular ciberataques, identificar brechas y comprender el uso de herramientas ofensivas para fortalecer la defensa.
 - **CyberOps Associate** — el trabajo en el SOC: monitoreo continuo, análisis de eventos de seguridad, correlación de datos y respuesta operativa rápida ante intrusiones.
 - **CISSP** — el salto a la gestión: ya no se trata de explotar sino de diseñar, operar y gobernar la seguridad de una organización. Es la certificación de quien dirige la función de seguridad, no de quien está en el teclado.

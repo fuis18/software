@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/Layout.astro
-eyebrow: Sec
-title: Sec Privacy
+eyebrow: Ops
+title: Ops Privacy
 subtitle: Stack propio de privacidad y self-hosting
 ---
 
@@ -9,7 +9,7 @@ La forma más directa de proteger los propios datos es no entregarlos: servicios
 
 ## El patrón
 
-Cada pieza reemplaza un servicio en la nube por uno propio, corriendo en tu infraestructura — la misma base de [ops-selfhosted](../../ops/ops-selfhosted/), pero con la privacidad como objetivo.
+Cada pieza reemplaza un servicio en la nube por uno propio, corriendo en tu infraestructura — la misma base de [ops-selfhosted](../ops-selfhosted/), pero con la privacidad como objetivo.
 
 | Servicio que se reemplaza | Alternativa self-hosted                 |
 | ------------------------- | --------------------------------------- |
@@ -24,7 +24,7 @@ Cada pieza reemplaza un servicio en la nube por uno propio, corriendo en tu infr
 
 ### nginx como proxy
 
-La puerta de entrada de todo el stack: nginx como proxy reverso recibe el tráfico, termina TLS y lo enruta a cada servicio interno — sin exponer puertos individuales al exterior. La mecánica completa está en [ops-traffic](../../ops/ops-traffic/).
+La puerta de entrada de todo el stack: nginx como proxy reverso recibe el tráfico, termina TLS y lo enruta a cada servicio interno — sin exponer puertos individuales al exterior. La mecánica completa está en [ops-traffic](../ops-traffic/).
 
 ### SearXNG
 
@@ -49,7 +49,7 @@ El **navegador** con privacidad por diseño: la versión hardened de Firefox que
 ## El hilo conductor
 
 - **nginx** une todas las piezas detrás de un solo punto de entrada con TLS.
-- **El acceso desde afuera** — si se quiere llegar al stack fuera de casa, el patrón es el mismo de toda la casa: túneles y mallas personales, ver [ops-sdn](../../ops/ops-sdn/).
-- **El respaldo** — los datos de correo, contactos y calendario se respaldan como cualquier otro servicio: ver [ops-backup](../../ops/ops-backup/).
+- **El acceso desde afuera** — si se quiere llegar al stack fuera de casa, el patrón es el mismo de toda la casa: túneles y mallas personales, ver [ops-sdn](../ops-sdn/).
+- **El respaldo** — los datos de correo, contactos y calendario se respaldan como cualquier otro servicio: ver [ops-backup](../ops-backup/).
 
-> La privacidad self-hosted es una decisión de arquitectura, no una herramienta: cada servicio que se saca de la nube de un tercero es un flujo de datos que deja de acumularse afuera — y cada pieza que se corre pasa a ser infraestructura que hay que mantener, el mismo trabajo que describe toda la sección [ops](../../ops/).
+> La privacidad self-hosted es una decisión de arquitectura, no una herramienta: cada servicio que se saca de la nube de un tercero es un flujo de datos que deja de acumularse afuera — y cada pieza que se corre pasa a ser infraestructura que hay que mantener, el mismo trabajo que describe toda la sección [ops](../).

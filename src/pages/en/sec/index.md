@@ -4,7 +4,7 @@ title: Sec
 subtitle: Network, system, and supply chain security
 ---
 
-Network, system, and software supply chain security: the learning path and offensive red team tools (reconnaissance, exploitation, lateral movement), networking fundamentals and automation, container and pipeline security, static code analysis, identity management (IAM), and a personal privacy and self-hosting stack.
+Network, system, and software supply chain security: the learning path and offensive red team tools (reconnaissance, exploitation, lateral movement), networking fundamentals and automation, container and pipeline security, static code analysis, and identity management (IAM).
 
 ## Security Concepts
 
@@ -24,7 +24,7 @@ Offensive security learning path: certifications (CompTIA Security+, CompTIA Pen
 
 ### [sec-tools](sec-tools/)
 
-Red team tools: Burp Suite and OWASP ZAP/Caido/FoxyProxy for web traffic interception, Wfuzz/gobuster for fuzzing, Nmap for reconnaissance, BloodHound/CrackMapExec/NetExec/Responder/Kerbrute for Active Directory attacks, whatweb/wappalyzer for fingerprinting, and John the Ripper for password cracking.
+Red team tools grouped by what they solve: web traffic interception, reconnaissance and fuzzing, exploitation and C2, Active Directory attacks, workflow helper scripts, Python exploitation libraries, fingerprinting, and password cracking.
 
 ### [sec-vulnerabilities](sec-vulnerabilities/)
 
@@ -48,12 +48,8 @@ Runtime security: syscall, process, and suspicious access monitoring with Falco 
 
 Identity and access management: what IAM is, and the path to AWS Security Specialty certification.
 
-## Network and Privacy
+## Network
 
 ### [sec-network](sec-network/)
 
 Networking fundamentals and automation: TCP/IP, switching, routing, firewall, VPN, DNS, HTTP, FTP/SFTP, SSL/TLS, SSH, analysis with Wireshark and NetFlow (softflowd, nfdump, SiLK, Akvorado), CCNA and DevNet learning path (with sandbox), automation with Netmiko and NAPALM, and Cisco platforms like Meraki and DNA Center.
-
-### [sec-privacy](sec-privacy/)
-
-Personal privacy and self-hosting stack: nginx as proxy, SearXNG as private search engine, Matrix for messaging, CardDAV/CalDAV for contacts and calendar, email on OpenBSD (Postfix/OpenSMTPD), and Mullvad Browser.

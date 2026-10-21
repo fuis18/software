@@ -5,7 +5,9 @@ title: Software Ecosystem
 subtitle: Dev · Sec · Ops · AI · Games
 ---
 
-El ecosistema del software moderno, ordenado por disciplina: el desarrollo de aplicaciones (web, backend, móvil y de escritorio), la seguridad ofensiva y de la cadena de suministro, la administración de infraestructura, los modelos y herramientas de inteligencia artificial, y el desarrollo de videojuegos.
+El ecosistema del software moderno, ordenado por disciplina: desarrollo de aplicaciones, seguridad ofensiva y de la cadena de suministro, administración de infraestructura, inteligencia artificial y desarrollo de videojuegos.
+
+Una base de conocimiento para resolver decisiones técnicas: qué es cada herramienta, qué resuelve y cuándo elegirla. Se enfoca en el stack vigente de cada disciplina — las herramientas en uso y en desarrollo activo hoy.
 
 ## [Dev](dev/)
 

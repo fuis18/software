@@ -119,3 +119,7 @@ Administración y escalado de bases de datos: replicación, sharding, migracione
 ### [ops-selfhosted](ops-selfhosted/)
 
 Servicios propios para la casa o infraestructura propia: media servers, la automatización que los rodea, descargadores y las utilidades que sostienen la red del hogar.
+
+### [ops-privacy](ops-privacy/)
+
+Stack propio de privacidad y self-hosting: nginx como proxy, SearXNG como buscador privado, Matrix para mensajería, CardDAV/CalDAV para contactos y calendario, correo sobre OpenBSD (Postfix/OpenSMTPD), y Mullvad Browser.

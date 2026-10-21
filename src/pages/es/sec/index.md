@@ -4,7 +4,7 @@ title: Sec
 subtitle: Seguridad de redes, sistemas y cadena de suministro
 ---
 
-Seguridad de redes, sistemas y de la cadena de suministro de software: el camino formativo y las herramientas ofensivas de red team (reconocimiento, explotación, movimiento lateral), los fundamentos de networking y su automatización, la seguridad de contenedores y pipelines, el análisis estático de código, gestión de identidades (IAM), y un stack propio de privacidad y self-hosting.
+Seguridad de redes, sistemas y de la cadena de suministro de software: el camino formativo y las herramientas ofensivas de red team (reconocimiento, explotación, movimiento lateral), los fundamentos de networking y su automatización, la seguridad de contenedores y pipelines, el análisis estático de código, y gestión de identidades (IAM).
 
 ## Conceptos de Seguridad
 
@@ -24,7 +24,7 @@ Camino formativo en seguridad ofensiva: certificaciones (CompTIA Security+, Comp
 
 ### [sec-tools](sec-tools/)
 
-Herramientas de red team: Burp Suite y OWASP ZAP/Caido/FoxyProxy para interceptar tráfico web, Wfuzz/gobuster para fuzzing, Nmap para reconocimiento, BloodHound/CrackMapExec/NetExec/Responder/Kerbrute para atacar Active Directory, whatweb/wappalyzer para fingerprinting, y John the Ripper para crackear contraseñas.
+Herramientas de red team agrupadas por lo que resuelven: interceptación de tráfico web, reconocimiento y fuzzing, explotación y C2, ataques a Active Directory, scripts helper de flujo de trabajo, librerías de explotación en Python, fingerprinting y crackeo de contraseñas.
 
 ### [sec-vulnerabilities](sec-vulnerabilities/)
 
@@ -48,12 +48,8 @@ Seguridad en tiempo de ejecución: monitoreo de syscalls, procesos y accesos sos
 
 Gestión de identidades y accesos: qué es IAM, y el camino hacia la certificación AWS Security Specialty.
 
-## Red y Privacidad
+## Red
 
 ### [sec-network](sec-network/)
 
 Fundamentos de networking y su automatización: TCP/IP, switching, routing, firewall, VPN, DNS, HTTP, FTP/SFTP, SSL/TLS, SSH, análisis con Wireshark y de flujos NetFlow (softflowd, nfdump, SiLK, Akvorado), el camino CCNA y DevNet (con su sandbox), automatización con Netmiko y NAPALM, y plataformas Cisco como Meraki y DNA Center.
-
-### [sec-privacy](sec-privacy/)
-
-Stack propio de privacidad y self-hosting: nginx como proxy, SearXNG como buscador privado, Matrix para mensajería, CardDAV/CalDAV para contactos y calendario, correo sobre OpenBSD (Postfix/OpenSMTPD), y Mullvad Browser.

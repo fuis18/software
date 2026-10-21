@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/Layout.astro
-eyebrow: Sec
-title: Sec Privacy
+eyebrow: Ops
+title: Ops Privacy
 subtitle: Own privacy stack and self-hosting
 ---
 
@@ -9,7 +9,7 @@ The most direct way to protect your own data is not to hand it over: services th
 
 ## The Pattern
 
-Each piece replaces a cloud service with your own, running on your infrastructure — the same foundation as [ops-selfhosted](../../ops/ops-selfhosted/), but with privacy as the objective.
+Each piece replaces a cloud service with your own, running on your infrastructure — the same foundation as [ops-selfhosted](../ops-selfhosted/), but with privacy as the objective.
 
 | Service being replaced      | Self-hosted alternative                |
 | --------------------------- | -------------------------------------- |
@@ -24,7 +24,7 @@ Each piece replaces a cloud service with your own, running on your infrastructur
 
 ### nginx as Reverse Proxy
 
-The entry point for the entire stack: nginx as a reverse proxy receives traffic, terminates TLS, and routes it to each internal service — without exposing individual ports to the outside. The full mechanics are in [ops-traffic](../../ops/ops-traffic/).
+The entry point for the entire stack: nginx as a reverse proxy receives traffic, terminates TLS, and routes it to each internal service — without exposing individual ports to the outside. The full mechanics are in [ops-traffic](../ops-traffic/).
 
 ### SearXNG
 
@@ -49,7 +49,7 @@ The **browser** with privacy by design: the hardened version of Firefox that use
 ## The Common Thread
 
 - **nginx** ties all pieces together behind a single entry point with TLS.
-- **External access** — if you want to reach the stack from outside the house, the pattern is the same as everywhere else: tunnels and personal meshes, see [ops-sdn](../../ops/ops-sdn/).
-- **Backup** — mail, contacts, and calendar data are backed up like any other service: see [ops-backup](../../ops/ops-backup/).
+- **External access** — if you want to reach the stack from outside the house, the pattern is the same as everywhere else: tunnels and personal meshes, see [ops-sdn](../ops-sdn/).
+- **Backup** — mail, contacts, and calendar data are backed up like any other service: see [ops-backup](../ops-backup/).
 
-> Self-hosted privacy is an architecture decision, not a tool: every service pulled out of a third party's cloud is a data flow that stops accumulating outside — and every piece that runs becomes infrastructure that needs maintaining, the same work described throughout the [ops](../../ops/) section.
+> Self-hosted privacy is an architecture decision, not a tool: every service pulled out of a third party's cloud is a data flow that stops accumulating outside — and every piece that runs becomes infrastructure that needs maintaining, the same work described throughout the [ops](../) section.
