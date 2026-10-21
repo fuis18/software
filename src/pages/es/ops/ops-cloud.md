@@ -48,6 +48,19 @@ Entre la nube IaaS (aprovisionar VMs) y operarlo todo a mano, existe el modelo P
 - **BaaS (Backend as a Service)** va un paso más allá: además del hosting, provee servicios de backend listos — base de datos, auth, storage y APIs. **Supabase** es el BaaS open source de referencia (PostgreSQL, Auth, Realtime, Storage), self-hostable o gestionado.
 - **LocalStack** emula la API de AWS en local: permite desarrollar y testear contra S3, Lambda, DynamoDB y demás servicios sin pagar ni tocar la nube real, antes de desplegar contra AWS.
 
+### PaaS open source self-hosted
+
+La misma idea de PaaS, pero corriendo en infraestructura propia: se instala en un servidor (o VPS) y desde ahí se despliegan los proyectos con git, Docker y HTTPS automático.
+
+| Plataforma  | Perfil                       | Destaca en                                                              |
+| ----------- | ---------------------------- | ----------------------------------------------------------------------- |
+| **Coolify** | PaaS self-hosted open source | Deploy por git/Docker, bases de datos gestionadas y backups integrados  |
+| **Dokploy** | PaaS self-hosted open source | Ligero y simple, con soporte de Docker Compose y múltiples servidores   |
+
+- **Coolify** es el más completo de los dos: además de desplegar apps (Node, Python, contenedores), gestiona bases de datos, backups y certificados desde una sola interfaz.
+- **Dokploy** apunta a lo mismo con menos superficie: despliegues simples, Docker Compose y la posibilidad de administrar varios servidores desde un panel.
+- **Cuándo elegirlo:** cuando se quiere la experiencia de Heroku/Render sin depender de un proveedor — útil para proyectos propios o equipos chicos que ya tienen un servidor.
+
 ## FinOps
 
 La disciplina de gestionar el costo de la nube, porque a diferencia del hardware propio, en la nube cada recurso encendido es consumo facturado.

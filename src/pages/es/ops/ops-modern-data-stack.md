@@ -20,6 +20,7 @@ Herramientas encargadas de extraer y cargar datos desde las fuentes hacia el alm
 | [Vector (Datadog)](https://vector.dev/) | Ingestión de eventos, logs y streaming | Alta capacidad para datos de eventos, logs y streaming. La telemetría operativa vive en [ops-observability](../ops-observability/). |
 | [Estuary Flow](https://estuary.dev/) | Ingestión en tiempo real (CDC) | Change Data Capture (CDC) con baja latencia, desarrollado en Rust. |
 | [Meltano](https://meltano.com/) | ELT con conectores Singer | Extracción y carga desde APIs SaaS y bases de datos hacia warehouses/lakehouses. |
+| [Airbyte](https://airbyte.com/) | Integración de datos (ELT) con conectores | Catálogo amplio de conectores para extraer de APIs SaaS, bases de datos y archivos hacia warehouses/lakehouses; la alternativa open source a Fivetran. |
 
 ## 2. Almacenamiento (Warehouse/Lakehouse)
 

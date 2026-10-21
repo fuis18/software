@@ -48,6 +48,19 @@ Between cloud IaaS (provisioning VMs) and operating everything manually, there i
 - **BaaS (Backend as a Service)** goes a step further: beyond hosting, it provides ready-made backend services — database, auth, storage, and APIs. **Supabase** is the reference open-source BaaS (PostgreSQL, Auth, Realtime, Storage), self-hostable or managed.
 - **LocalStack** emulates the AWS API locally: allows developing and testing against S3, Lambda, DynamoDB, and other services without paying or touching the real cloud, before deploying against AWS.
 
+### Open Source Self-Hosted PaaS
+
+The same PaaS idea, but running on your own infrastructure: install it on a server (or VPS) and deploy projects from there with git, Docker, and automatic HTTPS.
+
+| Platform    | Profile                      | Stands out in                                                          |
+| ----------- | ---------------------------- | ----------------------------------------------------------------------- |
+| **Coolify** | Open source self-hosted PaaS | Git/Docker deploys, managed databases, and built-in backups            |
+| **Dokploy** | Open source self-hosted PaaS | Lightweight and simple, with Docker Compose and multi-server support   |
+
+- **Coolify** is the more complete of the two: beyond deploying apps (Node, Python, containers), it manages databases, backups, and certificates from a single interface.
+- **Dokploy** aims for the same with less surface: simple deployments, Docker Compose, and the ability to manage multiple servers from one panel.
+- **When to choose it:** when you want the Heroku/Render experience without depending on a provider — useful for personal projects or small teams that already own a server.
+
 ## FinOps
 
 The discipline of managing cloud costs, because unlike owned hardware, in the cloud every running resource is billed consumption.

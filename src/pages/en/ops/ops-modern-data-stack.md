@@ -20,6 +20,7 @@ Tools responsible for extracting and loading data from sources into storage, eit
 | [Vector (Datadog)](https://vector.dev/) | Event, log, and streaming ingestion | High-throughput ingestion of events, logs, and streaming data. Operational telemetry lives in [ops-observability](../ops-observability/). |
 | [Estuary Flow](https://estuary.dev/) | Real-time ingestion (CDC) | Change Data Capture (CDC) with low-latency streaming, built in Rust. |
 | [Meltano](https://meltano.com/) | ELT with Singer connectors | Extract and load data from SaaS APIs and databases directly into data warehouses/lakehouses. |
+| [Airbyte](https://airbyte.com/) | ELT data integration with connectors | Broad connector catalog to extract from SaaS APIs, databases, and files into warehouses/lakehouses; the open source alternative to Fivetran. |
 
 ## 2. Storage (Warehouse/Lakehouse)
 
