@@ -19,6 +19,7 @@ subtitle: Librerías de apoyo para construir la interfaz
 | URL state        | **nuqs**             | Estado type-safe en URL query params: como useState pero en la URL |
 | Drag & drop      | **DnDKit**           | Interacciones de drag & drop accesibles                           |
 | Gráficos         | **Recharts**         | Visualización de datos y gráficos                                 |
+| Nodos y diagramas | **React Flow**      | Interfaces de nodos y diagramas de flujo interactivos             |
 | actions history  | **travels**          | Funcionalidad de hacer & deshacer (undo/redo)                     |
 | Office           | **libpdf**           | CRUD de PDF: crear, leer, editar y manipular archivos PDF         |
 

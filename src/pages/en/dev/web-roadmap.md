@@ -11,7 +11,7 @@ The recommended order for frontend web development:
 
 ### 1. Fundamentals
 
-- **HTML/CSS**: semantic markup, flexbox, grid, responsive design
+- **HTML/CSS**: semantic markup, flexbox, grid, responsive design — the living standard is [HTML Living Standard](https://html.spec.whatwg.org/)
 - **JavaScript**: ES6+, DOM manipulation, async/await, modules
 - **TypeScript**: static typing, interfaces, generics
 
@@ -51,6 +51,7 @@ Once comfortable with a framework, add a meta-framework:
 
 ## Resources
 
+- [HTML Living Standard](https://html.spec.whatwg.org/)
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [frontendmasters.com](https://frontendmasters.com/)
 - [Total TypeScript](https://www.totaltypescript.com/)

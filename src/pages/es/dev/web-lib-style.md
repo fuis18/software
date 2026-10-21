@@ -30,5 +30,6 @@ subtitle: Librerías de apoyo visual para la interfaz
 | Notificaciones | **Sonner**           | Toasts / notificaciones                 |
 | Notificaciones | **Sileo**            | Toasts / notificaciones (alternativa)   |
 | Modales        | **React Aria Modal** | Modales accesibles                      |
+| Modales        | **MicroModal**       | Modales accesibles en JavaScript vanilla |
 | Sliders        | **Flicking**         | Carruseles / sliders                    |
-| Dashboards     | **gridstakJS**       | Grillas arrastrables y redimensionables |
+| Dashboards     | **gridstack.js**     | Grillas arrastrables y redimensionables |

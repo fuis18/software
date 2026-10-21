@@ -9,7 +9,7 @@ subtitle: Roadmap para frontend
 
 ### 0. Conceptos
 
-- **HTML semántico** — qué etiqueta comunica qué significado (no solo qué se ve igual), estructura de documento, accesibilidad básica.
+- **HTML semántico** — qué etiqueta comunica qué significado (no solo qué se ve igual), estructura de documento, accesibilidad básica; la referencia oficial es el [HTML Living Standard](https://html.spec.whatwg.org/).
 - **CSS** — modelo de caja, flexbox, grid, especificidad y cascada: cómo se posiciona y distribuye todo antes de sumar cualquier librería de estilos.
 - **JavaScript** — el DOM y cómo se manipula, eventos, closures, asincronía (callbacks, promesas, `async/await`).
 

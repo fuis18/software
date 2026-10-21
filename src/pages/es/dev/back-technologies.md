@@ -26,6 +26,17 @@ subtitle: Formas de comunicación entre servicios
 
 **Cómo elegir:** RabbitMQ para colas de trabajo clásicas (procesar algo una vez, con reintentos). Kafka cuando el volumen de eventos es alto y varios consumidores necesitan leer el mismo stream (analytics, event sourcing). NATS cuando la prioridad es latencia mínima por sobre garantías de entrega. Redis Pub/Sub cuando ya hay Redis como cache y no se justifica sumar infraestructura nueva solo para mensajería simple.
 
+## Orquestación de jobs y workflows
+
+Las colas resuelven el transporte de un mensaje; la orquestación resuelve el flujo completo: pasos que dependen unos de otros, reintentos, esperas y estado que sobrevive entre ejecuciones.
+
+| Name        | Tipo                      | Uso principal                                                                    |
+| ----------- | ------------------------- | -------------------------------------------------------------------------------- |
+| **Inngest** | Orquestación de workflows | Funciones durables por evento, con pasos, reintentos y esperas                   |
+
+- **Inngest** es una plataforma de orquestación para tareas en background: las funciones se definen como pasos (`step.run`) y el runtime persiste el estado entre ellos, así un reintento retoma donde quedó en vez de repetir todo el flujo.
+- **Cuándo conviene:** cuando el trabajo es un flujo de varios pasos con dependencias, delays o manejo de fallos (un onboarding, un pipeline de facturación) y no solo una tarea aislada en una cola.
+
 ## Webhooks
 
 Un **webhook** es un callback por HTTP: el servicio que produce el evento le hace una request (normalmente `POST` con un payload JSON) a una URL que el consumidor expuso de antemano, cada vez que algo ocurre. A diferencia de las colas y los streams, no hay infraestructura intermedia — el productor y el consumidor se hablan por HTTP directo.

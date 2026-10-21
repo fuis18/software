@@ -26,6 +26,17 @@ subtitle: Communication methods between services
 
 **How to choose:** RabbitMQ for classic work queues (process something once, with retries). Kafka when event volume is high and multiple consumers need to read the same stream (analytics, event sourcing). NATS when latency is the top priority over delivery guarantees. Redis Pub/Sub when Redis is already used as cache and it's not worth adding new infrastructure just for simple messaging.
 
+## Background Job and Workflow Orchestration
+
+Queues solve the transport of a message; orchestration solves the full flow: steps that depend on one another, retries, waits, and state that survives between runs.
+
+| Name        | Type                   | Primary use                                                                  |
+| ----------- | ---------------------- | ----------------------------------------------------------------------------- |
+| **Inngest** | Workflow orchestration | Durable functions triggered by events, with steps, retries, and waits        |
+
+- **Inngest** is an orchestration platform for background tasks: functions are defined as steps (`step.run`) and the runtime persists state between them, so a retry resumes where it left off instead of repeating the entire flow.
+- **When it's worth it:** when the work is a multi-step flow with dependencies, delays, or failure handling (onboarding, billing pipelines) rather than a single isolated task in a queue.
+
 ## Webhooks
 
 A **webhook** is an HTTP callback: the service that produces the event makes a request (usually `POST` with a JSON payload) to a URL that the consumer exposed in advance, whenever something happens. Unlike queues and streams, there's no intermediate infrastructure — the producer and consumer talk directly via HTTP.

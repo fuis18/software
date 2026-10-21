@@ -125,3 +125,5 @@ Media queries de uso frecuente, sin depender de JS para detectarlas.
 - `display-mode: fullscreen` — estilos específicos cuando la app corre como PWA en fullscreen.
 
 ## Novedades
+
+- **[gridlanes.webkit.org](https://gridlanes.webkit.org/)** — demo interactiva de WebKit sobre el nombrado de líneas en CSS Grid: escribir reglas y ver en tiempo real cómo las interpreta el navegador (`grid-template-columns: [inicio] 1fr [medio] 1fr [fin]`).

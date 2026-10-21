@@ -30,5 +30,6 @@ subtitle: Visual support libraries for the interface
 | Notifications   | **Sonner**           | Toasts / notifications                 |
 | Notifications   | **Sileo**            | Toasts / notifications (alternative)   |
 | Modals          | **React Aria Modal** | Accessible modals                      |
+| Modals          | **MicroModal**       | Accessible modals in vanilla JavaScript |
 | Sliders         | **Flicking**         | Carousels / sliders                    |
-| Dashboards      | **gridstakJS**       | Draggable and resizable grids          |
+| Dashboards      | **gridstack.js**     | Draggable and resizable grids          |

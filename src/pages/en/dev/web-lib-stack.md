@@ -19,6 +19,7 @@ subtitle: Supporting libraries for building the interface
 | URL state        | **nuqs**           | Type-safe URL query params state: like useState but in the URL      |
 | Drag & drop      | **DnDKit**         | Accessible drag & drop interactions                                  |
 | Charts           | **Recharts**       | Data visualization and charts                                        |
+| Nodes & diagrams | **React Flow**     | Interactive node-based UIs and flow diagrams                         |
 | Actions history  | **travels**        | Undo/redo functionality                                              |
 | Office           | **libpdf**         | PDF CRUD: create, read, edit, and manipulate PDF files               |
 
