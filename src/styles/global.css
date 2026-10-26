@@ -34,7 +34,11 @@
 html[data-theme='light'] .icon-sun { display: none; }
 html[data-theme='light'] .icon-moon { display: block; }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background: var(--bg);
