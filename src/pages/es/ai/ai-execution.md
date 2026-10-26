@@ -48,5 +48,5 @@ Sea cual sea el motor o proveedor que elijas, el mismo puñado de conceptos de c
 ## Relacionados
 
 - [ai-models](../ai-models/) — Qué modelos ejecutar.
-- [ai-usage](../ai-usage/) — Interfaces, agentes, MCP, n8n.
+- [ai-usage](../ai-usage/) — Interfaces, agentes, n8n.
 - [ai-creation](../ai-creation/) — Cuantización, serving.

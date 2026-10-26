@@ -30,7 +30,11 @@ Ejecución de modelos en local y uso de APIs y proveedores, gateways, routers y 
 
 ### [ai-usage](ai-usage/)
 
-Interfaces para programar, agentes, MCP, skills, n8n, datos para IA (RAG/CAG, bases vectoriales) y flujos multimedia.
+Interfaces para programar, agentes, n8n, datos para IA (RAG/CAG, bases vectoriales) y flujos multimedia.
+
+### [ai-mcp](ai-mcp/)
+
+Servidores MCP y skills de agentes: qué es cada uno, cómo se instalan y la seguridad de revisar skills antes de añadirlas.
 
 ## Crear
 
@@ -48,4 +52,4 @@ Neuroevolución (NEAT), transición de evolución a aprendizaje por refuerzo y r
 
 ### [ai-resources](ai-resources/)
 
-Herramientas (NotebookLM), referencias de skills y MCP, y cursos curated (MCP, n8n, construir LLMs desde cero).
+Herramientas (NotebookLM) y cursos curated (MCP, n8n, construir LLMs desde cero).

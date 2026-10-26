@@ -48,5 +48,5 @@ Whatever engine or provider you pick, the same handful of configuration concepts
 ## Related
 
 - [ai-models](../ai-models/) — Which models to run.
-- [ai-usage](../ai-usage/) — Coding interfaces, agents, MCP, n8n.
+- [ai-usage](../ai-usage/) — Coding interfaces, agents, n8n.
 - [ai-creation](../ai-creation/) — Quantization, serving from training artifacts.

@@ -30,7 +30,11 @@ Running models locally and using APIs and providers, gateways, routers, and prac
 
 ### [ai-usage](ai-usage/)
 
-Interfaces for coding, agents, MCP, skills, n8n, data for AI (RAG/CAG, vector DBs), and multimedia workflows.
+Interfaces for coding, agents, n8n, data for AI (RAG/CAG, vector DBs), and multimedia workflows.
+
+### [ai-mcp](ai-mcp/)
+
+MCP servers and agent skills: what each one is, how they install, and the habit of scanning skills before adding them.
 
 ## Create
 
@@ -48,4 +52,4 @@ Neuroevolution (NEAT), transition from evolution to reinforcement learning, and 
 
 ### [ai-resources](ai-resources/)
 
-Tools (NotebookLM), skills and MCP references, and curated courses (MCP, n8n, building LLMs from scratch).
+Tools (NotebookLM) and curated courses (MCP, n8n, building LLMs from scratch).

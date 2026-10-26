@@ -2,28 +2,16 @@
 layout: ../../../layouts/Layout.astro
 eyebrow: IA
 title: Recursos de IA
-subtitle: Herramientas, skills/MCP y cursos
+subtitle: Herramientas y cursos
 ---
 
-Recursos prácticos: herramientas, skills para agentes, referencias MCP y cursos curated.
+Recursos prácticos: herramientas de apoyo y cursos curated. Los servidores MCP y skills de agentes viven en [ai-mcp](../ai-mcp/).
 
 ## 1. Herramientas
 
 - **[NotebookLM](https://notebooklm.google.com/)** — Investigación "grounded": subes tus fuentes y responde citándolas, con resúmenes en audio. Para estudiar papers y documentos sin perderte entre ellos.
-- **[Context7](https://context7.com/)** — Docs de librerías siempre actualizadas a la versión real instalada; se usa vía `npx ctx7 setup` o como servidor MCP. El antídoto contra la documentación desactualizada de tu LLM.
-- **[awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers)** — Lista curada de servidores MCP: el punto de partida para descubrir qué ya está conectado antes de escribir el tuyo.
-- **[skills.sh](https://skills.sh/)** — Marketplace de skills para agentes: descubrimiento e instalación con `npx skills add owner/repo`.
-- **[skillspector](https://github.com/NVIDIA/skillspector)** — Escáner de seguridad de NVIDIA que revisa un skill antes de instalarlo. El hábito que evita sorpresas al añadir skills de terceros.
 
-## 2. Skills y MCP
-
-- **[skills.sh](https://skills.sh/)** — Instalación con `npx skills add owner/repo`, sobre el estándar SKILL.md: skills portables entre agentes que hablen el mismo formato.
-- **[autoskills](https://github.com/cybersaksham/autoskills)** — Genera e instala skills con `npx autoskills@latest` sin escribir el SKILL.md a mano.
-- **[Uncodixfy](https://github.com/cyxzdev/Uncodixfy)** — Skill instalable con `npx skills add cyxzdev/Uncodixfy`.
-- **[HyperFrames skills](https://github.com/heygen-com/hyperframes)** — Skills de HyperFrames para vídeo agent-native; se instalan con `npx skills add heygen-com/hyperframes --full-depth`. Ver [ai-usage](../ai-usage/).
-- **[Context7 MCP](https://context7.com/docs/resources/all-clients)** — Configuración de Context7 por cliente (header auth o `--api-key`) para conectarlo a tu editor o agente.
-
-## 3. Cursos
+## 2. Cursos
 
 ### MCP
 
@@ -46,7 +34,8 @@ Recursos prácticos: herramientas, skills para agentes, referencias MCP y cursos
 
 ## Relacionados
 
-- [ai-usage](../ai-usage/) — Agentes, MCP, skills, n8n práctico.
+- [ai-mcp](../ai-mcp/) — Servidores MCP y skills de agentes.
+- [ai-usage](../ai-usage/) — Interfaces para programar, agentes, n8n, datos y multimedia.
 - [ai-execution](../ai-execution/) — Motores locales y proveedores.
 - [ai-creation](../ai-creation/) — Construir/optimizar modelos.
 - [ai-mathematics](../ai-mathematics/) — Fundamentos para LLM-from-scratch.

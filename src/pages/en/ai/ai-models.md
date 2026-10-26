@@ -57,5 +57,5 @@ To run these families locally — Ollama, llama.cpp, vLLM, LM Studio — see [ai
 ## Related
 
 - [ai-execution](../ai-execution/) — Local engines, UIs, APIs/providers.
-- [ai-usage](../ai-usage/) — Agents, MCP, skills, n8n, data, multimedia.
+- [ai-usage](../ai-usage/) — Agents, n8n, data, multimedia.
 - [ai-creation](../ai-creation/) — Fine-tuning, quantization, train-to-prod.
