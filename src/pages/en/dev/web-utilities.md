@@ -30,3 +30,13 @@ Image conversion, compression, and delivery for the web.
 - **Squoosh** processes the image locally with WebAssembly, never uploading it to a server: compare codecs and qualities side by side before downloading the result.
 - **imgto.xyz** is the minimalist shortcut: drag, drop, and download the converted file — for when there's no need to compare quality.
 - **Cloudinary** covers the full production pipeline: storage, URL-based transformations, and CDN-optimized delivery for images and video.
+
+### Programmatic (Node)
+
+| Library    | What it does                                                                                                   |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| **sharp**  | Image processing in Node (resize, convert to WebP/AVIF): the engine behind the image pipelines of Next.js and Astro |
+| **tinify** | npm client for the TinyPNG/Tinify API: cloud compression, API key based                                        |
+
+- **sharp** is the go-to library for processing images at build time or on the server: built on libvips, with the same speed the frameworks use to optimize images on every request.
+- **tinify** delegates compression to the TinyPNG cloud: the image is uploaded via API key and comes back optimized — useful when TinyPNG's quality is preferred over local processing.

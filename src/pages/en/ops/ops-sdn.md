@@ -53,6 +53,24 @@ Tunnels designed to connect machines and people to each other, typically outside
 | **WireGuard** | Modern, simple, efficient tunnel | Traditional VPNs, site-to-site                            |
 | **Tailscale** | Personal mesh over WireGuard    | Access your network from anywhere without configuring routers |
 
+## Exposure Tunnels
+
+Outbound tunnels: the service runs on a private or local network, and it's the client that connects outward to publish it — no ports opened on the router and no direct exposure of the machine to the internet.
+
+| Tool                | Profile                                         | Typical use                                                      |
+| ------------------- | ----------------------------------------------- | ---------------------------------------------------------------- |
+| **Cloudflare Tunnel** | Origin → Cloudflare edge tunnel               | Your own services in production, no open ports, with DNS/WAF in front |
+| **ngrok**           | Ephemeral public URL to localhost               | Webhooks, demos, and QA during development                       |
+| **Pinggy**          | Minimal ngrok alternative, no account           | The same, with a single command                                  |
+| **wstunnel**        | Arbitrary traffic over WebSocket/HTTP2 (Rust)   | Crossing firewalls and proxies that only let HTTP through        |
+
+- **The pattern:** instead of the internet coming into the machine (open port, NAT, firewall), the machine goes out to a relay and gets published behind a URL — the connection is always outbound, so it works behind any NAT.
+- **Cloudflare Tunnel** (`cloudflared`) is the production one: it carries traffic from a private origin to Cloudflare's edge, where it's served with DNS, WAF, and TLS — the origin is never exposed. See [ops-traffic](../ops-traffic/).
+- **ngrok / Pinggy** are the development shortcut: one command starts the tunnel and returns a temporary public URL to the local server (Stripe/GitHub webhooks, quick demos, mobile QA). Pinggy stands out for not requiring an account for basic use.
+- **wstunnel** exposes nothing — it's covert transport: it encapsulates TCP/UDP inside WebSocket or HTTP/2 to cross networks where only HTTP traffic passes (corporate firewalls, strict proxies). Rewritten in Rust, with a static binary.
+- **How to choose:** private access to your network from anywhere → Tailscale (previous section). Ephemeral public URL for development → ngrok/Pinggy. Production without open ports → Cloudflare Tunnel. Crossing a restrictive network → wstunnel.
+- **Security:** a tunnel exposes whatever you point it at — always put authentication in front (basic auth, OAuth, allowlist), and only on internal services, never on the raw service as-is.
+
 ## Virtual Network in the Cloud
 
 The same overlay pattern, applied inside a cloud provider: isolating and controlling which resources communicate with each other.
