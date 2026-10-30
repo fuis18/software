@@ -1,6 +1,6 @@
 ---
-import { labelOf, languages } from '../i18n/config';
-import { getLangFromPath, localizePath } from '../i18n/routing';
+import { labelOf, languages } from '@/i18n/config';
+import { getLangFromPath, localizePath } from '@/i18n/routing';
 
 const currentPath = Astro.url.pathname;
 const currentLang = Astro.currentLocale ?? getLangFromPath(currentPath);
@@ -129,8 +129,8 @@ const options = languages.map((code) => ({
 
 <script>
   const switcher = document.querySelector('.lang-switcher');
-  const toggle = switcher?.querySelector('.lang-toggle');
-  const dropdown = switcher?.querySelector('.lang-dropdown');
+  const toggle = switcher?.querySelector<HTMLElement>('.lang-toggle');
+  const dropdown = switcher?.querySelector<HTMLElement>('.lang-dropdown');
 
   if (switcher && toggle && dropdown) {
     const options = Array.from(dropdown.querySelectorAll<HTMLElement>('.lang-option'));
@@ -148,7 +148,6 @@ const options = languages.map((code) => ({
       setOpen(!isOpen());
     });
 
-    // Flecha abajo sobre el botón abre y enfoca la primera opción.
     toggle.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
@@ -188,7 +187,6 @@ const options = languages.map((code) => ({
       }
     });
 
-    // Persistir la preferencia como hace el redirect de la raíz.
     options.forEach((option) => {
       option.addEventListener('click', () => {
         const lang = option.getAttribute('data-lang');

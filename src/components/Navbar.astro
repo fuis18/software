@@ -211,7 +211,7 @@ const githubUrl = 'https://github.com/fuis18/software/';
 
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
-    const applyTheme = (theme, persist) => {
+    const applyTheme = (theme: string, persist: boolean) => {
       document.documentElement.setAttribute('data-theme', theme);
       if (persist) {
         try {
