@@ -1,27 +1,31 @@
 {
-  "name": "Programming",
-  "version": "3.0.0",
+  "name": "Software",
+  "type": "module",
+  "version": "3.2.0",
   "description": "",
-  "main": "index.js",
+  "author": "Fuis18",
+  "license": "ISC",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "sync": "astro sync",
     "astro": "astro"
   },
   "keywords": [],
-  "author": "Fuis18",
-  "license": "ISC",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.3.0",
+      "version": "12.15.0",
       "onFail": "download"
     }
   },
-  "type": "module",
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
     "astro": "7.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "7.0.2"
   }
 }
