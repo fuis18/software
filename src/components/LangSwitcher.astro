@@ -1,0 +1,204 @@
+---
+import { labelOf, languages } from '../i18n/config';
+import { getLangFromPath, localizePath } from '../i18n/routing';
+
+const currentPath = Astro.url.pathname;
+const currentLang = Astro.currentLocale ?? getLangFromPath(currentPath);
+
+const options = languages.map((code) => ({
+  code,
+  label: labelOf(code),
+  href: localizePath(currentPath, code),
+  active: code === currentLang,
+}));
+---
+
+<div class="lang-switcher">
+  <button
+    type="button"
+    class="lang-toggle"
+    aria-label="Switch language"
+    aria-expanded="false"
+    aria-haspopup="true"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+    <span class="lang-label">{labelOf(currentLang)}</span>
+  </button>
+  <div class="lang-dropdown" role="menu">
+    {
+      options.map((option) => (
+        <a
+          href={option.href}
+          class:list={['lang-option', { active: option.active }]}
+          role="menuitem"
+          data-lang={option.code}
+          aria-current={option.active ? 'true' : undefined}
+        >
+          {option.label}
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .lang-switcher {
+    position: relative;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 10px;
+    gap: 6px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .lang-toggle:hover,
+  .lang-toggle[aria-expanded='true'] {
+    color: var(--accent);
+    border-color: var(--border-light);
+  }
+
+  .lang-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .lang-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .lang-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px;
+    min-width: 56px;
+    max-height: min(60vh, 280px);
+    overflow-y: auto;
+    display: none;
+    z-index: 200;
+  }
+
+  .lang-dropdown.open {
+    display: block;
+  }
+
+  .lang-dropdown .lang-option {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .lang-dropdown .lang-option:hover {
+    color: var(--accent);
+    background: var(--bg);
+  }
+
+  .lang-dropdown .lang-option.active {
+    color: var(--accent);
+  }
+</style>
+
+<script>
+  const switcher = document.querySelector('.lang-switcher');
+  const toggle = switcher?.querySelector('.lang-toggle');
+  const dropdown = switcher?.querySelector('.lang-dropdown');
+
+  if (switcher && toggle && dropdown) {
+    const options = Array.from(dropdown.querySelectorAll<HTMLElement>('.lang-option'));
+
+    const setOpen = (open: boolean, focusFirst = false) => {
+      dropdown.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open && focusFirst) options[0]?.focus();
+    };
+
+    const isOpen = () => dropdown.classList.contains('open');
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!isOpen());
+    });
+
+    // Flecha abajo sobre el botón abre y enfoca la primera opción.
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setOpen(true, true);
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (!dropdown.contains(target) && !toggle.contains(target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!isOpen()) return;
+      if (e.key === 'Escape') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    dropdown.addEventListener('keydown', (e) => {
+      const currentIndex = options.findIndex((option) => option === document.activeElement);
+
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const delta = e.key === 'ArrowDown' ? 1 : -1;
+        const next = options[(currentIndex + delta + options.length) % options.length];
+        next?.focus();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        options[0]?.focus();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        options[options.length - 1]?.focus();
+      } else if (e.key === 'Tab') {
+        setOpen(false);
+      }
+    });
+
+    // Persistir la preferencia como hace el redirect de la raíz.
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+        if (lang) {
+          try {
+            localStorage.setItem('lang', lang);
+          } catch (e) {}
+          document.cookie = `lang=${lang};path=/;max-age=31536000`;
+        }
+      });
+    });
+  }
+</script>

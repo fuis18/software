@@ -1,11 +1,12 @@
 ---
+import LangSwitcher from './LangSwitcher.astro';
+import { getLangFromPath } from '../i18n/routing';
+
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const currentPath = Astro.url.pathname;
-const langMatch = currentPath.match(/\/(es|en)\//);
-const currentLang = langMatch ? langMatch[1] : 'es';
+const currentLang = Astro.currentLocale ?? getLangFromPath(Astro.url.pathname);
 
 const links = [
   { label: 'Dev', href: `${base}${currentLang}/dev/` },
@@ -39,24 +40,7 @@ const githubUrl = 'https://github.com/fuis18/software/';
   </nav>
 
   <div class="nav-actions">
-    <div class="lang-switcher">
-      <button type="button" class="icon-btn lang-toggle" aria-label="Switch language" aria-expanded="false" aria-haspopup="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-        <span class="lang-label">{currentLang.toUpperCase()}</span>
-      </button>
-      <div class="lang-dropdown" role="menu">
-        <a href={currentPath.replace(`/${currentLang}/`, '/es/')} class:list={['lang-option', { active: currentLang === 'es' }]} role="menuitem" data-lang="es">
-          ES
-        </a>
-        <a href={currentPath.replace(`/${currentLang}/`, '/en/')} class:list={['lang-option', { active: currentLang === 'en' }]} role="menuitem" data-lang="en">
-          EN
-        </a>
-      </div>
-    </div>
+    <LangSwitcher />
 
     <a href={githubUrl} class="icon-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -179,64 +163,6 @@ const githubUrl = 'https://github.com/fuis18/software/';
     grid-area: links;
   }
 
-  .lang-switcher {
-    position: relative;
-  }
-
-  .lang-toggle {
-    width: auto !important;
-    padding: 0 10px !important;
-    gap: 6px;
-  }
-
-  .lang-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-  }
-
-  .lang-dropdown {
-    position: absolute;
-    top: calc(100% + 4px);
-    right: 0;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 4px;
-    min-width: 48px;
-    display: none;
-    z-index: 200;
-  }
-
-  .lang-dropdown.open {
-    display: block;
-  }
-
-  .lang-dropdown .lang-option {
-    display: block;
-    width: 100%;
-    padding: 8px 12px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    transition: color 0.15s ease, background 0.15s ease;
-  }
-
-  .lang-dropdown .lang-option:hover {
-    color: var(--accent);
-    background: var(--bg);
-  }
-
-  .lang-dropdown .lang-option.active {
-    color: var(--accent);
-  }
-
   @media (max-width: 560px) {
     .navbar {
       grid-template-areas:
@@ -281,45 +207,6 @@ const githubUrl = 'https://github.com/fuis18/software/';
       },
       { passive: true },
     );
-  }
-
-  const langToggle = document.querySelector('.lang-toggle');
-  const langDropdown = document.querySelector('.lang-dropdown');
-
-  if (langToggle && langDropdown) {
-    langToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = langDropdown.classList.toggle('open');
-      langToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!langDropdown.contains(e.target) && !langToggle.contains(e.target)) {
-        langDropdown.classList.remove('open');
-        langToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && langDropdown.classList.contains('open')) {
-        langDropdown.classList.remove('open');
-        langToggle.setAttribute('aria-expanded', 'false');
-        langToggle.focus();
-      }
-    });
-
-    const langOptions = document.querySelectorAll('.lang-option');
-    langOptions.forEach((option) => {
-      option.addEventListener('click', () => {
-        const lang = option.getAttribute('data-lang');
-        if (lang) {
-          try {
-            localStorage.setItem('lang', lang);
-          } catch (e) {}
-          document.cookie = `lang=${lang};path=/;max-age=31536000`;
-        }
-      });
-    });
   }
 
   const themeToggle = document.querySelector('.theme-toggle');

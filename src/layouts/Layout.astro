@@ -1,13 +1,14 @@
 ---
-import '../styles/global.css';
-import Navbar from '../components/Navbar.astro';
+import '@/styles/global.css';
+import Navbar from '@/components/Navbar.astro';
+import { defaultLang, hreflangOf, languages, ogLocaleOf } from '@/i18n/config';
+import { getBase, getLangFromPath, localizePath } from '@/i18n/routing';
 
 const { frontmatter } = Astro.props;
 const siteName = 'software';
 
 const currentPath = Astro.url.pathname;
-const langMatch = currentPath.match(/\/(es|en)\//);
-const lang = langMatch ? langMatch[1] : 'es';
+const lang = Astro.currentLocale ?? getLangFromPath(currentPath);
 
 const title = frontmatter?.title || 'Knowledge';
 const eyebrow = frontmatter?.eyebrow || 'software';
@@ -15,9 +16,19 @@ const subtitle = frontmatter?.subtitle;
 const pageTitle = `${title} — ${siteName}`;
 const description =
   frontmatter?.description || `${title}${subtitle ? ` — ${subtitle}` : ''}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(currentPath, Astro.site);
 
-const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
+const ogLocale = ogLocaleOf(lang);
+const ogLocaleAlternates = languages
+  .filter((code) => code !== lang)
+  .map((code) => ogLocaleOf(code));
+
+const alternates = languages.map((code) => ({
+  code,
+  href: new URL(localizePath(currentPath, code), Astro.site).href,
+}));
+const xDefault = new URL(localizePath(currentPath, defaultLang), Astro.site).href;
+const sitemapHref = `${getBase()}sitemap-index.xml`;
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -30,12 +41,20 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0d0f14">
   <link rel="canonical" href={canonical}>
+  {alternates.map((alternate) => (
+    <link rel="alternate" hreflang={hreflangOf(alternate.code)} href={alternate.href}>
+  ))}
+  <link rel="alternate" hreflang="x-default" href={xDefault}>
+  <link rel="sitemap" href={sitemapHref}>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content={siteName}>
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={description}>
   <meta property="og:url" content={canonical}>
   <meta property="og:locale" content={ogLocale}>
+  {ogLocaleAlternates.map((alternate) => (
+    <meta property="og:locale:alternate" content={alternate}>
+  ))}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content={pageTitle}>
   <meta name="twitter:description" content={description}>
