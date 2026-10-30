@@ -5,7 +5,7 @@ title: Dev
 subtitle: Web, backend, mobile, and desktop apps.
 ---
 
-Software development: how applications are built, web interfaces and backends, which frameworks and architectures to choose based on use cases, the Rust ecosystem for native and cross-platform apps, and cross-cutting practices — testing and authentication — that apply regardless of the layer being built.
+Software development: how applications are built, web interfaces and backends, which frameworks and architectures to choose based on use cases, the Rust ecosystem for native and cross-platform apps, and cross-cutting practices — version control, testing, and authentication — that apply regardless of the layer being built.
 
 ## Frontend - Web
 
@@ -81,6 +81,10 @@ Native and cross-platform mobile app frameworks.
 
 ## Universal Library
 
+### [dev-vcs](dev-vcs/)
+
+Version control with Git: concepts, branching flows, PRs, monorepo vs polyrepo, forges (GitHub, GitLab, Codeberg), and tooling.
+
 ### [dev-auth](dev-auth/)
 
 Identity and authentication, cross-cutting backend and frontend: Keycloak as identity provider, OIDC and OAuth2.0 protocols, JWT tokens, and Auth.js on the frontend.
@@ -89,4 +93,4 @@ Identity and authentication, cross-cutting backend and frontend: Keycloak as ide
 
 ### [dev-project-management](dev-project-management/)
 
-Software project management tools: Asana, Jira, and Monday, and how to choose based on how the team works.
+Software project management tools: Asana, Jira, and Monday, free alternatives (Plane, Kaneo), team documentation, and how to choose based on how the team works.

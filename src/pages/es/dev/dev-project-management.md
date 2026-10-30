@@ -19,6 +19,42 @@ El desarrollo de software es también coordinación: quién hace qué, en qué o
 - **Jira** — la herramienta de referencia en desarrollo: _issues_ con estados, tableros de sprint, backlog y reportes, integrada al flujo de CI/CD y a los repos (cada PR puede referenciar un ticket). Es la más pesada de configurar y la más potente cuando el equipo ya trabaja con metodología ágil. En el flujo de operaciones aparece como el integrador natural de las alertas de [ops-incident](../../ops/ops-incident/).
 - **Monday** — trabajo en tableros visuales muy accesibles, con automatizaciones y vistas sin escribir código. Rápida de adoptar para equipos no-técnicos que conviven con el equipo de desarrollo.
 
+### Jira en profundidad
+
+- **Workflows por proyecto** — cada tipo de issue recibe su flujo de estados (To Do → In Progress → Done); se diseñan por proyecto según cómo trabaja el equipo, no al revés.
+- **Automation** — reglas sin código "cuando esto, haz aquello" (cuando el PR se mergea, mueve el ticket a Done; si un bloqueador se cierra, notifica al asignado) con disparadores, condiciones y acciones.
+- **JQL** — el lenguaje de consulta de Jira (`project = X AND status != Done ORDER BY priority`) permite filtros arbitrarios que alimentan tableros y dashboards.
+- **Dashboards** — burndown, velocidad y cumulative flow dan las métricas de ritmo del equipo, y cada uno se construye sobre filtros JQL.
+- **Integración** — commits, PRs y estados de CI en el propio ticket, y las alertas de [ops-incident](../../ops/ops-incident/) abriendo tickets automáticamente.
+
+### Alternativas libres y modernas
+
+| Herramienta  | Licencia          | Perfil                                                       |
+| ------------ | ----------------- | ------------------------------------------------------------ |
+| **Plane**    | AGPL (Community)  | El moderno reemplazo de Jira: ciclos, módulos y docs; importa proyectos de Jira |
+| **Kaneo**    | MIT               | Kanban minimalista estilo Linear para equipos chicos         |
+
+- **Plane** — boards con ciclos y módulos, docs integradas e importación desde Jira; self-hosted o nube gratuita hasta 12 miembros. Es el candidato serio a reemplazar a Jira sin salir del código abierto.
+- **Kaneo** — solo el tablero, nada más: Kanban ligero y rápido para equipos que no necesitan la máquina de sprints de Jira.
+- **Issues del forge** — las issues nativas de GitHub, GitLab o Forgejo cubren el caso base gratis y viven junto al código (ver [dev-vcs](../dev-vcs/)).
+
+## Documentación del equipo
+
+El par histórico del gestor de proyectos es la wiki: Confluence dominó este espacio junto a Jira, y hoy hay alternativas libres más modernas.
+
+| Herramienta  | Licencia                | Perfil                                                     |
+| ------------ | ----------------------- | ---------------------------------------------------------- |
+| **BookStack** | MIT                    | Wiki jerárquica (libro → capítulo → página), self-hosted   |
+| **Docmost**  | AGPL                    | Editor moderno tipo Notion con edición en tiempo real      |
+| **Wiki.js**  | AGPL                    | Contenido almacenado en git, multi-backend                 |
+| **Outline**  | BSL (source-available)  | Muy rápida y moderna, SSO; no es open source OSI           |
+
+- **BookStack** — estructura rígida y predecible para documentación ordenada; corre liviana en cualquier server.
+- **Docmost** — la experiencia más actual: bloques, tiempo real y permisos por espacio.
+- **Wiki.js** — cuando el contenido debe vivir versionado en git y publicarse como parte del flujo.
+- **Outline** — muy pulida, pero su licencia BSL no es open source en sentido OSI (fuente disponible con restricciones comerciales).
+- **Docs-as-code** — el otro camino: la documentación vive como markdown en el repo, se revisa en PR y se publica desde CI (Docusaurus, MkDocs Material, mdBook 🦀) — ver [dev-vcs](../dev-vcs/).
+
 ## Metodologías
 
 | Metodología | Uso principal |
@@ -42,6 +78,7 @@ El desarrollo de software es también coordinación: quién hace qué, en qué o
 ## Cómo elegir
 
 - **Jira** cuando el equipo vive en tickets y sprints y necesita el vínculo directo con el código (PRs, commits, releases).
+- **Plane** cuando se quiere la potencia de Jira bajo licencia libre, con despliegue propio.
 - **Asana** cuando se quiere organizar proyectos y objetivos con más flexibilidad que un tablero ágil puro.
 - **Monday** cuando la prioridad es una herramienta visual simple que cualquiera en la organización pueda usar.
 

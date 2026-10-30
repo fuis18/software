@@ -4,7 +4,7 @@ title: Dev
 subtitle: Web, backend, apps móviles y de escritorio.
 ---
 
-Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backends, qué frameworks y arquitecturas se eligen según el caso de uso, el ecosistema Rust para apps nativas y multiplataforma, y las prácticas transversales — testing y autenticación — que aplican sin importar la capa que se esté construyendo.
+Desarrollo de software: cómo se construyen aplicaciones, interfaz web y backends, qué frameworks y arquitecturas se eligen según el caso de uso, el ecosistema Rust para apps nativas y multiplataforma, y las prácticas transversales — control de versiones, testing y autenticación — que aplican sin importar la capa que se esté construyendo.
 
 ## Frontend - Web
 
@@ -80,6 +80,10 @@ Frameworks para apps móviles nativas y multiplataforma.
 
 ## Library Universal
 
+### [dev-vcs](dev-vcs/)
+
+Control de versiones con Git: conceptos, flujos de ramas, PRs, monorepo vs polyrepo, forges (GitHub, GitLab, Codeberg) y tooling.
+
 ### [dev-auth](dev-auth/)
 
 Identidad y autenticación, transversal a backend y frontend: Keycloak como identity provider, los protocolos OIDC y OAuth2.0, tokens JWT, y Auth.js del lado frontend.
@@ -88,4 +92,4 @@ Identidad y autenticación, transversal a backend y frontend: Keycloak como iden
 
 ### [dev-project-management](dev-project-management/)
 
-Herramientas de gestión de proyectos de software: Asana, Jira y Monday, y cómo elegirlas según la forma de trabajar del equipo.
+Herramientas de gestión de proyectos de software: Asana, Jira y Monday, alternativas libres (Plane, Kaneo), documentación de equipo, y cómo elegirlas según la forma de trabajar del equipo.
