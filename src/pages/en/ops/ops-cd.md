@@ -16,7 +16,7 @@ The difference between the two isn't technical, it's about **where the human gat
 
 ## GitOps
 
-The model where the **git repo is the source of truth** for infrastructure: changes are made in the repo and an agent applies them to the cluster.
+The model where the **git repo is the source of truth** for infrastructure (branches, PRs, and history: see [dev-vcs](../../dev/dev-vcs/)) — changes are made in the repo and an agent applies them to the cluster.
 
 - **Declarative + reconciliation** — the desired state is in git; an agent running inside the cluster (not an external pipeline pushing) continuously observes that the real system matches, and if not, corrects it. The same principle from [ops-kubernetes](../ops-kubernetes/).
 - **Why the pull direction matters:** in traditional CI/CD, an external pipeline has credentials to _push_ changes to the cluster (push). In GitOps, the agent lives _inside_ the cluster and _pulls_ changes from git — no one external needs write credentials to production, only read access to the repo.

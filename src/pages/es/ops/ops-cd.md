@@ -16,7 +16,7 @@ La diferencia entre ambas no es técnica, es de **dónde queda el gate humano**:
 
 ## GitOps
 
-El modelo donde el **repo git es la fuente de verdad** de la infraestructura: los cambios se hacen en el repo y un agente los aplica al clúster.
+El modelo donde el **repo git es la fuente de verdad** de la infraestructura (ramas, PRs e historial: ver [dev-vcs](../../dev/dev-vcs/)) — los cambios se hacen en el repo y un agente los aplica al clúster.
 
 - **Declarativo + reconciliación** — el estado deseado está en git; un agente corriendo dentro del clúster (no un pipeline externo empujando) observa continuamente que el sistema real coincida, y si no, lo corrige. El mismo principio de [ops-kubernetes](../ops-kubernetes/).
 - **Por qué importa el sentido del pull:** en CI/CD tradicional, un pipeline externo tiene credenciales para _empujar_ cambios al clúster (push). En GitOps, el agente vive _adentro_ del clúster y _jala_ (pull) los cambios desde git — nadie externo necesita credenciales de escritura sobre producción, solo acceso de lectura al repo.

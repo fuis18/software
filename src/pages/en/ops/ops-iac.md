@@ -89,6 +89,15 @@ A step is **idempotent** when running it any number of times always arrives at t
 
 > The philosophy is shared with Kubernetes and GitOps: the system compares real state with desired state and reconciles. See [ops-kubernetes](../ops-kubernetes/) and [ops-cd](../ops-cd/).
 
+## Shell scripting (imperative)
+
+A bash script is the oldest form of automation in Linux: a file that runs commands step by step, with no declared state and no idempotency by default. It's still ops' glue layer — glue scripts, cron jobs, and pipeline steps live here.
+
+- **Pipes and exit codes** — a pipe chains commands (`cmd1 | cmd2`) and the exit code (`$?`) is the contract between steps: `0` is success, any other value is failure. Every serious script starts with `set -euo pipefail`, so an early failure stops everything instead of cascading.
+- **When bash, when Python, when Ansible** — bash for gluing local commands (processes, files, network) up to a couple dozen lines; Python when the logic grows (data structures, APIs, tests); Ansible when state needs to reach remote hosts idempotently.
+- **Where it runs** — cron on the server, CI steps ([ops-ci](../ops-ci/)), git hooks, and as the imperative exception inside the declarative flow (Terraform provisioners).
+- **Limits** — with no state and no idempotency, an ever-growing script becomes fragile: past that point, migrating to declarative IaC or a real language is the right move.
+
 ## The complete GitOps flow
 
 The journey that connects the pieces to a reproducible deploy:
@@ -96,7 +105,7 @@ The journey that connects the pieces to a reproducible deploy:
 1. **Provision** — the physical/virtual resource is created with infrastructure declaration (provisioning): Terraform/OpenTofu, Pulumi, or Crossplane decide what VMs, networks, or cloud services should exist.
 2. **Configure** — on top, the server's idempotent configuration is applied: Ansible or SaltStack ensure that the newly created resource has the correct packages, services, and files.
 3. **Define apps** — application services are defined as declared compositions/images (Kubernetes manifests, Compose, whatever corresponds to the target platform).
-4. **Git as source** — all of the above lives versioned in the repo; the change is born in git and reconciled in the real world, closing the loop with the [ops-cd](../ops-cd/) model.
+4. **Git as source** — all of the above lives versioned in the repo (the branching and PR flows that govern it, in [dev-vcs](../../dev/dev-vcs/)); the change is born in git and reconciled in the real world, closing the loop with the [ops-cd](../ops-cd/) model.
 
 Each step of this flow is, in essence, the same idea applied to a different layer: declare the desired state and let a tool reconcile — provisioning reconciles resources, configuration management reconciles a server's state, and GitOps reconciles the entire system against the repo.
 

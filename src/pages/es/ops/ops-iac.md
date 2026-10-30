@@ -89,6 +89,15 @@ Un paso es **idempotente** cuando ejecutarlo las veces que sea llega siempre al 
 
 > La filosofía es compartida con Kubernetes y GitOps: el sistema compara el estado real con el deseado y reconcilia. Ver [ops-kubernetes](../ops-kubernetes/) y [ops-cd](../ops-cd/).
 
+## Shell scripting (imperativo)
+
+El script de bash es la forma más vieja de automatización en Linux: un archivo que ejecuta comandos paso a paso, sin declaración de estado ni idempotencia por defecto. Sigue siendo la capa de pegamento de ops — los glue scripts, los cron jobs y los pasos de los pipelines viven acá.
+
+- **Tuberías y exit codes** — la tubería encadena comandos (`cmd1 | cmd2`) y el código de salida (`$?`) es el contrato entre pasos: `0` es éxito, cualquier otro valor es fallo. Cada script serio arranca con `set -euo pipefail`, para que un fallo temprano detenga todo en vez de seguir fallando en cascada.
+- **Cuándo bash, cuándo Python, cuándo Ansible** — bash para gluing de comandos locales (procesos, archivos, red) hasta un par de decenas de líneas; Python cuando la lógica crece (estructuras de datos, APIs, tests); Ansible cuando hay que llevar un estado a hosts remotos de forma idempotente.
+- **Dónde corre** — cron en el server, pasos de CI ([ops-ci](../ops-ci/)), hooks de git, y como la excepción imperativa dentro del flujo declarativo (provisioners de Terraform).
+- **Límites** — sin estado ni idempotencia, el script que crece demasiado se vuelve frágil: cruzado ese punto, migrar a IaC declarativa o a un lenguaje real es la jugada correcta.
+
 ## El flujo GitOps completo
 
 El recorrido que une las piezas hasta un deploy reproducible:
@@ -96,7 +105,7 @@ El recorrido que une las piezas hasta un deploy reproducible:
 1. **Aprovisionar** — el recurso físico/virtual se crea con declaración de infraestructura (provisioning): Terraform/OpenTofu, Pulumi o Crossplane deciden qué VMs, redes o servicios de nube deben existir.
 2. **Configurar** — encima se aplica la configuración idempotente del server: Ansible o SaltStack aseguran que ese recurso recién creado tenga los paquetes, servicios y archivos correctos.
 3. **Definir apps** — los servicios de la app se definen como composiciones/imágenes declaradas (manifiestos de Kubernetes, Compose, lo que corresponda a la plataforma de destino).
-4. **Git como fuente** — todo lo anterior vive versionado en el repo; el cambio nace en git y se reconcilia en el mundo real, cerrando el círculo con el modelo de [ops-cd](../ops-cd/).
+4. **Git como fuente** — todo lo anterior vive versionado en el repo (los flujos de ramas y PRs que lo gobiernan, en [dev-vcs](../../dev/dev-vcs/)); el cambio nace en git y se reconcilia en el mundo real, cerrando el círculo con el modelo de [ops-cd](../ops-cd/).
 
 Cada paso de este flujo es, en esencia, la misma idea aplicada a una capa distinta: declarar el estado deseado y dejar que una herramienta reconcilie — provisioning reconcilia recursos, configuration management reconcilia el estado de un server, y GitOps reconcilia todo el sistema contra el repo.
 
