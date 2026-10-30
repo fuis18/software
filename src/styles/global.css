@@ -29,7 +29,6 @@
   --row-hover: #eef2f8;
 }
 
-/* Theme toggle icons: sun in dark mode, moon in light mode */
 .icon-moon { display: none; }
 html[data-theme='light'] .icon-sun { display: none; }
 html[data-theme='light'] .icon-moon { display: block; }

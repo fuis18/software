@@ -2,7 +2,6 @@ import { defaultLang, languages, type LangCode } from './config';
 
 const langPattern = () => new RegExp(`/(${languages.join('|')})/`);
 
-/** Normaliza `import.meta.env.BASE_URL` para que termine en "/". */
 export function getBase(): string {
   const base = import.meta.env.BASE_URL;
   return base.endsWith('/') ? base : `${base}/`;

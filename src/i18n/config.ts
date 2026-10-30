@@ -6,7 +6,6 @@ export const defaultLang = 'es' satisfies LangCode;
 
 export const labelOf = (code: string): string => code.toUpperCase();
 
-/** hreflang a nivel de idioma: el propio código ("es"). */
 export const hreflangOf = (code: string): string => code;
 
 export const ogLocaleOf = (code: string): string => {
