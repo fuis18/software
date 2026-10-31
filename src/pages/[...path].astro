@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageList from '../components/PageList.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+
+  return docs.map((entry) => {
+    const segments = entry.id.split('/');
+    const lang = segments[0];
+
+    let list = null;
+
+    if (segments.length === 1) {
+      const categories = docs.filter(
+        (d) => d.id.startsWith(`${lang}/`) && d.id.split('/').length === 2,
+      );
+      const rank: Record<string, number> = { dev: 0, sec: 1, ops: 2, ai: 3, games: 4 };
+      list = {
+        variant: 'categories' as const,
+        entries: categories
+          .map((d) => ({
+            title: d.data.title,
+            href: `./${d.id.split('/')[1]}/`,
+            summary: d.data.summary,
+            key: rank[d.id.split('/')[1]] ?? 99,
+          }))
+          .sort((a, b) => a.key - b.key),
+      };
+    } else if (segments.length === 2) {
+      const prefix = `${lang}/${segments[1]}/`;
+      const pages = docs.filter((d) => d.id.startsWith(prefix));
+      list = {
+        variant: 'pages' as const,
+        entries: pages.map((d) => ({
+          title: d.data.title,
+          href: `./${d.id.split('/').slice(2).join('/')}/`,
+          summary: d.data.summary,
+          group: d.data.group,
+          order: d.data.order,
+        })),
+      };
+    }
+
+    return {
+      params: { path: entry.id },
+      props: { entry, list },
+    };
+  });
+}
+
+const { entry, list } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout frontmatter={entry.data}>
+  <Content />
+  {list && <PageList variant={list.variant} entries={list.entries} />}
+</Layout>

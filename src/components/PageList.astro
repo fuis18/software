@@ -1,0 +1,49 @@
+---
+interface Entry {
+  title: string;
+  href: string;
+  summary?: string;
+  group?: string;
+  order?: number;
+}
+
+interface Props {
+  variant: 'categories' | 'pages';
+  entries: Entry[];
+}
+
+const { variant, entries } = Astro.props;
+
+const groups: Array<{ name?: string; items: Entry[] }> = [];
+
+if (variant === 'pages') {
+  const byGroup = new Map<string, Entry[]>();
+  for (const entry of [...entries].sort((a, b) => (a.order ?? 0) - (b.order ?? 0))) {
+    const key = entry.group ?? 'General';
+    if (!byGroup.has(key)) byGroup.set(key, []);
+    byGroup.get(key)!.push(entry);
+  }
+  for (const [name, items] of byGroup) groups.push({ name, items });
+} else {
+  groups.push({ items: entries });
+}
+---
+
+{groups.map((group) => (
+  <>
+    {variant === 'pages' && group.name && <h2>{group.name}</h2>}
+    {group.items.map((entry) => (
+      variant === 'categories' ? (
+        <>
+          <h2><a href={entry.href}>{entry.title}</a></h2>
+          {entry.summary && <p>{entry.summary}</p>}
+        </>
+      ) : (
+        <>
+          <h3><a href={entry.href}>{entry.title}</a></h3>
+          {entry.summary && <p>{entry.summary}</p>}
+        </>
+      )
+    ))}
+  </>
+))}

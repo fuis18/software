@@ -30,9 +30,14 @@ const supportedLangs: string[] = [...languages];
     }
   </style>
 </head>
-<body>
+<body data-base={base} data-langs={JSON.stringify(supportedLangs)} data-default={defaultLang}>
   <p>Redirecting...</p>
-  <script define:vars={{ base, supportedLangs, defaultLang }}>
+  <script>
+    const body = document.body;
+    const base = body.dataset.base || '/';
+    const supportedLangs: string[] = JSON.parse(body.dataset.langs || '[]');
+    const defaultLang = body.dataset.default || 'es';
+
     function getPreferredLang() {
       // 1. Check localStorage
       const stored = localStorage.getItem('lang');
