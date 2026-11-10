@@ -45,10 +45,10 @@ Animaciones, gráficos, notificaciones, modales — lo que termina de completar 
 
 Capacidades que ofrece el navegador para ejecutar trabajo fuera del hilo principal o interceptar la red.
 
-| Name           | Uso           |
-| -------------- | ------------- |
-| **Web worker** | Segundo Plano |
-| **Service worker** | Cache         |
+| Nombre | Uso |
+| --- | --- |
+| **Web worker** | segundo plano |
+| **Service worker** | Caché |
 
 ## Arquitectura
 

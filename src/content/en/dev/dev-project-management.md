@@ -4,45 +4,38 @@ title: Dev Project Management
 subtitle: Software project management tools
 group: Project Management
 order: 19
-summary: "Software project management tools: Asana, Jira, and Monday, free alternatives (Plane, Kaneo), team documentation, and how to choose based on how the team works."
+summary: "Software project management tools: Plane, Vikunja, AppFlowy, Kaneo, and Teable, team documentation, and how to choose based on how the team works."
 ---
 
 Software development is also coordination: who does what, in what order, and when it's ready. Project management tools organize work into tasks, sprints, and tracking, regardless of the methodology the team uses (Scrum, Kanban, or something custom).
 
 ## Platforms
 
-| Platform  | Profile                           | Excels in                                                |
-| --------- | --------------------------------- | -------------------------------------------------------- |
-| **Asana** | Flexible project management       | Tasks, timelines, custom workflows, large teams          |
-| **Jira**  | The standard for dev teams        | Issues, Scrum/Kanban sprints, development integration    |
-| **Monday** | Visual work management           | Visual boards, no-code, adaptable to any team            |
+| Platform     | Profile                        | Excels in                                      |
+| ------------ | ------------------------------ | ---------------------------------------------- |
+| **Plane**    | All-in-one agile management    | Issues, cycles, modules, integrated docs       |
+| **Vikunja**  | Task management (Go)           | Lists, kanban, Gantt, calendars, CalDAV        |
+| **AppFlowy** 🦀 | Local-first workspace (Rust) | Desktop and mobile, blocks, databases          |
+| **Kaneo**    | Minimalist Kanban (MIT)        | Just the board, Linear-style                   |
+| **Teable**   | No-code grids on Postgres      | Tables, kanban, calendar, real-time            |
 
-- **Asana** — designed to organize work by projects and objectives: lists, boards, timelines, and automations. Very flexible for different types of teams, not just software.
-- **Jira** — the reference tool in development: _issues_ with states, sprint boards, backlog, and reports, integrated into the CI/CD flow and repos (each PR can reference a ticket). It's the heaviest to set up and the most powerful when the team already works with agile methodology. In the operations flow it appears as the natural integrator of [ops-incident](../../ops/ops-incident/) alerts.
-- **Monday** — work on very accessible visual boards, with automations and views without writing code. Fast to adopt for non-technical teams that work alongside the development team.
+- **Plane** — the most complete all-in-one on the list: _issues_ with states, cycles (sprints), modules (projects), and integrated docs; self-hosted (AGPL) or free cloud for up to 12 members, with import from Jira.
+- **Vikunja** — task management in Go (AGPL): lists, kanban, Gantt, and calendars with CalDAV sync; serves dev teams and any department that just needs to organize work.
+- **AppFlowy** 🦀 — local-first workspace in Rust and Flutter (AGPL): native desktop and mobile apps with blocks and databases, working offline without sending data to a third party.
+- **Kaneo** — just the board, nothing else: lightweight Kanban (MIT) for small teams that don't need the sprint machine.
+- **Teable** — Monday's visual shape under a free license (AGPL): no-code grids over real Postgres (plain SQL on the data), with table, kanban, and calendar views.
 
-### Jira in Depth
+### Plane in Depth
 
-- **Workflows per project** — each issue type gets its own state flow (To Do → In Progress → Done); they're designed per project according to how the team works, not the other way around.
-- **Automation** — no-code rules "when this, do that" (when the PR merges, move the ticket to Done; if a blocker closes, notify the assignee) with triggers, conditions, and actions.
-- **JQL** — Jira's query language (`project = X AND status != Done ORDER BY priority`) enables arbitrary filters feeding boards and dashboards.
-- **Dashboards** — burndown, velocity, and cumulative flow give the team's pace metrics, each one built on JQL filters.
-- **Integration** — commits, PRs, and CI status on the ticket itself, and [ops-incident](../../ops/ops-incident/) alerts opening tickets automatically.
-
-### Free and Modern Alternatives
-
-| Tool         | License         | Profile                                                     |
-| ------------ | --------------- | ------------------------------------------------------------ |
-| **Plane**    | AGPL (Community) | The modern Jira replacement: cycles, modules, and docs; imports Jira projects |
-| **Kaneo**    | MIT             | Minimalist Linear-style Kanban for small teams               |
-
-- **Plane** — boards with cycles and modules, integrated docs, and import from Jira; self-hosted or free cloud for up to 12 members. The serious candidate to replace Jira without leaving open source.
-- **Kaneo** — just the board, nothing else: light, fast Kanban for teams that don't need Jira's sprint machine.
-- **Forge issues** — native issues in GitHub, GitLab, or Forgejo cover the basic case for free and live next to the code (see [dev-vcs](../dev-vcs/)).
+- **Workflows per project** — each issue type gets its own state flow (To Do → In Progress → Done); designed per project according to how the team works, not the other way around.
+- **Automations** — no-code rules "when this, do that" (when the PR merges, move the issue to Done; if a blocker closes, notify the assignee) with triggers, conditions, and actions.
+- **Views and filters** — kanban, list, spreadsheet, and calendar over the same issues; saved filters act as queries feeding each view.
+- **Cycles and modules** — cycles set the sprint pace and modules group long-running topics; integrated docs keep the project's context inside the same tool.
+- **Integration** — import from Jira and GitHub, and webhooks carry commits, PRs, and CI status onto the issue, with [ops-incident](../../ops/ops-incident/) alerts opening tickets automatically.
 
 ## Team Documentation
 
-The project manager's historical counterpart is the wiki: Confluence dominated this space next to Jira, and today there are more modern free alternatives.
+The project manager's historical counterpart is the wiki: Confluence dominated this space from within the Atlassian suite, and today there are more modern free alternatives.
 
 | Tool         | License               | Profile                                                     |
 | ------------ | --------------------- | ------------------------------------------------------------ |
@@ -79,9 +72,11 @@ The project manager's historical counterpart is the wiki: Confluence dominated t
 
 ## How to Choose
 
-- **Jira** when the team lives in tickets and sprints and needs the direct link to code (PRs, commits, releases).
-- **Plane** when you want Jira's power under a free license, with self-hosting.
-- **Asana** when you want to organize projects and objectives with more flexibility than a pure agile board.
-- **Monday** when the priority is a simple visual tool that anyone in the organization can use.
+- **Plane** when the team lives in issues, cycles, and sprints and needs the direct link to code (PRs, commits, releases).
+- **Vikunja** when task management spans the whole team or organization (non-dev departments included) and calendars and Gantt are needed.
+- **AppFlowy** 🦀 when work has to be local-first on desktop and mobile, with data on the machine itself.
+- **Kaneo** when the priority is just the Kanban board, without the sprint machine.
+- **Teable** when work is organized over visual no-code tables and grids, on Postgres.
+- **Forge issues** — native issues in GitHub, GitLab, or Forgejo cover the basic case for free and live next to the code (see [dev-vcs](../dev-vcs/)).
 
 > The tool doesn't define the methodology: first define how you want to work (sprints, kanban, continuous flow) and then choose the platform that best supports it.

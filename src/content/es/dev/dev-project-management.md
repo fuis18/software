@@ -4,45 +4,38 @@ title: Dev Project Management
 subtitle: Herramientas de gestión de proyectos de software
 group: Project Management
 order: 19
-summary: "Herramientas de gestión de proyectos de software: Asana, Jira y Monday, alternativas libres (Plane, Kaneo), documentación de equipo, y cómo elegirlas según la forma de trabajar del equipo."
+summary: "Herramientas de gestión de proyectos de software: Plane, Vikunja, AppFlowy, Kaneo y Teable, documentación de equipo, y cómo elegirlas según la forma de trabajar del equipo."
 ---
 
 El desarrollo de software es también coordinación: quién hace qué, en qué orden y cuándo está listo. Las herramientas de gestión de proyectos organizan el trabajo en tareas, sprints y seguimiento, sin importar la metodología que el equipo use (Scrum, Kanban, o algo propio).
 
 ## Plataformas
 
-| Plataforma | Perfil                            | Destaca en                                                 |
-| ---------- | --------------------------------- | ---------------------------------------------------------- |
-| **Asana**  | Gestión de proyectos flexible     | Tareas, timelines, flujos personalizados, equipos grandes |
-| **Jira**   | El estándar de los equipos dev    | Issues, sprints Scrum/Kanban, integración con desarrollo  |
-| **Monday** | Work management visual            | Paneles visuales, no-code, adaptación a cualquier equipo  |
+| Plataforma     | Perfil                          | Destaca en                                    |
+| -------------- | ------------------------------- | --------------------------------------------- |
+| **Plane**      | Todo-en-uno de gestión ágil     | Issues, ciclos, módulos, docs integradas      |
+| **Vikunja**    | Gestión de tareas (Go)          | Listas, kanban, Gantt, calendarios, CalDAV    |
+| **AppFlowy** 🦀 | Workspace local-first (Rust)   | Escritorio y móvil, bloques, bases de datos   |
+| **Kaneo**      | Kanban minimalista (MIT)        | Solo el tablero, estilo Linear                |
+| **Teable**     | Grids no-code sobre Postgres    | Tablas, kanban, calendario, tiempo real       |
 
-- **Asana** — pensada para organizar el trabajo por proyectos y objetivos: listas, tableros, líneas de tiempo y automatizaciones. Muy flexible para distintos tipos de equipo, no solo software.
-- **Jira** — la herramienta de referencia en desarrollo: _issues_ con estados, tableros de sprint, backlog y reportes, integrada al flujo de CI/CD y a los repos (cada PR puede referenciar un ticket). Es la más pesada de configurar y la más potente cuando el equipo ya trabaja con metodología ágil. En el flujo de operaciones aparece como el integrador natural de las alertas de [ops-incident](../../ops/ops-incident/).
-- **Monday** — trabajo en tableros visuales muy accesibles, con automatizaciones y vistas sin escribir código. Rápida de adoptar para equipos no-técnicos que conviven con el equipo de desarrollo.
+- **Plane** — el todo-en-uno más completo de la lista: _issues_ con estados, ciclos (sprints), módulos (proyectos) y docs integradas; self-hosted (AGPL) o nube gratuita hasta 12 miembros, con importación desde Jira.
+- **Vikunja** — gestión de tareas en Go (AGPL): listas, kanban, Gantt y calendarios con sync CalDAV; sirve tanto al equipo de dev como a cualquier área que solo necesite organizar trabajo.
+- **AppFlowy** 🦀 — workspace local-first en Rust y Flutter (AGPL): apps nativas de escritorio y móvil con bloques y bases de datos, que funcionan sin conexión y sin mandar los datos a un tercero.
+- **Kaneo** — solo el tablero, nada más: Kanban ligero (MIT) para equipos chicos que no necesitan la máquina de sprints.
+- **Teable** — la forma visual de Monday bajo licencia libre (AGPL): grids no-code sobre Postgres reales (SQL directo sobre los datos), con vistas de tabla, kanban y calendario.
 
-### Jira en profundidad
+### Plane en profundidad
 
 - **Workflows por proyecto** — cada tipo de issue recibe su flujo de estados (To Do → In Progress → Done); se diseñan por proyecto según cómo trabaja el equipo, no al revés.
-- **Automation** — reglas sin código "cuando esto, haz aquello" (cuando el PR se mergea, mueve el ticket a Done; si un bloqueador se cierra, notifica al asignado) con disparadores, condiciones y acciones.
-- **JQL** — el lenguaje de consulta de Jira (`project = X AND status != Done ORDER BY priority`) permite filtros arbitrarios que alimentan tableros y dashboards.
-- **Dashboards** — burndown, velocidad y cumulative flow dan las métricas de ritmo del equipo, y cada uno se construye sobre filtros JQL.
-- **Integración** — commits, PRs y estados de CI en el propio ticket, y las alertas de [ops-incident](../../ops/ops-incident/) abriendo tickets automáticamente.
-
-### Alternativas libres y modernas
-
-| Herramienta  | Licencia          | Perfil                                                       |
-| ------------ | ----------------- | ------------------------------------------------------------ |
-| **Plane**    | AGPL (Community)  | El moderno reemplazo de Jira: ciclos, módulos y docs; importa proyectos de Jira |
-| **Kaneo**    | MIT               | Kanban minimalista estilo Linear para equipos chicos         |
-
-- **Plane** — boards con ciclos y módulos, docs integradas e importación desde Jira; self-hosted o nube gratuita hasta 12 miembros. Es el candidato serio a reemplazar a Jira sin salir del código abierto.
-- **Kaneo** — solo el tablero, nada más: Kanban ligero y rápido para equipos que no necesitan la máquina de sprints de Jira.
-- **Issues del forge** — las issues nativas de GitHub, GitLab o Forgejo cubren el caso base gratis y viven junto al código (ver [dev-vcs](../dev-vcs/)).
+- **Automatizaciones** — reglas sin código "cuando esto, haz aquello" (cuando el PR se mergea, mueve el issue a Done; si un bloqueador se cierra, notifica al asignado) con disparadores, condiciones y acciones.
+- **Vistas y filtros** — kanban, lista, spreadsheet y calendario sobre los mismos issues; los filtros guardados hacen de consultas que alimentan cada vista.
+- **Cycles y modules** — los ciclos dan el ritmo de sprint y los módulos agrupan temas de largo aliento; las docs integradas dejan el contexto del proyecto dentro de la misma herramienta.
+- **Integración** — importa desde Jira y GitHub, y webhooks llevan commits, PRs y estados de CI al issue, con las alertas de [ops-incident](../../ops/ops-incident/) abriendo tickets automáticamente.
 
 ## Documentación del equipo
 
-El par histórico del gestor de proyectos es la wiki: Confluence dominó este espacio junto a Jira, y hoy hay alternativas libres más modernas.
+El par histórico del gestor de proyectos es la wiki: Confluence dominó este espacio desde la suite de Atlassian, y hoy hay alternativas libres más modernas.
 
 | Herramienta  | Licencia                | Perfil                                                     |
 | ------------ | ----------------------- | ---------------------------------------------------------- |
@@ -79,9 +72,11 @@ El par histórico del gestor de proyectos es la wiki: Confluence dominó este es
 
 ## Cómo elegir
 
-- **Jira** cuando el equipo vive en tickets y sprints y necesita el vínculo directo con el código (PRs, commits, releases).
-- **Plane** cuando se quiere la potencia de Jira bajo licencia libre, con despliegue propio.
-- **Asana** cuando se quiere organizar proyectos y objetivos con más flexibilidad que un tablero ágil puro.
-- **Monday** cuando la prioridad es una herramienta visual simple que cualquiera en la organización pueda usar.
+- **Plane** cuando el equipo vive en issues, ciclos y sprints y necesita el vínculo directo con el código (PRs, commits, releases).
+- **Vikunja** cuando la gestión de tareas es de todo el equipo u organización (áreas no-dev incluidas) y hacen falta calendarios y Gantt.
+- **AppFlowy** 🦀 cuando el trabajo tiene que ser local-first en escritorio y móvil, con los datos en la propia máquina.
+- **Kaneo** cuando solo hace falta el tablero kanban, sin la máquina de sprints.
+- **Teable** cuando el trabajo se organiza sobre tablas y grids visuales no-code, sobre Postgres.
+- **Issues del forge** — las issues nativas de GitHub, GitLab o Forgejo cubren el caso base gratis y viven junto al código (ver [dev-vcs](../dev-vcs/)).
 
 > La herramienta no define la metodología: primero se define cómo se quiere trabajar (sprints, kanban, flujo continuo) y después se elige la plataforma que mejor lo soporte.

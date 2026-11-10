@@ -19,12 +19,12 @@ Git stores the full history of every change in the project and enables parallel 
 
 ## Branching Flows
 
-| Flow             | Structure                                                    | When                                   |
-| ---------------- | ------------------------------------------------------------ | -------------------------------------- |
-| **Trunk-based**  | everything on trunk, branches shorter than a day, flags      | mature CI, continuous deployment       |
-| **GitHub Flow**  | main + one branch per feature + PR                           | the default for web projects           |
-| **GitFlow**      | main + develop + release/hotfix branches                     | packaged software released in versions |
-| **Release Flow** | stable main + one long-lived branch per release line         | several supported versions in parallel |
+| Flow             | Structure                                               | When                                   |
+| ---------------- | ------------------------------------------------------- | -------------------------------------- |
+| **Trunk-based**  | everything on trunk, branches shorter than a day, flags | mature CI, continuous deployment       |
+| **GitHub Flow**  | main + one branch per feature + PR                      | the default for web projects           |
+| **GitFlow**      | main + develop + release/hotfix branches                | packaged software released in versions |
+| **Release Flow** | stable main + one long-lived branch per release line    | several supported versions in parallel |
 
 - **Trunk-based** — the continuous deployment path: integrate into trunk several times a day and protect unfinished work behind feature flags; requires fast CI and good test coverage.
 - **GitHub Flow** — the simple default for teams deploying to production from main: short branch, PR, merge, deploy.
@@ -41,36 +41,33 @@ The PR is the integration unit: it proposes the diff, discusses it, triggers the
 
 ## Monorepo vs Polyrepo
 
-| Approach      | Structure                                  | Strong at                                             |
-| ------------- | ------------------------------------------ | ----------------------------------------------------- |
-| **Monorepo**  | one repo for many services and libraries   | atomic changes, shared tooling and dependencies       |
-| **Polyrepo**  | one repo per service                       | independent releases, simple permissions and lifecycles |
+| Approach     | Structure                                | Strong at                                               |
+| ------------ | ---------------------------------------- | ------------------------------------------------------- |
+| **Monorepo** | one repo for many services and libraries | atomic changes, shared tooling and dependencies         |
+| **Polyrepo** | one repo per service                     | independent releases, simple permissions and lifecycles |
 
 - **Monorepo** — a change touching two services is versioned, reviewed, and deployed as a unit; the cost lies in tooling (incremental builds, path-based CI).
 - **Polyrepo** — each service has its own pace and pipeline; the cost lies in coordinating cross-repo changes (versioning dependencies by hand).
 
 ## Forges
 
-| Forge               | Model                                   | Profile                                                     |
-| ------------------- | --------------------------------------- | ----------------------------------------------------------- |
-| **GitHub**          | Freemium, proprietary                   | The standard: Actions, Packages, the largest ecosystem      |
-| **GitLab**          | Freemium + self-hosted Community Edition | All-in-one: repo, CI/CD, registries, and security scanning  |
-| **Codeberg**        | 100% free (Forgejo), donation-funded    | Forge without a corporation, backed by its foundation       |
-| **Forgejo / Gitea** | Free (MIT)                              | Lightweight self-hosted, single binary, low footprint       |
-| **Radicle**         | Free, p2p (Rust)                        | Decentralized forge, no central server                      |
+| Forge               | Model                                    | Profile                                                    |
+| ------------------- | ---------------------------------------- | ---------------------------------------------------------- |
+| **GitHub**          | Freemium, proprietary                    | The standard: Actions, Packages, the largest ecosystem     |
+| **GitLab**          | Freemium + self-hosted Community Edition | All-in-one: repo, CI/CD, registries, and security scanning |
+| **Codeberg**        | 100% free (Forgejo), donation-funded     | Forge without a corporation, backed by its foundation      |
+| **Forgejo / Gitea** | Free (MIT)                               | Lightweight self-hosted, single binary, low footprint      |
+| **Radicle**         | Free, p2p (Rust)                         | Decentralized forge, no central server                     |
 
 - **How to choose** — GitHub is the default network where most of the ecosystem lives; GitLab (CE) or Forgejo when self-hosting is required; Codeberg when the only criterion is the free license; Radicle to experiment with peer-to-peer forges.
 
 ## Tooling
 
-| Tool             | Profile                                                     |
-| ---------------- | ----------------------------------------------------------- |
-| **git**          | Official CLI — everything goes through here                 |
-| **lazygit**      | Full-featured TUI for daily work                            |
-| **gitui** 🦀     | Fast Rust TUI, minimal footprint                            |
-| **delta** 🦀     | Diffs and merges with syntax highlighting                   |
-| **jj** 🦀        | Next-generation VCS built on git's repo format              |
-| **gitoxide** 🦀  | Git rewritten in Rust, the base of modern tooling           |
+| Tool            | Profile                                           |
+| --------------- | ------------------------------------------------- |
+| **delta** 🦀    | Diffs and merges with syntax highlighting         |
+| **jj** 🦀       | Next-generation VCS built on git's repo format    |
+| **gitoxide** 🦀 | Git rewritten in Rust, the base of modern tooling |
 
 - **jj** — eliminates git's broken states (index, stash): the working copy is an editable commit and conflicts are resolved without special branches; it works over the same repo format, so it coexists with git and current forges.
 - **delta** — integrates as git's pager and turns diffs into readable output, with syntax highlighting and per-file structure.

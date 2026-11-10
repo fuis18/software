@@ -19,11 +19,11 @@ Git guarda el historial completo de cada cambio del proyecto y permite trabajar 
 
 ## Flujos de ramas
 
-| Flujo            | Estructura                                                      | Cuándo                                 |
-| ---------------- | --------------------------------------------------------------- | -------------------------------------- |
-| **Trunk-based**  | todo en trunk, ramas de vida menor a un día, features con flags | CI madura, deploy continuo             |
-| **GitHub Flow**  | main + rama por feature + PR                                    | el caso default de proyectos web       |
-| **GitFlow**      | main + develop + ramas release/hotfix                           | software empaquetado por versiones     |
+| Flujo            | Estructura                                                      | Cuándo                                  |
+| ---------------- | --------------------------------------------------------------- | --------------------------------------- |
+| **Trunk-based**  | todo en trunk, ramas de vida menor a un día, features con flags | CI madura, deploy continuo              |
+| **GitHub Flow**  | main + rama por feature + PR                                    | el caso default de proyectos web        |
+| **GitFlow**      | main + develop + ramas release/hotfix                           | software empaquetado por versiones      |
 | **Release Flow** | main estable + rama larga por línea de release                  | varias versiones soportadas en paralelo |
 
 - **Trunk-based** — el camino del deploy continuo: integrar a trunk varias veces al día y proteger lo no terminado con feature flags; exige CI rápida y buena cobertura de tests.
@@ -51,26 +51,23 @@ El PR es la unidad de integración: propone el diff, lo discute, dispara el pipe
 
 ## Forges
 
-| Forge               | Modelo                                  | Perfil                                                     |
-| ------------------- | --------------------------------------- | ---------------------------------------------------------- |
-| **GitHub**          | Freemium, propietario                   | El estándar: Actions, Packages, el ecosistema más grande   |
-| **GitLab**          | Freemium + Community Edition self-hosted | Todo-en-uno: repo, CI/CD, registries y security scanning  |
-| **Codeberg**        | 100% libre (Forgejo), donativo          | Forge sin corporativo, respaldado por su fundación         |
-| **Forgejo / Gitea** | Libre (MIT)                             | Self-hosted ligero, binario único, bajo consumo            |
-| **Radicle**         | Libre, p2p (Rust)                       | Forge descentralizado, sin servidor central                |
+| Forge               | Modelo                                   | Perfil                                                   |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------- |
+| **GitHub**          | Freemium, propietario                    | El estándar: Actions, Packages, el ecosistema más grande |
+| **GitLab**          | Freemium + Community Edition self-hosted | Todo-en-uno: repo, CI/CD, registries y security scanning |
+| **Codeberg**        | 100% libre (Forgejo), donativo           | Forge sin corporativo, respaldado por su fundación       |
+| **Forgejo / Gitea** | Libre (MIT)                              | Self-hosted ligero, binario único, bajo consumo          |
+| **Radicle**         | Libre, p2p (Rust)                        | Forge descentralizado, sin servidor central              |
 
 - **Cómo elegir** — GitHub es la red por defecto donde vive la mayor parte del ecosistema; GitLab (CE) o Forgejo cuando hay que self-hoshear; Codeberg cuando el criterio es únicamente la licencia libre; Radicle para experimentar con forges peer-to-peer.
 
 ## Tooling
 
-| Herramienta        | Perfil                                                       |
-| ------------------ | ------------------------------------------------------------ |
-| **git**            | CLI oficial — todo pasa por acá                              |
-| **lazygit**        | TUI completa para el flujo diario                            |
-| **gitui** 🦀       | TUI rápida en Rust, mínimo consumo                           |
-| **delta** 🦀       | Diffs y merges con syntax highlighting                       |
-| **jj** 🦀          | VCS de nueva generación sobre el formato de repos de git     |
-| **gitoxide** 🦀    | Git reescrito en Rust, base del tooling moderno              |
+| Herramienta     | Perfil                                                   |
+| --------------- | -------------------------------------------------------- |
+| **delta** 🦀    | Diffs y merges con syntax highlighting                   |
+| **jj** 🦀       | VCS de nueva generación sobre el formato de repos de git |
+| **gitoxide** 🦀 | Git reescrito en Rust, base del tooling moderno          |
 
 - **jj** — elimina los estados rotos de git (índice, stash): el working copy es un commit editable y los conflictos se resuelven sin ramas especiales; trabaja sobre el mismo formato de repos, así que convive con git y los forges actuales.
 - **delta** — se integra como pager de git y convierte los diffs en legibles, con resaltado de sintaxis y estructura por archivo.
