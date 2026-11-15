@@ -29,6 +29,8 @@ A project's folder structure should reflect the **app domain** (features, use ca
 
 In practice: instead of grouping by type (`components/`, `hooks/`, `services/`), you group by feature (`jobs/`, `auth/`, `profile/`), and each feature folder carries its own components, hooks, and services.
 
+The full breakdown — folder trees, the layered alternative, and how to choose — lives in [dev-architectures](../dev-architectures/).
+
 ### 4. Styling
 
 What styles the interface on the CSS side. See [front-style](../web-style/).
@@ -49,44 +51,3 @@ Capabilities the browser offers to run work off the main thread or intercept the
 | --- | --- |
 | **Web worker** | Background |
 | **Service worker** | Cache |
-
-## Architecture
-
-### Screaming Architecture (Feature-Based)
-
-The folder structure should reflect the **app domain** and "scream" what it is about, not what framework it uses. In practice you group by feature instead of by technical layer — see step 3 of the roadmap.
-
-```
-src/
-  features/
-    auth/
-      components/    # LoginButton, LoginForm
-      hooks/         # useAuth, useUser
-      services/      # loginApi, registerApi
-      types/         # UserInterface
-      index.ts       # Entry point (Public API)
-    shopping-cart/
-      components/
-      store/
-      index.ts
-  shared/            # Global components (buttons, generic inputs)
-```
-
-### Layered Architecture
-
-Grouping by technical layer, the classic alternative: `components/`, `hooks/`, `services/`, `pages/`, `utils/`.
-
-```
-src/
-  components/
-  hooks/
-  services/
-  pages/
-  utils/
-```
-
-**How to choose:** Layered for simple projects where the file type rules; Screaming/Feature-Based when the app grows and several features touch the same layers, so each feature stays self-contained and can be moved or removed as a unit.
-
-### Principles
-
-See [dev-principles](../dev-principles/) — KISS, YAGNI, and DRY.

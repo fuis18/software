@@ -34,7 +34,7 @@ Identidad y autenticación una vez que ya hay API y datos que proteger. Ver [dev
 
 ### 5. Testing
 
-Último escalón: cubrir con tests lo que ya se construyó. Ver [ops-ci](../ops/ops-ci/).
+Último escalón: cubrir con tests lo que ya se construyó. Ver [ops-ci](../../ops/ops-ci/).
 
 ## Diseño de APIs REST
 
@@ -74,7 +74,7 @@ Un método es idempotente cuando repetirlo deja el mismo resultado que ejecutarl
 - **Por qué importa** — reintentos: si la red falla después de un timeout, el cliente no sabe si el servidor procesó el pedido; puede reintentar sin miedo solo si el verbo es idempotente.
 - **POST crítico** — cuando un POST representa un pago u otra operación que no debe duplicarse, se agrega una clave de idempotencia (`Idempotency-Key`): el servidor guarda la respuesta de la primera ejecución y devuelve esa misma en los reintentos.
 
-## Arquitectura
+## Principios de diseño
 
 ### Principios
 
@@ -97,19 +97,4 @@ Un método es idempotente cuando repetirlo deja el mismo resultado que ejecutarl
 | **I** Interface Segregation | Mejor varias interfaces pequeñas que una interfaz gigante.              |
 | **D** Dependency Inversion  | Depender de abstracciones, no de implementaciones concretas.            |
 
-### Estilos arquitectónicos
-
-| Estilo                 | Idea base                                                       |
-| ---------------------- | --------------------------------------------------------------- |
-| **Clean Architecture** | Las reglas de negocio en el centro, dependencias hacia adentro. |
-| **Hexagonal**          | Puerto-adaptador: el dominio no conoce a la infraestructura.    |
-| **Onion**              | Capas concéntricas con el dominio en el núcleo.                 |
-| **DDD**                | Modelar el dominio del negocio con su propio lenguaje.          |
-| **MVC**                | Model / View / Controller — ver paso 2 del roadmap.             |
-
-### Recursos
-
-- ArchView — System Design Patterns Diagrams
-- Software Architecture Diagram Examples
-- Awesome Software and Architecture Design Patterns
-- Digital Platform Architect — Architecture Styles & Patterns
+Los estilos arquitectónicos (Clean, Hexagonal, Onion, DDD) y los patrones de sistema viven en [dev-architectures](../dev-architectures/).

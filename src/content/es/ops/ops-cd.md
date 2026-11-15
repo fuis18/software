@@ -7,7 +7,7 @@ order: 14
 summary: "Entrega y despliegue continuo: el repositorio como fuente de verdad, despliegues progresivos y las estrategias para publicar cambios sin romper a los usuarios."
 ---
 
-Si la CI termina con el artefacto validado, la **entrega continua** se encarga de llevarlo a producción con métodos que minimizan el daño de un error: despliegues progresivos, GitOps y release automation.
+Si el pipeline de [ops-ci](../ops-ci/) termina con el artefacto validado, la **entrega continua** se encarga de llevarlo a producción con métodos que minimizan el daño de un error: despliegues progresivos, GitOps y release automation.
 
 ## Entrega vs. Despliegue
 

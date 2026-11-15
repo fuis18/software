@@ -50,7 +50,7 @@ Capa donde los datos se exponen a usuarios finales, analistas, científicos de d
 
 | Herramienta | Perfil | Caso de Uso |
 |---|---|---|
-| [Rill](https://www.rilldata.com/) | BI-as-Code y análisis operacional | Definición de métricas y dashboards en YAML/SQL, consumibles directamente vía MCP para agentes de IA. |
+| [Rill](https://www.rilldata.com/) | BI-as-Code y análisis operacional | Definición de métricas y dashboards en YAML/SQL, consumibles directamente vía MCP para agentes de IA (ver [ai-mcp](../../ai/ai-mcp/)). |
 | [Marimo](https://marimo.io/) | Notebooks reactivos para ciencia de datos e IA | Archivos `.py` puros, sin estados ocultos, Git-friendly y ejecutables desde CLI. |
 | [Quarto](https://quarto.org/) | Publicación técnica | Creación de reportes, documentos ejecutivos, libros y portales analíticos a partir de código. |
 | [R Shiny](https://shiny.posit.co/) | Aplicaciones web estadísticas interactivas | Transforma análisis de R en aplicaciones web interactivas sin escribir JavaScript, CSS o HTML. |
@@ -64,6 +64,34 @@ Capacidades de soporte que garantizan fiabilidad, gobernanza y automatización e
 | Orquestación | [Kestra](https://kestra.io/) | Orquestación fiable de workflows para coordinar, programar y monitorizar pipelines de datos. |
 | Calidad de Datos | [Soda Core](https://www.soda.io/) | Validaciones automáticas de calidad de datos, detección de anomalías y checks entre datasets. |
 | Gobierno de Datos y Catálogo | [OpenLineage](https://openlineage.io/) & [Marquez](https://marquezproject.ai/) | Linaje de datos end-to-end, gestión de metadatos y descubrimiento de datos. |
+| Feature Store   | [Feast](https://feast.dev/)           | Features de ML consistentes entre entrenamiento e inferencia, servidas desde el warehouse. |
+| Policy as Code  | [OPA](https://www.openpolicyagent.org/) | Reglas de acceso, retención y calidad como código en Rego, evaluadas en el pipeline y en el clúster (ver [sec-runtime](../../sec/sec-runtime/)). |
+
+- **Costo del MDS** — al correr en cloud con cobro por uso, un pipeline activo puede disparar la factura rápido: right-sizing, etiquetado y compromisos viven en [ops-cloud](../ops-cloud/) § FinOps.
+
+## De la arquitectura clásica al MDS
+
+Las capas de una plataforma clásica no desaparecen: se reorganizan como etapas de un pipeline. Es el reflejo en datos de la evolución de los patrones de [dev-architectures](../../dev/dev-architectures/).
+
+| Capa clásica     | Qué era antes                      | Equivalente moderno (MDS)     | Tecnologías                                             |
+| ---------------- | ---------------------------------- | ----------------------------- | ------------------------------------------------------- |
+| **Presentación** | Frontend web, dashboards estáticos | Consumo dinámico + agentes    | Rill (BI-as-Code), Marimo (notebooks), MCP para agentes |
+| **Aplicación**   | Backend con lógica de negocio      | Transformación + orquestación | SQLMesh (entornos virtuales), Kestra, SDF               |
+| **Dominio**      | Reglas de negocio en código        | Modelos semánticos + métricas | Rill (métricas en YAML/SQL), SQLMesh, catálogo Marquez  |
+| **Persistencia** | Base de datos relacional on-prem   | Warehouse/Lakehouse vectorial | LanceDB, delta-rs (sin JVM), DataFusion                 |
+
+- **Capas → pipeline horizontal** — las capas verticales se vuelven etapas horizontales conectadas por contratos de datos: sin llamadas RPC entre capas, flujos de datos elásticos (ingesta → almacenamiento → transformación → consumo).
+- **MVC → notebook reactivo + capa semántica** — el modelo son las tablas del warehouse con las métricas en YAML; la vista se desacopla y el mismo dataset sirve dashboards, notebooks, reportes y agentes a la vez.
+- **Cliente-servidor → eventos + serverless** — el cliente pasa a ser agentes y notebooks, el servidor a motores de consulta y lakehouse, y la comunicación a eventos asíncronos que escalan por evento, no por instancia.
+
+### SOA → MDS
+
+| SOA clásico                          | MDS moderno                                       |
+| ------------------------------------ | ------------------------------------------------- |
+| Bus de integración central (ESB)     | Conectores open source (Airbyte, Meltano)         |
+| Contratos ESB rígidos                | APIs + formatos estándar (Parquet, Delta)         |
+| Servicios corporativos reutilizables | Servicios por dominio de datos (bounded contexts) |
+| Gobernanza manual                    | Linaje automático (OpenLineage + Marquez)         |
 
 ## MDS vs. Stack de Datos Tradicional
 
@@ -80,3 +108,5 @@ Capacidades de soporte que garantizan fiabilidad, gobernanza y automatización e
 - [ops-data-modeling](../ops-data-modeling/) — Esquema de estrella, vistas materializadas y motores columnares para analítica.
 - [ops-dataops](../ops-dataops/) — Prácticas, automatización y CI/CD para flujos de trabajo de datos.
 - [ops-observability](../ops-observability/) — Monitoreo, trazado y observabilidad para sistemas y datos.
+- [dev-planning](../../dev/dev-planning/) — Requerimientos, documentos, diagramas y ADR antes de construir nada.
+- [dev-project-management](../../dev/dev-project-management/) — La parte administrativa: plataformas de tareas, documentación del equipo y metodologías.

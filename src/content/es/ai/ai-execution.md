@@ -34,6 +34,7 @@ Ejecuta modelos en local para privacidad y control de costes, o usa APIs/proveed
 - **[FreeRouter](https://freerouter.top/)** — Enrutado gratuito o de bajo coste sobre modelos variados; útil para experimentos y proyectos laterales, pero revisa disponibilidad y límites antes de construir encima.
 - **[BytePlus](https://www.byteplus.com/)** — Proveedor con pesos abiertos y cerrados cuando buscas una alternativa a los fabricantes estadounidenses: revisa catálogo, precios y región antes de comprometerte.
 - **[Glama.ai](https://glama.ai/)** — Acceso a modelos con routing y énfasis en contexto de herramientas/MCP, útil cuando tu cliente es un agente que necesita descubrir herramientas y llamar a muchos modelos desde un solo sitio.
+- **[LiteLLM](https://www.litellm.ai/)** — el gateway que corre en tu infraestructura: un endpoint compatible con OpenAI frente a 100+ proveedores, con enrutamiento, rate limits, presupuestos por clave y costo agregado por modelo — el OpenRouter self-hosted.
 
 ## 4. Conceptos y configuración
 
@@ -46,6 +47,7 @@ Sea cual sea el motor o proveedor que elijas, el mismo puñado de conceptos de c
 | Gateway / router | Un único endpoint frente a muchos modelos que elige cuál responde y hace failover cuando uno se degrada. | El routing estilo OpenRouter evita reescribir el cliente por proveedor, deja un solo juego de credenciales y métricas, y suaviza caídas o cambios de precio sobre la marcha. |
 | Cuantización | Guardar pesos a menor precisión con la que se entrenaron (FP16, INT8, INT4). | La palanca principal para caber un modelo en menos VRAM, con algún coste en calidad — y normalmente lo primero que conviene probar antes de comprar hardware ([ai-creation](../ai-creation/)). |
 | Ajuste a hardware | Si tu GPU o CPU realmente puede alojar el modelo a velocidad utilizable, no solo si el archivo se descarga. | Decide antes de descargar: [canirun.ai](https://www.canirun.ai/) estima el ajuste, [ops-hardware](../../ops/ops-hardware/) cubre las máquinas. |
+| Observabilidad de LLM | Trazas de cada llamada: prompt, respuesta, latencia, tokens y costo. | [Phoenix](https://phoenix.arize.com/) (MIT) registra y consulta las trazas para comparar versiones de prompt o encontrar qué llamada encarece a un agente — clave cuando un bucle de agente falla en silencio. |
 
 ## Relacionados
 

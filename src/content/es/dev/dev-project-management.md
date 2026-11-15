@@ -50,6 +50,8 @@ El par histórico del gestor de proyectos es la wiki: Confluence dominó este es
 - **Outline** — muy pulida, pero su licencia BSL no es open source en sentido OSI (fuente disponible con restricciones comerciales).
 - **Docs-as-code** — el otro camino: la documentación vive como markdown en el repo, se revisa en PR y se publica desde CI (Docusaurus, MkDocs Material, mdBook 🦀) — ver [dev-vcs](../dev-vcs/).
 
+Lo que se define antes de empezar a codificar — requerimientos, documentos, diagramas y ADR — está en [dev-planning](../dev-planning/).
+
 ## Metodologías
 
 | Metodología | Uso principal |

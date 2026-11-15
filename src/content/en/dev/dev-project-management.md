@@ -50,6 +50,8 @@ The project manager's historical counterpart is the wiki: Confluence dominated t
 - **Outline** — very polished, but its BSL license is not open source in the OSI sense (source available with commercial restrictions).
 - **Docs-as-code** — the other path: documentation lives as markdown in the repo, is reviewed in PR, and published from CI (Docusaurus, MkDocs Material, mdBook 🦀) — see [dev-vcs](../dev-vcs/).
 
+What gets defined before coding starts — requirements, documents, diagrams, and ADRs — is covered in [dev-planning](../dev-planning/).
+
 ## Methodologies
 
 | Methodology | Main use |

@@ -80,6 +80,13 @@ The path of data from source to where it's analyzed — and how the final destin
 - **ETL vs. ELT — why the order changed:** ETL was born in an era where the destination store (the traditional warehouse) was expensive and limited, so transforming _before_ loading minimized what had to be stored and processed there. ELT reverses the order because modern warehouses/lakes are powerful and cheap enough to load raw data first and transform afterward, within the same store — which is exactly the model dbt enables (transforms _inside_ the warehouse, not before arriving).
 - **Lakehouse — why it exists:** for years you chose between a _data warehouse_ (structured, fast to query, but rigid and expensive for raw data) or a _data lake_ (cheap, flexible, stores anything, but slow and weak for analytical queries). The lakehouse seeks to combine both: stores raw data with the flexibility of a lake, but adds structure and efficient query capability on top, without needing two separate systems.
 
+### Data Versioning
+
+Version control for datasets: the same git flow applied to data — branches, commits, and merges, see [dev-vcs](../../dev/dev-vcs/).
+
+- **[DVC](https://dvc.org/)** (Apache 2.0) — versions datasets and ML artifacts with git semantics: heavy files live in remote storage, the repo keeps only pointers and hashes, and "who changed which dataset" stays in the history.
+- **[LakeFS](https://lakefs.io/)** (Apache 2.0) — branches, commits, and merges over data lakes on S3/GCS: try a transformation on a branch and merge it when tests pass, without duplicating the lake.
+
 ### Typical architecture
 
 1. **Ingestion** — data enters from sources (databases, events, files) via streams (Kafka) or batch (Airflow-orchestrated jobs).

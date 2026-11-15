@@ -80,6 +80,13 @@ El camino del dato desde origen hasta donde se analiza — y cómo se organiza e
 - **ETL vs. ELT — por qué cambió el orden:** ETL nació en una época donde el almacén de destino (el warehouse tradicional) era caro y limitado, así que transformar _antes_ de cargar minimizaba lo que había que guardar y procesar ahí. ELT invierte el orden porque los warehouses/lakes modernos son lo bastante potentes y baratos como para cargar el dato crudo primero y transformar después, dentro del mismo almacén — que es exactamente el modelo que habilita a dbt (transforma _dentro_ del warehouse, no antes de llegar).
 - **Lakehouse — por qué existe:** durante años se eligió entre un _data warehouse_ (estructurado, rápido de consultar, pero rígido y caro para datos crudos) o un _data lake_ (barato, flexible, guarda cualquier cosa, pero lento y débil para queries analíticas). El lakehouse busca combinar ambos: guarda el dato crudo con la flexibilidad de un lake, pero agrega estructura y capacidad de query eficiente encima, sin necesitar dos sistemas separados.
 
+### Versionado de datos
+
+Control de versiones para los datasets: el mismo flujo de git aplicado a los datos — ramas, commits y merges, ver [dev-vcs](../../dev/dev-vcs/).
+
+- **[DVC](https://dvc.org/)** (Apache 2.0) — versiona datasets y artefactos ML con semántica de git: los archivos pesados viven en un storage remoto, el repo guarda solo punteros y hashes, y "quién cambió qué dataset" queda en el historial.
+- **[LakeFS](https://lakefs.io/)** (Apache 2.0) — branches, commits y merges sobre data lakes en S3/GCS: probar una transformación en una rama y mergearla cuando los tests pasan, sin duplicar el lake.
+
 ### Arquitectura típica
 
 1. **Ingesta** — el dato entra de las fuentes (bases, eventos, archivos) vía streams (Kafka) o batch (jobs orquestados por Airflow).

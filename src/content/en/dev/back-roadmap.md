@@ -34,7 +34,7 @@ Identity and authentication once there is an API and data to protect. See [dev-a
 
 ### 5. Testing
 
-Final step: cover what has already been built with tests. See [ops-ci](../ops/ops-ci/).
+Final step: cover what has already been built with tests. See [ops-ci](../../ops/ops-ci/).
 
 ## REST API Design
 
@@ -74,7 +74,7 @@ A method is idempotent when repeating it leaves the same result as running it on
 - **Why it matters** — retries: if the network fails after a timeout, the client doesn't know if the server processed the request; it can retry safely only if the verb is idempotent.
 - **Critical POST** — when a POST represents a payment or another operation that must not be duplicated, an idempotency key is added (`Idempotency-Key`): the server stores the response from the first execution and returns that same one on retries.
 
-## Architecture
+## Design Principles
 
 ### Principles
 
@@ -97,19 +97,4 @@ A method is idempotent when repeating it leaves the same result as running it on
 | **I** Interface Segregation | Several small interfaces are better than one giant interface.          |
 | **D** Dependency Inversion  | Depend on abstractions, not concrete implementations.                  |
 
-### Architectural Styles
-
-| Style                 | Core Idea                                                      |
-| --------------------- | -------------------------------------------------------------- |
-| **Clean Architecture** | Business rules at the center, dependencies pointing inward.   |
-| **Hexagonal**         | Port-adapter: the domain doesn't know about infrastructure.   |
-| **Onion**             | Concentric layers with the domain at the core.                 |
-| **DDD**               | Model the business domain with its own language.              |
-| **MVC**               | Model / View / Controller — see step 2 of the roadmap.        |
-
-### Resources
-
-- ArchView — System Design Patterns Diagrams
-- Software Architecture Diagram Examples
-- Awesome Software and Architecture Design Patterns
-- Digital Platform Architect — Architecture Styles & Patterns
+The architectural styles (Clean, Hexagonal, Onion, DDD) and the system patterns behind them live in [dev-architectures](../dev-architectures/).

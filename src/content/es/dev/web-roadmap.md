@@ -29,6 +29,8 @@ La estructura de carpetas de un proyecto debería reflejar el **dominio de la ap
 
 En la práctica: en vez de agrupar por tipo (`components/`, `hooks/`, `services/`), se agrupa por feature (`jobs/`, `auth/`, `profile/`), y cada carpeta de feature trae adentro sus propios componentes, hooks y servicios.
 
+El desarrollo completo — árboles de carpetas, la alternativa en capas y cómo elegir — está en [dev-architectures](../dev-architectures/).
+
 ### 4. Estilo
 
 Con qué se estiliza la interfaz del lado CSS. Ver [front-style](../web-style/).
@@ -49,44 +51,3 @@ Capacidades que ofrece el navegador para ejecutar trabajo fuera del hilo princip
 | --- | --- |
 | **Web worker** | segundo plano |
 | **Service worker** | Caché |
-
-## Arquitectura
-
-### Screaming Architecture (Feature-Based)
-
-La estructura de carpetas debería reflejar el **dominio de la app** y "gritar" de qué se trata, no qué framework usa. En la práctica se agrupa por feature en vez de por capa técnica — ver paso 3 del roadmap.
-
-```
-src/
-  features/
-    auth/
-      components/    # LoginButton, LoginForm
-      hooks/         # useAuth, useUser
-      services/      # loginApi, registerApi
-      types/         # UserInterface
-      index.ts       # Punto de entrada (Public API)
-    shopping-cart/
-      components/
-      store/
-      index.ts
-  shared/            # Componentes globales (Botones, inputs genéricos)
-```
-
-### Layered Architecture
-
-Agrupar por capa técnica, la alternativa clásica: `components/`, `hooks/`, `services/`, `pages/`, `utils/`.
-
-```
-src/
-  components/
-  hooks/
-  services/
-  pages/
-  utils/
-```
-
-**Cómo elegir:** Layered para proyectos simples donde el tipo de archivo manda; Screaming/Feature-Based cuando la app crece y varias features tocan las mismas capas, para que cada feature quede autocontenida y se pueda mover o eliminar como unidad.
-
-### Principios
-
-Ver [dev-principles](../dev-principles/) — KISS, YAGNI y DRY.

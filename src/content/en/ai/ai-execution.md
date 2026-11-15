@@ -34,6 +34,7 @@ Run models locally for privacy and cost control, or use cloud providers and rout
 - **[FreeRouter](https://freerouter.top/)** — Free or low-cost routing over an assortment of models — useful for experiments and side projects, but check availability and limits before building on it.
 - **[BytePlus](https://www.byteplus.com/)** — A provider mixing open and closed weights when you want an alternative to the US-centric vendors — check the model catalog, pricing, and region before committing.
 - **[Glama.ai](https://glama.ai/)** — Model access with routing and an emphasis on tools/MCP context, handy when your client is an agent that needs tool discovery and one place to call many models.
+- **[LiteLLM](https://www.litellm.ai/)** — the gateway that runs on your own infrastructure: an OpenAI-compatible endpoint in front of 100+ providers, with routing, rate limits, per-key budgets, and aggregated cost per model — the self-hosted OpenRouter.
 
 ## 4. Concepts & Configuration
 
@@ -46,6 +47,7 @@ Whatever engine or provider you pick, the same handful of configuration concepts
 | Gateway / router | A single endpoint in front of many models that picks which one answers and fails over when it degrades. | OpenRouter-style routing avoids rewriting your client per provider, leaves you one set of credentials and metrics, and softens outages or price changes as they happen. |
 | Quantization | Storing weights at lower precision than they were trained at (FP16, INT8, INT4). | The main lever for fitting a model in less VRAM, at some cost in quality — and usually the first thing to try before buying hardware ([ai-creation](../ai-creation/)). |
 | Hardware fit | Whether your GPU or CPU can actually host the model at usable speed, not just whether the file downloads. | Decide before downloading: [canirun.ai](https://www.canirun.ai/) estimates the fit, [ops-hardware](../../ops/ops-hardware/) covers the machines themselves. |
+| LLM observability | A trace of every call: prompt, response, latency, tokens, and cost. | [Phoenix](https://phoenix.arize.com/) (MIT) records and queries traces to compare prompt versions or find which call makes an agent expensive — key when an agent loop fails silently. |
 
 ## Related
 

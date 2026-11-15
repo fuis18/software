@@ -7,7 +7,7 @@ order: 14
 summary: "Continuous delivery and deployment: the repository as the source of truth, progressive rollouts, and strategies for shipping changes without breaking users."
 ---
 
-If CI ends with the validated artifact, **continuous delivery** handles bringing it to production with methods that minimize the damage of an error: progressive deployments, GitOps, and release automation.
+If the [ops-ci](../ops-ci/) pipeline ends with the validated artifact, **continuous delivery** handles bringing it to production with methods that minimize the damage of an error: progressive deployments, GitOps, and release automation.
 
 ## Delivery vs. Deployment
 
