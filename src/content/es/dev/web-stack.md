@@ -11,16 +11,16 @@ summary: Meta-frameworks según el objetivo del proyecto y routers.
 
 Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de datos?, ¿enterprise?), no por gusto personal.
 
-| Framework    | Bundler        | Objetivo                       | Destaca en                       |
-| ------------ | -------------- | ------------------------------ | -------------------------------- |
-| **Astro**    | Vite           | Sitios estáticos               | Landing pages, blogs             |
-| **React**    | Vite           | Interactividad                 | Ecosistema React                 |
-| **TanStack** | Vite           | Apps con mucho manejo de datos | Proyectos grandes                |
-| **Svelte**   | Vite           | Interactividad                 | Rendimiento                      |
-| **Next.js**  | Turbopack      | Público / SEO                  | E-commerce                       |
-| **Angular**  | Vite / esbuild | Enterprise                     | Proyectos legacy                 |
-| **Qwik**     | Vite           | Público / Gobierno             | Carga instantánea                |
-| **vinext**   | Vite           | Next.js sobre Vite             | Deploy universal, builds rápidos |
+| Framework    | Bundler   | Objetivo                                                | Destaca en                       |
+| ------------ | --------- | ------------------------------------------------------- | -------------------------------- |
+| **Astro**    | Vite      | Landing pages, blogs, docs, portfolio                   | Sitios estáticos                 |
+| **React**    | Vite      | SaaS internos, dashboards, MVPs                         | Ecosistema React                 |
+| **TanStack** | Vite      | ERPs, CRM, paneles admin con tablas y filtros complejos | Manejo intensivo de datos        |
+| **Svelte**   | Vite      | Herramientas interactivas, apps de escritorio (Tauri)   | Rendimiento                      |
+| **Next.js**  | Turbopack | Tiendas online (e-commerce), sites con SSR/ISR          | Público / SEO                    |
+| **Qwik**     | Vite      | Portales de alto tráfico, sites de gobierno, prensa     | Carga instantánea                |
+| **Fresh**    | Deno      | Tiendas en el Edge, blogs dinámicos, BFF de un backend  | Edge, 0 JS por defecto           |
+| **vinext**   | Vite      | Apps Next.js con deploy a Cloudflare/Vercel/Netlify     | Deploy universal, builds rápidos |
 
 ### ¿Qué es cada uno?
 
@@ -29,8 +29,8 @@ Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de d
 - **TanStack Start**: meta-framework full-stack construido sobre React y TanStack Router, pensado para apps con manejo intensivo de datos, con type-safety de punta a punta.
 - **Svelte**: en vez de usar un virtual DOM, compila los componentes a JS imperativo optimizado en build time, lo que se traduce en bundles chicos y buen rendimiento.
 - **Next.js**: el meta-framework de React más usado en producción, con SSR/SSG/ISR integrados y fuerte enfoque en SEO y e-commerce.
-- **Angular**: framework completo (no solo librería) mantenido por Google, con TypeScript de base, inyección de dependencias y convenciones estrictas; común en entornos enterprise/legacy.
 - **Qwik**: framework con "resumability" en vez de hidratación: no re-ejecuta JS en el cliente al cargar, lo que da tiempos de carga inicial muy rápidos, útil en sitios públicos de alto tráfico.
+- **Fresh**: framework nativo de Deno para apps dinámicas orientadas al contenido, con SEO e interactividad ligera desplegadas en el Edge. Usa Preact (alternativa ultraligera a React) y la Arquitectura de Islas: por defecto envía 0 bytes de JavaScript al cliente y solo hidrata los componentes que de verdad necesitan interactividad (carrito, buscador, comentarios). Sin paso de build complejo en desarrollo, pensado para correr en Deno Deploy cerca del usuario.
 - **vinext**: plugin de Vite que reimplementa la API de Next.js. Permite correr apps de Next.js sobre Vite con deploys a Cloudflare Workers, Vercel, Netlify y más. Builds 4.4x más rápidos que Next.js, bundles 57% más chicos.
 
 ## Router
@@ -47,7 +47,7 @@ Se elige por el objetivo del proyecto (¿estático?, ¿SEO?, ¿mucho manejo de d
 - **Wouter**: router ultra liviano basado en hooks, sin dependencias extra; útil cuando solo necesitás navegación básica sin el peso de una librería completa.
 - **TanStack Router**: router pensado para TypeScript desde el diseño, con inferencia de tipos en rutas y params, validación de search params y buena integración con TanStack Query.
 
-> Nota: Svelte tiene su propio router
+> Nota: Svelte y Fresh tienen su propio router
 
 ## React Compiler
 
